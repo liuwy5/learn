@@ -1,6 +1,9 @@
 package com.learning.controller.ui.customer;
 
+import com.learning.common.enums.InterestTypeEnum;
 import com.learning.common.util.TicketUtil;
+import com.learning.dao.InterestDao;
+import com.learning.domain.InterestDomain;
 import com.learning.service.IFriendService;
 import com.learning.service.IPasswdService;
 import com.learning.vo.FriendVo;
@@ -38,6 +41,15 @@ public class HomeController {
         // 非好友列表
         List<InterestFriendVo> interestFriendList = passwdService.getInterestFriend(loginName);
         model.addAttribute("interestFriendList", interestFriendList);
-        return "customer/index";
+
+        // 群聊列表
+        List<InterestDomain> interestDomainList = InterestDao.selectAllInterest();
+        model.addAttribute("interestChatList", interestDomainList);
+        model.addAttribute("interestChatCount", interestDomainList.size());
+
+        // 兴趣类别
+        model.addAttribute("interestList", InterestTypeEnum.values());
+
+        return "/customer/index";
     }
 }

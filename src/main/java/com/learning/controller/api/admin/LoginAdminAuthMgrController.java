@@ -1,12 +1,10 @@
 package com.learning.controller.api.admin;
 
-import com.learning.service.IAdminLoginService;
+import com.learning.service.AdminLoginServiceImpl;
 import com.learning.vo.LoginVo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.http.HttpSession;
 
 /**
@@ -16,8 +14,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/admin/login")
 public class LoginAdminAuthMgrController {
-    @Autowired
-    private IAdminLoginService adminLoginService;
+    private AdminLoginServiceImpl adminLoginService = new AdminLoginServiceImpl();
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public Integer auth(LoginVo loginVo, HttpSession session) {

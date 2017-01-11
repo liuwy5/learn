@@ -1,23 +1,13 @@
 package com.learning.controller.socket;
 
 import com.learning.bean.Ticket;
+import com.learning.common.enums.ChatModeEnum;
 import com.learning.common.util.JsonUtil;
 import com.learning.common.util.TimeUtil;
 import com.learning.config.GetHttpSessionConfigurator;
-import com.learning.service.IMessageService;
-import com.learning.service.impl.MessageServiceImpl;
+import com.learning.dao.MessageDao;
 import com.learning.vo.MessageVo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
-import org.springframework.web.socket.server.standard.SpringConfigurator;
-
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -31,12 +21,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 @ServerEndpoint(value = "/webSocket", configurator = GetHttpSessionConfigurator.class)
 @Component
 public class MyWebSocket {
-
-//    @Autowired
-//    private IMessageService messageService;
-
-//    @Resource
-//    private IMessageService messageService = (IMessageService) ContextLoader.getCurrentWebApplicationContext().getBean("messageService");
 
     // TODO: 设计为线程安全的
     private static int onlineCount = 0;
@@ -80,28 +64,25 @@ public class MyWebSocket {
         MessageVo messageVo = (MessageVo) JsonUtil.jsonToObject(message, MessageVo.class);
         messageVo.setSender(this.loginName);
 
-//        ApplicationContext ac = new FileSystemXmlApplicationContext("/spring/spring.xml");
-//        IMessageService messageService = (IMessageService) ac.getBean("messageService");
+        if (ChatModeEnum.PRIVATE_CHAT.getCode().equals(messageVo.getChatMode())) { //私聊消息
+            MessageDao.insertPrivateMessage(messageVo);
 
-        IMessageService messageService = null;
-
-                // 存储消息
-        System.out.println(" =========" + (messageService == null));
-        if (messageService != null) {
-            messageService.storeSingleMessage(messageVo);
-        }
-
-        // 发给消息接收方
-        messageVo.setSelf(false);
-        for (MyWebSocket webSocket : webSocketSet) {
-            try {
-                if (messageVo.getReceiver().equals(webSocket.loginName)) {
-                    webSocket.sendMessage(messageVo);
+            // 发给消息接收方
+            messageVo.setSelf(false);
+            for (MyWebSocket webSocket : webSocketSet) {
+                try {
+                    if (messageVo.getReceiver().equals(webSocket.loginName)) {
+                        webSocket.sendMessage(messageVo);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
+        } else if (ChatModeEnum.GROUP_CHAT.getCode().equals(messageVo.getChatMode())) { // 群聊
+            MessageDao.insertGroupMessage(messageVo);
         }
+
+
     }
 
     @OnError

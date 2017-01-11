@@ -13,6 +13,10 @@ public class MessageVo {
 
     private boolean self;
 
+    private Integer chatMode;
+
+    private Integer interestId;
+
     private String date;
 
     private Integer type;
@@ -47,6 +51,22 @@ public class MessageVo {
 
     public void setSelf(boolean self) {
         this.self = self;
+    }
+
+    public Integer getChatMode() {
+        return chatMode;
+    }
+
+    public void setChatMode(Integer chatMode) {
+        this.chatMode = chatMode;
+    }
+
+    public Integer getInterestId() {
+        return interestId;
+    }
+
+    public void setInterestId(Integer interestId) {
+        this.interestId = interestId;
     }
 
     public String getDate() {

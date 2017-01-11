@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> New Document </TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+    <META NAME="Author" CONTENT="">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Description" CONTENT="">
+    <style>
+        /* "变灰"效果*/
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+    <script>
+        // 禁用超链接-"变灰"
+        function  disableHref(){
+            var hrefDom = document.getElementById("testHref");
+            hrefDom.className+=" disableHref";
+        }
+        // 启用超链接-"正常"
+        function  enableHref(){
+            var hrefDom = document.getElementById("testHref");
+            hrefDom.className=hrefDom.className.replace(" disableHref","");
+        }
+        // 超链接点击事件
+        function hrefClick(){
+            var target=event.target;
+            if(target.className.indexOf("disableHref")>-1){
+                // 加入判断,有"变灰"时返回
+                return false;
+            }
+            // do something u need
+            // for example
+            alert("jump previous");
+        }
+
+    </script>
+</HEAD>
+
+<BODY>
+<a href="javascript:;" id="testHref" onclick="hrefClick()" class="ttt">test href</a>
+<input type="button" id="btnDisableHref" onclick="disableHref()" value="Disable href" />
+<input type="button" id="btnEnableHref" onclick="enableHref()" value="Enable href" />
+</BODY>
+</HTML>

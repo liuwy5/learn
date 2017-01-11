@@ -85,6 +85,7 @@ create table message(
   sender varchar(10) COLLATE utf8_bin not null default '' comment '发起方',
   receiver varchar(10) COLLATE utf8_bin not null default '' comment '接收方',
   send int(1) COLLATE utf8_bin not null DEFAULT 0 comment '是否为发送方：0 发送 1 接收',
+  interest int(5) null DEFAULT null comment '是否为私聊，null为私聊，否则为群聊id',
   content varchar(1000) COLLATE utf8_bin not null default '' comment '发送内容',
   hasRead int(1) COLLATE utf8_bin not null DEFAULT 0 comment '是否已读：0 未读 1 已读',
   created_at datetime COLLATE utf8_bin NULL,
@@ -108,8 +109,6 @@ create table interest(
   id int(11) not null auto_increment,
   uuid varchar(36) not null default '',
   interest int(11) COLLATE utf8_bin null default 0 comment '兴趣：0 体育 1 电影 3 音乐，分号分隔',
-  send_login_name varchar(10) COLLATE utf8_bin not null default '' comment '发送方',
-  content varchar(1000) COLLATE utf8_bin not null default '' comment '内容',
   created_at datetime COLLATE utf8_bin NULL,
   PRIMARY KEY (id)
 ) engine=InnoDB default CHARSET=utf8 COLLATE=utf8_bin comment='兴趣群聊表';

@@ -25,7 +25,12 @@
     <div class="title">
         <div class="am-g am-g-fixed">
             <div class="am-u-sm-12">
-                <h1 class="am-text-primary" th:text="'Chat Room With ' + ${friendLoginName}">Chat Room</h1>
+                <div th:if="${friendLoginName} != null">
+                    <h1 class="am-text-primary" th:text="'Chat Room With ' + ${friendLoginName}">Chat Room</h1>
+                </div>
+                <div th:if="${friendLoginName} == null">
+                    <h1 class="am-text-primary" th:text="'Chat Room in ' + ${groupChatName} + '【' + ${interestName} + '】'">Chat Room</h1>
+                </div>
             </div>
         </div>
     </div>
@@ -73,6 +78,8 @@
             $('#message').focus();
 
             var friendLoginName = [[${friendLoginName}]];
+            var chatMode = [[${chatMode}]];
+            var interestId = [[interestId]];
 
             var socket = null;
 
@@ -131,15 +138,16 @@
                     var messageJson = JSON.stringify({
                         content : message,
                         receiver: friendLoginName,
-                        type : 2,
                         self : true,
+                        chatMode : chatMode,
+                        interestId : interestId,
                         date : date
                     });
                     socket.send(messageJson);
                     addMessage(messageJson);
                     console.log('send message: ' + message);
                     // 消息输入框获取焦点
-                    $('#message').focus();
+                    $('#message').val('').focus();
                 }
             });
 

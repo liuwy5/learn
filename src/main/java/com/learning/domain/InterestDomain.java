@@ -9,6 +9,10 @@ public class InterestDomain {
 
     private Integer interest;
 
+    private String interestName;
+
+    private String groupChatName;
+
     private String sendLoginName;
 
     private String content;
@@ -37,6 +41,22 @@ public class InterestDomain {
 
     public void setInterest(Integer interest) {
         this.interest = interest;
+    }
+
+    public String getInterestName() {
+        return interestName;
+    }
+
+    public void setInterestName(String interestName) {
+        this.interestName = interestName;
+    }
+
+    public String getGroupChatName() {
+        return groupChatName;
+    }
+
+    public void setGroupChatName(String groupChatName) {
+        this.groupChatName = groupChatName;
     }
 
     public String getSendLoginName() {

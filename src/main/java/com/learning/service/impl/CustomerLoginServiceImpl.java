@@ -12,7 +12,7 @@ import com.learning.vo.LoginVo;
 import com.learning.vo.ModifyPasswdVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -43,6 +43,7 @@ public class CustomerLoginServiceImpl implements ICustomerLoginService {
         }
     }
 
+    @Transactional
     public Resp changePwd(ModifyPasswdVo modifyPasswdVo, HttpSession session) {
         String loginName = TicketUtil.getLoginName(session);
         if (loginName == null) {
@@ -57,6 +58,7 @@ public class CustomerLoginServiceImpl implements ICustomerLoginService {
             } else {
                 return new Resp(RespStatusEnum.RESP_FAIL.getCode(), "密码不正确");
             }
+
         }
     }
 }

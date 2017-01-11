@@ -240,3 +240,10 @@ footer a:hover {
 footer p {
     margin-top: -15px;
 }
+
+/* "变灰"效果*/
+.disableHref{
+    cursor:default;
+    color:#666;
+    text-decoration:none;
+}
