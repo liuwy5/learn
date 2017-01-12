@@ -94,7 +94,7 @@ public class CreateTable {
      */
     @Test
     public void createMessage() throws Exception {
-        String sqlString = "create table message(\n" +
+        String sqlString = "drop table message; create table message(\n" +
                 "  id int(15) PRIMARY KEY auto_increment,\n" +
                 "  sender varchar(10) default '' comment '发起方',\n" +
                 "  receiver varchar(10) default NULL comment '接收方',\n" +
@@ -102,7 +102,7 @@ public class CreateTable {
                 "  interest int(5) DEFAULT NULL comment '是否为私聊，null为私聊，否则为群聊id',\n" +
                 "  content varchar(1000) default '' comment '发送内容',\n" +
                 "  hasRead int(1) DEFAULT 0 comment '是否已读：0 未读 1 已读',\n" +
-                "  created_at datetime NULL\n" +
+                "  created_at varchar(20) NULL\n" +
                 ") comment='聊天记录表';";
         H2SqlUtil.updateSql(sqlString);
     }

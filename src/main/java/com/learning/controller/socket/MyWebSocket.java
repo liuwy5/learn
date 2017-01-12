@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -32,6 +34,8 @@ public class MyWebSocket {
     private Session session;
 
     private String loginName;
+
+    private Map<Integer, Set<String>> groupMemeberMap;
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) {
@@ -80,6 +84,18 @@ public class MyWebSocket {
             }
         } else if (ChatModeEnum.GROUP_CHAT.getCode().equals(messageVo.getChatMode())) { // 群聊
             MessageDao.insertGroupMessage(messageVo);
+
+            // 发给群组
+            for (MyWebSocket webSocket : webSocketSet) {
+                try {
+                    if (!messageVo.getSender().equals(webSocket.loginName)) {
+                        messageVo.setSelf(false);
+                        webSocket.sendMessage(messageVo);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
 

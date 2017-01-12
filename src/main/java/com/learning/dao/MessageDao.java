@@ -21,8 +21,8 @@ public class MessageDao {
 
     public static void insertPrivateMessage(MessageVo messageVo) {
         String sqlString = "insert into message (sender, receiver, content, created_at) values " +
-                "('" + messageVo.getSender() + "', '" + messageVo.getReceiver() + "', '" + messageVo.getContent() + "', " +
-                TimeUtil.getDateNow() + ")";
+                "('" + messageVo.getSender() + "', '" + messageVo.getReceiver() + "', '" + messageVo.getContent().replace("'", "") + "', '" +
+                TimeUtil.getDateNormalNow() + "')";
         logger.info("execute sql MessageDao.insertPrivateMessage: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }
@@ -30,7 +30,7 @@ public class MessageDao {
     public static void insertGroupMessage(MessageVo messageVo) {
         String sqlString = "insert into message (sender, interest, content, created_at) values " +
                 "('" + messageVo.getSender() + "', " + messageVo.getInterestId() + ", '" +
-                messageVo.getContent() + "', " + TimeUtil.getDateNow() + ")";
+                messageVo.getContent().replace("'", "") + "', '" + TimeUtil.getDateNormalNow() + "')";
         logger.info("execute sql MessageDao.insertGroupMessage: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }

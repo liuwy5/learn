@@ -13,16 +13,17 @@ public class H2SqlUtilTest {
     public void updateSqlTest() throws Exception{
         Integer interestType = 3;
         String chatName = "1234567";
-        String sqlString = "update interest set group_chat_name = '11111' where id = 3;";
-//        H2SqlUtil.updateSql(sqlString);
+        String sqlString = "insert into message (sender, receiver, content, created_at) values " +
+                "('sq', 's2', 'fdfdf\\'fdfd', '" +
+                TimeUtil.getDateNormalNow() + "')";
         H2SqlUtil.updateSql(sqlString);
 
-        sqlString = "select * from interest";
-        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
-        while (resultSet.next()){
-            System.out.println(resultSet.getInt("id") + ">" + resultSet.getInt("interest") + ": " +
-                    resultSet.getString("group_chat_name") + "//" + resultSet.getTimestamp("created_at"));
-        }
+//        sqlString = "select * from message";
+//        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+//        while (resultSet.next()){
+//            System.out.println(resultSet.getInt("id") + ">" + resultSet.getInt("interest") + ": " +
+//                    resultSet.getString("group_chat_name") + "//" + resultSet.getTimestamp("created_at"));
+//        }
     }
 
     @Test

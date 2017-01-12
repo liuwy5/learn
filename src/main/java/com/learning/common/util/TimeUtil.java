@@ -17,14 +17,17 @@ public class TimeUtil {
         return date;
     }
 
+    public static String getDateNormalNow() {
+        return getDate("yyyyMMdd_HHmmss_SSS");
+    }
+
     /**
      * 获得当前时间
      */
     public static String getDate(String formatter) {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(formatter);
-        localDateTime.format(dateTimeFormatter);
-        return localDateTime.toString();
+        return localDateTime.format(dateTimeFormatter);
     }
 
 }
