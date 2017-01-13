@@ -38,7 +38,7 @@ public class MessageDao {
     public static List<MessageDomain> selectPrivateMessage(String sender, String receiver) {
         String sqlString = "select * from message where " +
                 "(sender = '" + sender + "' and receiver = '" + receiver + "') or (sender = '" + receiver + "' and receiver = '" + sender + "') " +
-                "order by created_at desc, id desc";
+                "order by created_at, id";
         logger.info("execute sql MessageDao.selectPrivateMessage: " + sqlString);
         List<MessageDomain> messageDomainList = new ArrayList<MessageDomain>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -69,7 +69,7 @@ public class MessageDao {
     }
 
     public static List<MessageDomain> selectGroupMessage(Integer interestId, String loginName) {
-        String sqlString = "select * from message where interest = " + interestId + "order by created_at desc, id desc";
+        String sqlString = "select * from message where interest = " + interestId + "order by created_at, id ";
         logger.info("execute sql MessageDao.selectGroupMessage: " + sqlString);
         List<MessageDomain> messageDomainList = new ArrayList<MessageDomain>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);

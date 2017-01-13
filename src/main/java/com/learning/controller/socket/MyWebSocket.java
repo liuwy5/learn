@@ -72,7 +72,7 @@ public class MyWebSocket {
             MessageDao.insertPrivateMessage(messageVo);
 
             // 发给消息接收方
-            messageVo.setSelf(false);
+            messageVo.setSend(0);
             for (MyWebSocket webSocket : webSocketSet) {
                 try {
                     if (messageVo.getReceiver().equals(webSocket.loginName)) {
@@ -89,7 +89,7 @@ public class MyWebSocket {
             for (MyWebSocket webSocket : webSocketSet) {
                 try {
                     if (!messageVo.getSender().equals(webSocket.loginName)) {
-                        messageVo.setSelf(false);
+                        messageVo.setSend(0);
                         webSocket.sendMessage(messageVo);
                     }
                 } catch (IOException e) {
@@ -110,15 +110,15 @@ public class MyWebSocket {
     private void sendMessage(String message) throws IOException {
         MessageVo messageVo = new MessageVo();
         messageVo.setContent(message);
-        messageVo.setSelf(true);
-        messageVo.setDate(TimeUtil.getDate("yyyy-MM-dd HH:mm:ss"));
+        messageVo.setSend(1);
+        messageVo.setCreatedAt(TimeUtil.getDate("yyyy-MM-dd HH:mm:ss"));
         String messageJson = JsonUtil.toJsonString(messageVo);
         this.session.getBasicRemote().sendText(messageJson);
     }
 
     private void sendMessage(MessageVo message) throws IOException {
-        if (message.getDate() == null) {
-            message.setDate(TimeUtil.getDate("yyyy-MM-dd HH:mm:ss"));
+        if (message.getCreatedAt() == null) {
+            message.setCreatedAt(TimeUtil.getDate("yyyy-MM-dd HH:mm:ss"));
         }
 
         String messageJson = JsonUtil.toJsonString(message);

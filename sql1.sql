@@ -47,7 +47,7 @@ create table message(
   id int(15) PRIMARY KEY auto_increment,
   sender varchar(10) default '' comment '发起方',
   receiver varchar(10) default NULL comment '接收方',
-  send int(1) DEFAULT 0 comment '是否为发送方：0 发送 1 接收',
+  send int(1) DEFAULT 0 comment '是否为发送方：1 发送 0 接收',
   interest int(5) DEFAULT NULL comment '是否为私聊，null为私聊，否则为群聊id',
   content varchar(1000) default '' comment '发送内容',
   hasRead int(1) DEFAULT 0 comment '是否已读：0 未读 1 已读',

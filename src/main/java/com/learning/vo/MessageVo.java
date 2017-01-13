@@ -11,13 +11,13 @@ public class MessageVo {
 
     private String content;
 
-    private boolean self;
+    private Integer send;
 
     private Integer chatMode;
 
     private Integer interestId;
 
-    private String date;
+    private String createdAt;
 
     private Integer type;
 
@@ -45,12 +45,12 @@ public class MessageVo {
         this.content = content;
     }
 
-    public boolean isSelf() {
-        return self;
+    public Integer getSend() {
+        return send;
     }
 
-    public void setSelf(boolean self) {
-        this.self = self;
+    public void setSend(Integer send) {
+        this.send = send;
     }
 
     public Integer getChatMode() {
@@ -69,12 +69,12 @@ public class MessageVo {
         this.interestId = interestId;
     }
 
-    public String getDate() {
-        return date;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Integer getType() {
