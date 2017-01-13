@@ -49,14 +49,12 @@ public class MessageDao {
                     String send = resultSet.getString("sender");
                     String receive = resultSet.getString("receiver");
                     if (sender.equals(send)) {
-                        messageDomain.setSender(send);
-                        messageDomain.setReceiver(receive);
                         messageDomain.setSend(1);
                     } else {
-                        messageDomain.setSender(receive);
-                        messageDomain.setReceiver(send);
                         messageDomain.setSend(0);
                     }
+                    messageDomain.setSender(send);
+                    messageDomain.setReceiver(receive);
                     messageDomain.setContent(resultSet.getString("content"));
                     messageDomain.setCreatedAt(resultSet.getString("created_at"));
                     messageDomainList.add(messageDomain);

@@ -77,6 +77,7 @@
             // 使昵称框获取焦点
             $('#message').focus();
 
+            var loginName = [[${session.ticket.loginName}]];
             var friendLoginName = [[${friendLoginName}]];
             var chatMode = [[${chatMode}]];
             var interestId = [[${interestId}]];
@@ -149,6 +150,7 @@
                     var date = new Date().Format("yyyy-MM-dd HH:mm:ss");
                     var messageJson = JSON.stringify({
                         content : message,
+                        sender: loginName,
                         receiver: friendLoginName,
                         send : 1,
                         chatMode : chatMode,
@@ -168,17 +170,6 @@
                 message = JSON.parse(message);
                 console.log('is self: ' + message.self);
                 var messageItem = showMessage(message);
-//                var messageItem = '<li class="am-comment '
-//                        + (message.self ? 'am-comment-flip' : 'am-comment')
-//                        + '">'
-//                        + '<a href="javascript:void(0)" >' + '<img src="/assets/img/'
-//                        + (message.self ? 'bg-img.jpg' : 'bg-img.jpg')
-//                        + '" alt="" class="am-comment-avatar" width="48" height="48"/></a>'
-//                        + '<div class="am-comment-main"><header class="am-comment-hd"><div class="am-comment-meta">'
-//                        + '<a href="javascript:void(0)" class="am-comment-author">message</a> <time>' + message.date
-//                        + '</time></div></header>'
-//                        + '<div class="am-comment-bd">' + message.content
-//                        + '</div></div></li>';
                 $(messageItem).appendTo('#message-list');
                 // 把滚动条滚动到底部
                 $(".chat-content-container").scrollTop($(".chat-content-container")[0].scrollHeight);
