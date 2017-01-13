@@ -94,12 +94,12 @@
                     </div>
                 </div>
                 <h3>群聊列表
-                    <!--<span class="small" th:if="${session.ticket != null}">-->
-                        <!--&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#addChatModal" id="addChat">创建话题</a>-->
-                    <!--</span>-->
-                    <span class="small">
+                    <span class="small" th:if="${session.ticket != null}">
                         &nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#addChatModal" id="addChat">创建话题</a>
                     </span>
+                    <!--<span class="small">-->
+                        <!--&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#addChatModal" id="addChat">创建话题</a>-->
+                    <!--</span>-->
                 </h3>
                 <div th:if="${interestChatCount != 0}">
                     <ul th:each="interestChat, interestChatStat : ${interestChatList}">

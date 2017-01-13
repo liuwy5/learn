@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link th:href="@{/assets/css/amazeui.min.css}" rel="stylesheet" />
+    <link th:href="@{/assets/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/assets/css/app.css}" rel="stylesheet" />
     <script th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
     <script th:src="@{/js/date.js}"></script>
@@ -47,47 +48,66 @@
     <!-- chat content start -->
 
     <!-- message input start -->
-    <div class="message-input am-margin-top">
-        <div class="am-g am-g-fixed">
-            <div class="am-u-sm-12">
-                <form class="am-form">
-                    <div class="am-form-group">
-                        <script type="text/plain" id="myEditor" style="width: 100%;height: 8rem;"></script>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="am-g am-g-fixed am-margin-top">
-            <div class="am-u-sm-6">
-                <div id="message-input-message" class="am-input-group am-input-group-primary">
-                    <span class="am-input-group-label"><i class="am-icon-user"></i></span>
-                    <input id="message" type="text" class="am-form-field" placeholder="Please enter message"/>
+    <div th:if="${session.ticket} == null">
+        <div class="message-input am-margin-top">
+            <div class="am-g am-g-fixed">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <div class="am-form-group">
+                            <script type="text/plain" id="myEditor1" style="width: 100%;height: 8rem;"></script>
+                            <div class="alert alert-info">登录之后就可以发言了哦！</div>
+                        </div>
+                    </form>
                 </div>
-            </div>
-            <div class="am-u-sm-6">
-                <button id="send" type="button" class="am-btn am-btn-primary">
-                    <i class="am-icon-send"></i> Send
-                </button>
             </div>
         </div>
     </div>
+    <div th:if="${session.ticket} != null">
+        <div class="message-input am-margin-top">
+            <div class="am-g am-g-fixed">
+                <div class="am-u-sm-12">
+                    <form class="am-form">
+                        <div class="am-form-group">
+                            <script type="text/plain" id="myEditor" style="width: 100%;height: 8rem;"></script>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="am-g am-g-fixed am-margin-top">
+                <div class="am-u-sm-6">
+                    <div id="message-input-message" class="am-input-group am-input-group-primary">
+                        <span class="am-input-group-label"><i class="am-icon-user"></i></span>
+                        <input id="message" type="text" class="am-form-field" placeholder="Please enter message"/>
+                    </div>
+                </div>
+                <div class="am-u-sm-6">
+                    <button id="send" type="button" class="am-btn am-btn-primary">
+                        <i class="am-icon-send"></i> Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
     <script type="text/javascript" th:inline="javascript">
         $(function() {
             // 使昵称框获取焦点
             $('#message').focus();
 
-            var loginName = [[${session.ticket.loginName}]];
+
             var friendLoginName = [[${friendLoginName}]];
             var chatMode = [[${chatMode}]];
             var interestId = [[${interestId}]];
-
             var privateMessageList = [[${privateMessageList}]];
+            var groupMessageList = [[${groupMessageList}]];
 
             var messageList = null;
 
             if (chatMode == 0) {
                 messageList = privateMessageList;
+            } else if (chatMode == 1) {
+                messageList = groupMessageList;
             }
 
             initMessage(messageList);
@@ -145,6 +165,7 @@
                 } else {
                     // 发送消息
                     var date = new Date().Format("yyyy-MM-dd HH:mm:ss");
+                    var loginName = [[${loginName}]];
                     var messageJson = JSON.stringify({
                         content : message,
                         sender: loginName,

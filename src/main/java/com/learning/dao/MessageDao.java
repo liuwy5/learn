@@ -67,7 +67,7 @@ public class MessageDao {
     }
 
     public static List<MessageDomain> selectGroupMessage(Integer interestId, String loginName) {
-        String sqlString = "select * from message where interest = " + interestId + "order by created_at, id ";
+        String sqlString = "select * from message where interest = " + interestId + " order by created_at, id ";
         logger.info("execute sql MessageDao.selectGroupMessage: " + sqlString);
         List<MessageDomain> messageDomainList = new ArrayList<MessageDomain>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -77,7 +77,7 @@ public class MessageDao {
                     MessageDomain messageDomain = new MessageDomain();
                     String send = resultSet.getString("sender");
                     messageDomain.setSender(send);
-                    if (loginName.equals(send)) {
+                    if (loginName != null && loginName.equals(send)) {
                         messageDomain.setSend(1);
                     } else {
                         messageDomain.setSend(0);

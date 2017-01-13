@@ -25,16 +25,11 @@ public class ChatController {
     public String chat(@PathVariable("friendLoginName") String friendLoginName, Model model, HttpSession session) {
         String loginName = TicketUtil.getLoginName(session);
 
+        model.addAttribute("loginName", loginName);
         model.addAttribute("friendLoginName", friendLoginName);
         model.addAttribute("chatMode", ChatModeEnum.PRIVATE_CHAT.getCode());
-
         model.addAttribute("privateMessageList", messageService.selectPrivateMessage(loginName, friendLoginName));
 
-
-
-        model.addAttribute("interestId", 1);
-        model.addAttribute("groupMessageList", messageService.selectPrivateMessage(loginName, friendLoginName));
-        model.addAttribute("groupChatName", "---");
         return "customer/chat";
     }
 
@@ -43,6 +38,7 @@ public class ChatController {
         String loginName = TicketUtil.getLoginName(session);
 
         InterestDomain interestDomain = InterestDao.selectById(interestId);
+        model.addAttribute("loginName", loginName);
         if (interestDomain != null) {
             model.addAttribute("groupChatName", interestDomain.getGroupChatName());
             model.addAttribute("interestName", interestDomain.getInterestName());
