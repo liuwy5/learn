@@ -18,7 +18,7 @@ public class TimeUtil {
     }
 
     public static String getDateNormalNow() {
-        return getDate("yyyyMMdd_HHmmss_SSS");
+        return getDate("yyyy-MM-dd HH:mm:ss");
     }
 
     /**

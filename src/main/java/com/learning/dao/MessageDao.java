@@ -35,10 +35,10 @@ public class MessageDao {
         H2SqlUtil.updateSql(sqlString);
     }
 
-    public static List<MessageDomain> selectPrivateMessage(String sender, String receiver, Integer limit) {
+    public static List<MessageDomain> selectPrivateMessage(String sender, String receiver) {
         String sqlString = "select * from message where " +
                 "(sender = '" + sender + "' and receiver = '" + receiver + "') or (sender = '" + receiver + "' and receiver = '" + sender + "') " +
-                "order by created_at desc limit " + limit;
+                "order by created_at desc, id desc";
         logger.info("execute sql MessageDao.selectPrivateMessage: " + sqlString);
         List<MessageDomain> messageDomainList = new ArrayList<MessageDomain>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -58,7 +58,7 @@ public class MessageDao {
                         messageDomain.setSend(0);
                     }
                     messageDomain.setContent(resultSet.getString("content"));
-                    messageDomain.setCreatedAt(resultSet.getDate("created_at"));
+                    messageDomain.setCreatedAt(resultSet.getString("created_at"));
                     messageDomainList.add(messageDomain);
                 }
             } catch (SQLException e) {
@@ -68,8 +68,8 @@ public class MessageDao {
         return messageDomainList;
     }
 
-    public static List<MessageDomain> selectGroupMessage(Integer interestId, String loginName, Integer limit) {
-        String sqlString = "select * from message where interest = " + interestId + "order by created_at desc limit " + limit;
+    public static List<MessageDomain> selectGroupMessage(Integer interestId, String loginName) {
+        String sqlString = "select * from message where interest = " + interestId + "order by created_at desc, id desc";
         logger.info("execute sql MessageDao.selectGroupMessage: " + sqlString);
         List<MessageDomain> messageDomainList = new ArrayList<MessageDomain>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -85,7 +85,7 @@ public class MessageDao {
                         messageDomain.setSend(0);
                     }
                     messageDomain.setContent(resultSet.getString("content"));
-                    messageDomain.setCreatedAt(resultSet.getDate("created_at"));
+                    messageDomain.setCreatedAt(resultSet.getString("created_at"));
                     messageDomainList.add(messageDomain);
                 }
             } catch (SQLException e) {

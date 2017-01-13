@@ -1,7 +1,5 @@
 package com.learning.domain;
 
-import java.util.Date;
-
 public class MessageDomain {
     private Integer id;
 
@@ -17,7 +15,7 @@ public class MessageDomain {
 
     private Integer hasread;
 
-    private Date createdAt;
+    private String createdAt;
 
     public Integer getId() {
         return id;
@@ -75,11 +73,11 @@ public class MessageDomain {
         this.hasread = hasread;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 }

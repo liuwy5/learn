@@ -81,6 +81,16 @@
             var chatMode = [[${chatMode}]];
             var interestId = [[${interestId}]];
 
+            var privateMessageList = [[${privateMessageList}]];
+
+            var messageList = null;
+
+            if (chatMode == 0) {
+                messageList = privateMessageList;
+            }
+
+            console.log(messageList);
+
             var socket = null;
 
             //判断当前浏览器是否支持WebSocket
