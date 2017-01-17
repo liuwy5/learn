@@ -6,7 +6,9 @@
     <link th:href="@{/assets/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/assets/css/app.css}" rel="stylesheet" />
     <script th:src="@{/assets/js/jquery-1.11.1.min.js}"></script>
+    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/date.js}"></script>
+    <script th:src="@{/js/chat.js}"></script>
 
     <style>
         .title {
@@ -55,7 +57,10 @@
                     <form class="am-form">
                         <div class="am-form-group">
                             <script type="text/plain" id="myEditor1" style="width: 100%;height: 8rem;"></script>
-                            <div class="alert alert-info">登录之后就可以发言了哦！</div>
+                            <div class="alert alert-info">登录之后就可以发言了哦！ &nbsp;&nbsp;&nbsp;
+                                <!--<a data-toggle="modal" id="login"> 登录 </a>-->
+                                <a data-toggle="modal" data-target="#loginModal" id="login" style="text-decoration:underline;">登录</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -80,14 +85,96 @@
                         <input id="message" type="text" class="am-form-field" placeholder="Please enter message"/>
                     </div>
                 </div>
-                <div class="am-u-sm-6">
+                <div class="am-u-sm-2" th:class="${isFriend} == 1 ? 'am-u-sm-6' : 'am-u-sm-2'">
                     <button id="send" type="button" class="am-btn am-btn-primary">
                         <i class="am-icon-send"></i> Send
+                    </button>
+                </div>
+                <div class="am-u-sm-4" th:if="${isFriend} == 0">
+                    <button id="addFriend" type="button" class="am-btn am-btn-primary">
+                        添加好友
                     </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- 登录模态框（Modal） -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="loginLabel">登录</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="loginForm" role="form">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label login-alert" id="login-alert" style="color: #434323; font-size: 12px; margin-bottom: 2px; height: 15px; "></label>
+                        </div>
+                        <!--<div class="login-alert" style="color: #434323; font-size: 12px; margin-bottom: 2px; height: 15px; "></div>-->
+                        <div class="form-group">
+                            <label for="loginName" class="col-sm-2 control-label">用户名</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="loginName" name="loginName" placeholder="请输入用户名" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPwd" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="loginPwd" name="loginPwd" placeholder="请输入密码" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <input type="hidden" class="form-control" id="interestId" name="interestId" th:value="${interestId}" /> <br/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="loginButton">登录</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <!--<div class="modal fade" id="login1Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    <!--<h4 class="modal-title" id="loginLabel">登录</h4>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--<form class="form-horizontal" id="loginForm" role="form">-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-4 control-label login-alert" id="login-alert" style="color: #434323; font-size: 12px; margin-bottom: 2px; height: 15px; "></label>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;<div class="login-alert" style="color: #434323; font-size: 12px; margin-bottom: 2px; height: 15px; "></div>&ndash;&gt;-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="loginName" class="col-sm-2 control-label">用户名</label>-->
+                            <!--<div class="col-sm-10">-->
+                                <!--<input type="text" class="form-control" id="loginName" name="loginName" placeholder="请输入用户名" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="loginPwd" class="col-sm-2 control-label">密码</label>-->
+                            <!--<div class="col-sm-10">-->
+                                <!--<input type="password" class="form-control" id="loginPwd" name="loginPwd" placeholder="请输入密码" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
+                    <!--<button type="button" class="btn btn-primary" id="loginButton">登录</button>-->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+        <!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+    <!--</div>-->
 
 </body>
     <script type="text/javascript" th:inline="javascript">
@@ -216,5 +303,38 @@
                 + '</div></div></li>';
             return messageItem;
         }
+
+        // 点击添加好友按钮
+        $('#addFriend').click(function () {
+            console.log('add');
+            var loginName = [[${loginName}]];
+            var friendLoginName = [[${friendLoginName}]];
+            var params = {
+                loginName: loginName,
+                friendLoginName: friendLoginName
+            };
+            $.ajax({
+                url: "/friend/add",
+                type: 'post',
+                data: params,
+                dataType: "json"
+            }).done(function (result) {
+                console.log(result);
+                if(result.code == 0){ // 修改成功
+                    alert('添加好友成功');
+                    setTimeout(function(){
+                        location.reload(true);
+                    }, 100);
+                }
+            }).fail(function(){
+                setTimeout(function(){
+                    iosOverlay({
+                        text: '服务异常',
+                        duration: 2e3,
+                        icon: "/assets/img/error.png"
+                    });
+                },1500);
+            });
+        })
     </script>
 </html>

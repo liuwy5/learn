@@ -23,6 +23,11 @@
     from friend
     where login_name_a = #{loginName,jdbcType=VARCHAR}
   </select>
+  <select id="selectByLoginNameAndFriendName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    SELECT *
+    from friend
+    where login_name_a = #{loginName} and login_name_b = #{friendName}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from friend
     where id = #{id,jdbcType=INTEGER}

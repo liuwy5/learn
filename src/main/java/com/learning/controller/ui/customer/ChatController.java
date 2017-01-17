@@ -4,7 +4,9 @@ import com.learning.common.enums.ChatModeEnum;
 import com.learning.common.util.TicketUtil;
 import com.learning.dao.InterestDao;
 import com.learning.domain.InterestDomain;
+import com.learning.service.IFriendService;
 import com.learning.service.MessageServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,9 @@ import javax.servlet.http.HttpSession;
 public class ChatController {
     private MessageServiceImpl messageService = new MessageServiceImpl();
 
+    @Autowired
+    private IFriendService friendService;
+
     @RequestMapping("/{friendLoginName}")
     public String chat(@PathVariable("friendLoginName") String friendLoginName, Model model, HttpSession session) {
         String loginName = TicketUtil.getLoginName(session);
@@ -29,6 +34,8 @@ public class ChatController {
         model.addAttribute("friendLoginName", friendLoginName);
         model.addAttribute("chatMode", ChatModeEnum.PRIVATE_CHAT.getCode());
         model.addAttribute("privateMessageList", messageService.selectPrivateMessage(loginName, friendLoginName));
+        Integer isFriend = friendService.isFriend(loginName, friendLoginName);
+        model.addAttribute("isFriend", isFriend);
 
         return "customer/chat";
     }

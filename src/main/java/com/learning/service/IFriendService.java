@@ -1,5 +1,6 @@
 package com.learning.service;
 
+import com.learning.bean.Resp;
 import com.learning.vo.FriendVo;
 
 import java.util.List;
@@ -10,4 +11,8 @@ import java.util.List;
  */
 public interface IFriendService {
     List<FriendVo> getFriendByLoginName(String loginName);
+
+    Integer isFriend(String loginName, String friendName);
+
+    Resp add(FriendVo friendVo);
 }
