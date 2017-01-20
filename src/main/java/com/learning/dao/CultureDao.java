@@ -19,8 +19,8 @@ public class CultureDao {
     private static Logger logger = LoggerFactory.getLogger(AdminDao.class);
 
     public static void add(CultureVo cultureVo) {
-        String formatter = "insert into culture (title, content, created_at) values ('{0}', '{1}', '{2}')";
-        String sqlString = MessageFormat.format(formatter, cultureVo.getTitle(), cultureVo.getContent(), cultureVo.getCreatedAt());
+        String formatter = "insert into culture (title, content, created_at) values ('%s', '%s', '%s')";
+        String sqlString = String.format(formatter, cultureVo.getTitle(), cultureVo.getContent(), cultureVo.getCreatedAt());
         logger.info("execute sql CultureDao.add: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }
@@ -73,8 +73,8 @@ public class CultureDao {
     }
 
     public static void updateById(CultureVo cultureVo) {
-        String formatter = "update culture set title = '{0}', content = '{1}' where id = {2}";
-        String sqlString = MessageFormat.format(formatter, cultureVo.getTitle(), cultureVo.getContent(), cultureVo.getId());
+        String formatter = "update culture set title = '%s', content = '%s' where id = %d";
+        String sqlString = String.format(formatter, cultureVo.getTitle(), cultureVo.getContent(), cultureVo.getId());
         logger.info("execute sql CultureDao.updateById: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }

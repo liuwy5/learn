@@ -22,8 +22,8 @@
                                 <div class="panel-title clearfix">
                                     <div class="title pull-left">文化内容管理</div>
                                     <div class="pull-right">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                           class="collapsed"><i class="fa fa-search"></i> 检索</a>
+                                        <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"-->
+                                           <!--class="collapsed"><i class="fa fa-search"></i> 检索</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -50,25 +50,27 @@
                             </div>
                             <div class="panel-body">
                                 <div class="margin-b-sm">
-                                    <button type="button" class="btn btn-success" id="addCulture"><i class="fa fa-plus"></i> 新增</button>
-                                    <button type="button" class="btn btn-success" id="editCulture"><i class="fa fa-edit"></i> 修改</button>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#addCultureInfoModal" id="addCultureBtn"><i class="fa fa-plus"></i> 新增</button>
                                 </div>
                                 <div class="table-responsive" style="overflow-x: hidden;">
                                     <table class="table table-striped table-bordered table-hover" id="dataTable">
                                         <thead>
                                         <tr>
                                             <th class="col-md-9">标题</th>
-                                            <th class="col-md-2">时间</th>
-                                            <th class="col-md-1">操作</th>
+                                            <th class="col-md-1">时间</th>
+                                            <th class="col-md-2">操作</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr th:each="culture, cultureStat : ${cultureList}" >
                                             <td class="col-md-9" th:text="${culture.title}">标题</td>
-                                            <td class="col-md-2" th:text="${culture.createdAt}">时间</td>
-                                            <td class="col-md-1">
+                                            <td class="col-md-1" th:text="${culture.createdAt}">时间</td>
+                                            <td class="col-md-2">
                                                 <button type="button" class="btn btn-success" th:onclick="'javascript:cultureDetail(' + ${culture.id} + ');'" >
-                                                    <i class="fa fa-edit"></i> 修改
+                                                    <span class="glyphicon glyphicon-pencil"></span> 修改
+                                                </button>
+                                                <button type="button" class="btn btn-success" th:onclick="'javascript:cultureDelete(' + ${culture.id} + ');'" >
+                                                    <span class="glyphicon glyphicon-trash"></span> 删除
                                                 </button>
                                             </td>
                                         </tr>
@@ -84,7 +86,45 @@
     </div>
 </div>
 
-<!--用户新增、修改-->
+<!--新增-->
+<div class="modal fade in" id="addCultureInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="false" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modalTitleAdd"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="filledDataAdd">
+                    <div class="form-group" style="margin-bottom: 5px;">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-7 warn-info" id="warn-info-add"></div>
+                        <div class="col-md-7"><input type="hidden" id="idAdd"/></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 标题</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="titleAdd" id="titleAdd"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 内容</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="10" cols="10" class="form-control" name="contentAdd" id="contentAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
+                <button type="button" class="btn btn-success" id="addCultureInfo"><i class="fa fa-check"></i> 新增</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改-->
 <div class="modal fade in" id="editCultureInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="false" style="display: none; padding-right: 17px;">
     <div class="modal-dialog">
@@ -97,7 +137,7 @@
                 <form class="form-horizontal" id="filledData">
                     <div class="form-group" style="margin-bottom: 5px;">
                         <label class="col-md-3"></label>
-                        <div class="col-md-7 warn-info"></div>
+                        <div class="col-md-7 warn-info" id="warn-info"></div>
                         <div class="col-md-7"><input type="hidden" id="id"/></div>
                     </div>
                     <div class="form-group">
@@ -116,18 +156,20 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
-                <button type="button" class="btn btn-success" id="saveData"><i class="fa fa-check"></i> 保存</button>
+                <button type="button" class="btn btn-success" id="saveCultureInfo"><i class="fa fa-check"></i> 保存</button>
             </div>
         </div>
     </div>
 </div>
 
 <div th:replace="include/meta :: javascript"/>
+<script src="/js/culture.js"></script>
 <script type="text/javascript">
     // 查看详情
     function cultureDetail(id) {
         console.log('id: ' + id);
         $('#editCultureInfo').modal('show');
+        $('#warn-info').html('');
         var params = {
             id : id
         };
@@ -141,6 +183,32 @@
                 $('#id').val(data.id);
                 $('#title').val(data.title);
                 $('#content').val(data.content);
+            }
+        });
+    }
+
+    // 删除
+    function cultureDelete(id) {
+        console.log('id: ' + id);
+        var params = {
+            id : id
+        };
+        $.ajax({
+            url: "/culture/delete",
+            type: 'post',
+            data: params,
+            dataType: "json",
+            success: function (result) {
+                if(result.code == 0){
+                    iosOverlay({
+                        text: "删除成功",
+                        duration: 2e3,
+                        icon: "/assets/img/check.png"
+                    });
+                    setTimeout(function(){
+                        location.reload(true);
+                    }, 1000);
+                }
             }
         });
     }

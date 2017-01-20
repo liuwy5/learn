@@ -2,3 +2,18 @@ admin登录：localhost:8086/admin/login
 
 
 SQLite3
+location.reload(true);
+
+
+if(result.code == 0){
+                $("#editPassword").modal("hide");
+                iosOverlay({
+                    text: "修改成功",
+                    duration: 2e3,
+                    icon: "/assets/img/check.png"
+                });
+                $("body").spinModal(false);
+                setTimeout(function(){
+                    location.reload(true);
+                }, 1000);
+            }
