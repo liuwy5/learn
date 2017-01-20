@@ -53,3 +53,12 @@ create table message(
   hasRead int(1) DEFAULT 0 comment '是否已读：0 未读 1 已读',
   created_at datetime NULL
 ) comment='聊天记录表';
+
+-- culture
+drop table if exists culture;
+create table if not EXISTS culture(
+  id int(11) PRIMARY KEY auto_increment,
+  title varchar(100) not null default '' comment '标题',
+  content text null comment '内容',
+  created_at VARCHAR(20) NULL
+) comment='文化展示表';

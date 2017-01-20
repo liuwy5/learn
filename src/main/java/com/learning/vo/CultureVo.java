@@ -1,6 +1,10 @@
-package com.learning.domain;
+package com.learning.vo;
 
-public class CultureDomain {
+/**
+ *
+ * Created by liuw on 17-1-17.
+ */
+public class CultureVo {
     private Integer id;
 
     private String title;

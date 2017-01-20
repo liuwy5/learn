@@ -120,4 +120,19 @@ public class CreateTable {
                 ") comment='兴趣群聊表';";
         H2SqlUtil.updateSql(sqlString);
     }
+
+    /**
+     * 创建culture表
+     */
+    @Test
+    public void createCulture() throws Exception {
+        String sqlString = "drop table if exists culture;\n" +
+                "create table if not EXISTS culture(\n" +
+                "  id int(11) PRIMARY KEY auto_increment,\n" +
+                "  title varchar(100) not null default '' comment '标题',\n" +
+                "  content text null comment '内容',\n" +
+                "  created_at VARCHAR(20) NULL\n" +
+                ") comment='文化展示表';";
+        H2SqlUtil.updateSql(sqlString);
+    }
 }

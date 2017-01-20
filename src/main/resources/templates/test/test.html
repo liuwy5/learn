@@ -18,6 +18,9 @@
             }
             window.open("http://www.jb51.net");
         }
+        function testClick() {
+            alert("test");
+        }
     </script>
 
     <title>在线学习系统</title>
@@ -53,9 +56,12 @@
     <section id="main"><!-- #main content and sidebar area -->
         <section id="content"><!-- #content -->
             <article>
+
                 <h2 style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:580px;">
                     <a href="#">对于服务器管理员来说，邮件传输代理是最为重要的工具。MTA的主要工作就是</a>
                 </h2>
+                s<input type="text" value="111"/>
+                s<input type="text"/>
                 <div style="overflow: hidden; text-overflow: ellipsis;height:150px;">
                     <p>fdfsdfsdfdsf</p>
                     <p> tellus sed augue semper porta. Mauris massa.ue semper porta. Mauris massa. Vestibulum laue semper porta. Mauris massa. Vestibulum la Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
@@ -125,6 +131,7 @@
             <ul>
                 <li><a id="a1" onclick="hrefClick()">可用</a></li>
                 <li><a id="a2" class="disableHref" onclick="hrefClick()">不可用</a></li>
+                <button onclick="testClick();">testClick</button>
                 <li><a href="#">Blah, blah and all blah</a></li>
                 <li><a href="#">More blah</a></li>
                 <li><a href="#">Blah, blah and all blah</a></li>
@@ -414,7 +421,8 @@
                     <div class="form-group">
                         <label for="oldPwd" class="col-sm-3 control-label">旧密码</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="oldPwd" name="loginName" placeholder="请输入旧密码" />
+                            <input type="password" class="form-control" id="oldPwd" name="loginName" value="请输入"  />
+                            s<input type="text" value="111"/>
                         </div>
                     </div>
                     <div class="form-group">

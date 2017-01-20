@@ -129,6 +129,10 @@ $(document).ready(function () {
         // for example
         alert("jump previous");
     }
+
+    function testClick() {
+        alert("test");
+    }
     // $('#a1').click = function (link) {
     //     alert('fdf');
     //     // var disabled = link.attr("disabled");

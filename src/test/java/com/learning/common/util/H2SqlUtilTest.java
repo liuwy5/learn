@@ -13,10 +13,9 @@ public class H2SqlUtilTest {
     public void updateSqlTest() throws Exception{
         Integer interestType = 3;
         String chatName = "1234567";
-        String sqlString = "insert into message (sender, receiver, content, created_at) values " +
-                "('sq', 's2', 'fdfdf\\'fdfd', '" +
-                TimeUtil.getDateNormalNow() + "')";
+        String sqlString = "insert into culture (title, content) values ('sqtitle1', 's2')";
         H2SqlUtil.updateSql(sqlString);
+
 
 //        sqlString = "select * from message";
 //        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
