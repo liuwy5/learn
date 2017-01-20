@@ -5,6 +5,7 @@ import com.learning.bean.Ticket;
 import com.learning.common.enums.LoginRespEnum;
 import com.learning.common.enums.RespStatusEnum;
 import com.learning.common.util.TicketUtil;
+import com.learning.dao.PasswdDao;
 import com.learning.domain.PasswdDomain;
 import com.learning.persistence.PasswdDomainMapper;
 import com.learning.service.ICustomerLoginService;
@@ -25,7 +26,7 @@ public class CustomerLoginServiceImpl implements ICustomerLoginService {
     private PasswdDomainMapper passwdDomainMapper;
 
     public Integer auth(LoginVo loginVo, HttpSession session) {
-        PasswdDomain passwdDomain = passwdDomainMapper.selectByLoginName(loginVo.getLoginName());
+        PasswdDomain passwdDomain = PasswdDao.selectByLoginName(loginVo.getLoginName());
 
         if (passwdDomain == null) {
             return LoginRespEnum.LOGIN_NO_VALID_LOGIN_NAME.getCode();
@@ -49,10 +50,10 @@ public class CustomerLoginServiceImpl implements ICustomerLoginService {
         if (loginName == null) {
             return new Resp(RespStatusEnum.RESP_FAIL.getCode(), "未登录");
         } else {
-            PasswdDomain passwdDomain = passwdDomainMapper.selectByLoginName(loginName);
+            PasswdDomain passwdDomain = PasswdDao.selectByLoginName(loginName);
             if (modifyPasswdVo.getOldLoginPsw().equals(passwdDomain.getPassword())) {
                 passwdDomain.setPassword(modifyPasswdVo.getLoginPsw());
-                passwdDomainMapper.updateByPrimaryKey(passwdDomain);
+                PasswdDao.updateByPrimaryKey(passwdDomain);
                 session.setAttribute("ticket", null);
                 return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "修改密码成功");
             } else {

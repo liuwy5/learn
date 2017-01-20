@@ -6,14 +6,26 @@ location.reload(true);
 
 
 if(result.code == 0){
-                $("#editPassword").modal("hide");
-                iosOverlay({
-                    text: "修改成功",
-                    duration: 2e3,
-                    icon: "/assets/img/check.png"
-                });
-                $("body").spinModal(false);
-                setTimeout(function(){
-                    location.reload(true);
-                }, 1000);
-            }
+    $("#editPassword").modal("hide");
+    iosOverlay({
+        text: "修改成功",
+        duration: 2e3,
+        icon: "/assets/img/check.png"
+    });
+    $("body").spinModal(false);
+    setTimeout(function(){
+        location.reload(true);
+    }, 1000);
+}
+
+
+注册：姓名 性别 国别(中国需要英文等级) 特长 兴趣爱好
+交互界面
+主题：中西方文化
+兴趣：群聊
+设置积分
+
+查看注册用户信息
+系统用户：新增 修改 删除
+文化：新增 修改 删除
+角色：新增 修改 删除

@@ -1,6 +1,7 @@
 package com.learning.service.impl;
 
 import com.learning.common.enums.InterestTypeEnum;
+import com.learning.dao.PasswdDao;
 import com.learning.domain.PasswdDomain;
 import com.learning.persistence.PasswdDomainMapper;
 import com.learning.service.IPasswdService;
@@ -16,13 +17,9 @@ import java.util.List;
  *
  * Created by lw on 16-12-19.
  */
-@Service
-public class PasswdServiceImpl implements IPasswdService {
-    @Autowired
-    private PasswdDomainMapper passwdDomainMapper;
-
+public class PasswdServiceImpl {
     public List<PasswdDomain> passwdList() {
-        return passwdDomainMapper.selectAll();
+        return PasswdDao.selectAllPasswd();
     }
 
     /**
@@ -40,9 +37,9 @@ public class PasswdServiceImpl implements IPasswdService {
             String interestCodeString = interestTypeEnum.getCode().toString();
             List<PasswdDomain> passwdDomainList;
             if (selfLoginName == null) {
-                passwdDomainList = passwdDomainMapper.selectByInterest(interestCodeString);
+                passwdDomainList = PasswdDao.selectByInterest(interestCodeString);
             } else {
-                passwdDomainList = passwdDomainMapper.selectByInterestExceptSelf(interestCodeString, selfLoginName);
+                passwdDomainList = PasswdDao.selectByInterestExceptSelf(interestCodeString, selfLoginName);
             }
             List<FriendVo> friendVoList = new ArrayList<FriendVo>(passwdDomainList.size());
             for (PasswdDomain passwdDomain : passwdDomainList) {
