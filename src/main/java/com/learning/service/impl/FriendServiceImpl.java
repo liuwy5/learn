@@ -3,6 +3,7 @@ package com.learning.service.impl;
 import com.learning.bean.Resp;
 import com.learning.common.enums.RespStatusEnum;
 import com.learning.common.util.UuidUtil;
+import com.learning.dao.FriendDao;
 import com.learning.domain.FriendDomain;
 import com.learning.persistence.FriendDomainMapper;
 import com.learning.service.IFriendService;
@@ -21,11 +22,9 @@ import java.util.UUID;
  */
 @Service
 public class FriendServiceImpl implements IFriendService {
-    @Autowired
-    private FriendDomainMapper friendDomainMapper;
 
     public List<FriendVo> getFriendByLoginName(String loginName) {
-        List<FriendDomain> friendDomainList = friendDomainMapper.selectByLoginName(loginName);
+        List<FriendDomain> friendDomainList = FriendDao.selectByLoginName(loginName);
         List<FriendVo> friendVoList = new ArrayList<FriendVo>(friendDomainList.size());
         for (FriendDomain friendDomain : friendDomainList) {
             FriendVo friendVo = new FriendVo();
@@ -36,7 +35,7 @@ public class FriendServiceImpl implements IFriendService {
     }
 
     public Integer isFriend(String loginName, String friendName) {
-        FriendDomain friendDomain = friendDomainMapper.selectByLoginNameAndFriendName(loginName, friendName);
+        FriendDomain friendDomain = FriendDao.selectByLoginNameAndFriendName(loginName, friendName);
         if (friendDomain == null) {
             return 0;
         } else {
@@ -49,12 +48,11 @@ public class FriendServiceImpl implements IFriendService {
         FriendDomain friendDomain = new FriendDomain();
         friendDomain.setLoginNameA(friendVo.getLoginName());
         friendDomain.setLoginNameB(friendVo.getFriendLoginName());
-        friendDomain.setUuid(UuidUtil.getUuid());
-        friendDomainMapper.insertSelective(friendDomain);
+        FriendDao.insertFriend(friendDomain);
         friendDomain.setLoginNameA(friendVo.getFriendLoginName());
         friendDomain.setLoginNameB(friendVo.getLoginName());
         friendDomain.setUuid(UuidUtil.getUuid());
-        friendDomainMapper.insertSelective(friendDomain);
+        FriendDao.insertFriend(friendDomain);
         return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), RespStatusEnum.RESP_SUCCESS.getMean());
     }
 }

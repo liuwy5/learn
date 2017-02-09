@@ -49,7 +49,7 @@ public class PasswdDao {
     }
 
     public static List<PasswdDomain> selectByInterest(String interestCodeString) {
-        String sqlString = "select * from passwd where interest like '%" + interestCodeString + "%')";
+        String sqlString = "select * from passwd where interest like '%" + interestCodeString + "%'";
         logger.info("execute sql PasswdDao.selectByInterest: " + sqlString);
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         return packageObject(resultSet);
