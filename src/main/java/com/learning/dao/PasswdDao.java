@@ -56,7 +56,7 @@ public class PasswdDao {
     }
 
     public static List<PasswdDomain> selectByInterestExceptSelf(String interestCodeString, String selfLoginName) {
-        String sqlString = "select * from passwd where interest like '%" + interestCodeString + "%') and login_name != '" + selfLoginName + "'";
+        String sqlString = "select * from passwd where interest like '%" + interestCodeString + "%' and login_name != '" + selfLoginName + "'";
         logger.info("execute sql PasswdDao.selectByInterestExceptSelf: " + sqlString);
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         return packageObject(resultSet);

@@ -53,7 +53,7 @@ public class CustomerLoginServiceImpl implements ICustomerLoginService {
             PasswdDomain passwdDomain = PasswdDao.selectByLoginName(loginName);
             if (modifyPasswdVo.getOldLoginPsw().equals(passwdDomain.getPassword())) {
                 passwdDomain.setPassword(modifyPasswdVo.getLoginPsw());
-                PasswdDao.updateByPrimaryKey(passwdDomain);
+                PasswdDao.updatePasswordByPrimaryKey(passwdDomain);
                 session.setAttribute("ticket", null);
                 return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "修改密码成功");
             } else {

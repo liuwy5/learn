@@ -6,6 +6,7 @@ import com.learning.dao.InterestDao;
 import com.learning.domain.InterestDomain;
 import com.learning.service.IFriendService;
 import com.learning.service.IPasswdService;
+import com.learning.service.impl.PasswdServiceImpl;
 import com.learning.vo.FriendVo;
 import com.learning.vo.InterestFriendVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,7 @@ public class HomeController {
     @Autowired
     private IFriendService friendService;
 
-    @Autowired
-    private IPasswdService passwdService;
+    private PasswdServiceImpl passwdService = new PasswdServiceImpl();
 
     @RequestMapping("")
     public String home(Model model, HttpSession session) {

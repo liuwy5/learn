@@ -17,4 +17,15 @@ public class QueryTable {
             System.out.println(resultSet.getString("login_name") + ": " + resultSet.getString("password"));
         }
     }
+
+    @Test
+    public void queryPasswd() throws Exception {
+        String sqlString = "select * from passwd";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        while (resultSet.next()){
+            System.out.println(resultSet.getString("login_name") + ": " + resultSet.getString("password") + ": " +
+                    resultSet.getString("name") + ": " + resultSet.getString("gender") + ": " + resultSet.getString("tel") + ": " +
+                    resultSet.getString("email") + ": " + resultSet.getString("national") + ": " + resultSet.getString("interest"));
+        }
+    }
 }

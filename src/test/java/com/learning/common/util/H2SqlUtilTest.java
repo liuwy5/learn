@@ -27,7 +27,7 @@ public class H2SqlUtilTest {
 
     @Test
         public void querySqlTest() throws Exception {  // select * from interest where id = 4
-        String sqlString = "select * from interest where id = 4";
+        String sqlString = "select * from passwd";
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         while (resultSet.next()){
             System.out.println(resultSet.getInt("id") + ">" + resultSet.getInt("interest") + ": " +
