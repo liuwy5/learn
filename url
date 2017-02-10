@@ -1,4 +1,5 @@
 admin登录：localhost:8086/admin/login
+文化管理：  localhost:8086/admin/culture
 
 
 SQLite3

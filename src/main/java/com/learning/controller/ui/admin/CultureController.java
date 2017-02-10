@@ -1,5 +1,6 @@
 package com.learning.controller.ui.admin;
 
+import com.learning.annotations.Login;
 import com.learning.service.CultureServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ public class CultureController {
     private CultureServiceImpl cultureService = new CultureServiceImpl();
 
     @RequestMapping("")
+    @Login
     public String cultuerList(Model model) {
         model.addAttribute("cultureList", cultureService.selectAllCulture());
         return "admin/culture";

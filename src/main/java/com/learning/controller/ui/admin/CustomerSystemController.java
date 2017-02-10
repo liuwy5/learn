@@ -1,5 +1,6 @@
 package com.learning.controller.ui.admin;
 
+import com.learning.annotations.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("admin/system/customer")
 public class CustomerSystemController {
     @RequestMapping("")
+    @Login
     public String customerList() {
         return "admin/systemCustomer";
     }
