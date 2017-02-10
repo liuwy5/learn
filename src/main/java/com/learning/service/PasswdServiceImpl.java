@@ -1,15 +1,10 @@
-package com.learning.service.impl;
+package com.learning.service;
 
 import com.learning.common.enums.InterestTypeEnum;
 import com.learning.dao.PasswdDao;
 import com.learning.domain.PasswdDomain;
-import com.learning.persistence.PasswdDomainMapper;
-import com.learning.service.IPasswdService;
 import com.learning.vo.FriendVo;
 import com.learning.vo.InterestFriendVo;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
