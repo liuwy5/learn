@@ -1,15 +1,9 @@
 package com.learning.domain;
 
-import java.util.Date;
-
 public class RoleDomain {
     private Integer id;
 
-    private String uuid;
-
-    private String roleName;
-
-    private Date createdAt;
+    private String name;
 
     public Integer getId() {
         return id;
@@ -19,27 +13,11 @@ public class RoleDomain {
         this.id = id;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getName() {
+        return name;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid == null ? null : uuid.trim();
-    }
-
-    public String getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleName(String roleName) {
-        this.roleName = roleName == null ? null : roleName.trim();
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setName(String roleName) {
+        this.name = roleName == null ? null : roleName.trim();
     }
 }

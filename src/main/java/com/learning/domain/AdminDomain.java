@@ -5,15 +5,15 @@ import java.util.Date;
 public class AdminDomain {
     private Integer id;
 
-    private String uuid;
-
     private String loginName;
 
     private String password;
 
-    private Date createdAt;
+    private String name;
 
-    private String roleUuid;
+    private Integer roleId;
+
+    private String roleName;
 
     public Integer getId() {
         return id;
@@ -21,14 +21,6 @@ public class AdminDomain {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid == null ? null : uuid.trim();
     }
 
     public String getLoginName() {
@@ -47,19 +39,28 @@ public class AdminDomain {
         this.password = password == null ? null : password.trim();
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getName() {
+        return name;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRoleUuid() {
-        return roleUuid;
+
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setRoleUuid(String roleUuid) {
-        this.roleUuid = roleUuid == null ? null : roleUuid.trim();
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

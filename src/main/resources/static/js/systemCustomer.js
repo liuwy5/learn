@@ -1,39 +1,51 @@
 /**
- * Created by liuw on 17-1-17.
+ * Created by liuw on 17-2-10.
  */
 $(document).ready(function () {
     // 点击新增按钮
-    $('#addCultureBtn').click(function () {
-        $('#titleAdd').val('');
-        $('#contentAdd').val('');
-        $('#warn-info').html('');
+    $('#addAdminBtn').click(function () {
+        $('#loginName').val('');
+        $('#password').val('');
+        $('#name').val('');
     });
 
     // 新增
-    $('#addCultureInfo').click(function () {
-        var title = $('#titleAdd').val();
-        var content = $('#contentAdd').val();
+    $('#addAdminInfo').click(function () {
+        var loginName = $('#loginName').val();
+        var password = $('#password').val();
+        var name = $('#name').val();
+        var roleId = $('#roleId').val();
         var alertIcon = "<i class='fa fa-exclamation-circle'></i>&nbsp;";
-        if (title == '') {
-            $('#warn-info').html(alertIcon + '标题不能为空');
+        if (loginName == '') {
+            $('#warn-info').html(alertIcon + '用户名不能为空');
             return;
         }
-        if (content == '') {
-            $('#warn-info').html(alertIcon + '内容不能为空');
+        if (password == '') {
+            $('#warn-info').html(alertIcon + '密码不能为空');
+            return;
+        }
+        if (name == '') {
+            $('#warn-info').html(alertIcon + '姓名不能为空');
+            return;
+        }
+        if (roleId == '') {
+            $('#warn-info').html(alertIcon + '角色不能为空');
             return;
         }
         var params = {
-            title: title,
-            content: content
+            loginName : loginName,
+            password : password,
+            name : name,
+            roleId : roleId
         };
         $.ajax({
             type: "POST",
-            url: "/culture/add",
+            url: "/admin/add",
             data: params,
             dataType: "json"
         }).done(function (result) {
             if(result.code == 0){
-                $("#addCultureInfoModal").modal("hide");
+                $("#addAdminInfoModal").modal("hide");
                 iosOverlay({
                     text: "添加成功",
                     duration: 2e3,
@@ -58,35 +70,49 @@ $(document).ready(function () {
             },1500);
         });
     });
+
     // 修改
-    $("#saveCultureInfo").click(function(){
-        var id = $('#id').val();
-        var title = $('#title').val();
-        var content = $('#content').val();
+    $('#updateAdminInfo').click(function () {
+        var id = $('#updateId').val();
+        var loginName = $('#updateLoginName').val();
+        var password = $('#updatePassword').val();
+        var name = $('#updateName').val();
+        var roleId = $('#updateRoleId').val();
         var alertIcon = "<i class='fa fa-exclamation-circle'></i>&nbsp;";
-        if (title == '') {
-            $('#warn-info').html(alertIcon + '标题不能为空');
+        if (loginName == '') {
+            $('#warn-info-update').html(alertIcon + '用户名不能为空');
             return;
         }
-        if (content == '') {
-            $('#warn-info').html(alertIcon + '内容不能为空');
+        if (password == '') {
+            $('#warn-info-update').html(alertIcon + '密码不能为空');
+            return;
+        }
+        if (name == '') {
+            $('#warn-info-update').html(alertIcon + '姓名不能为空');
+            return;
+        }
+        if (roleId == '') {
+            $('#warn-info').html(alertIcon + '角色不能为空');
             return;
         }
         var params = {
             id: id,
-            title: title,
-            content: content
+            loginName : loginName,
+            password : password,
+            name : name,
+            roleId : roleId
         };
+        console.log(params);
         $.ajax({
             type: "POST",
-            url: "/culture/update",
+            url: "/admin/update",
             data: params,
             dataType: "json"
         }).done(function (result) {
             if(result.code == 0){
-                $("#editCultureInfo").modal("hide");
+                $("#updateAdminInfoModal").modal("hide");
                 iosOverlay({
-                    text: "修改成功",
+                    text: "更新成功",
                     duration: 2e3,
                     icon: "/assets/img/check.png"
                 });
@@ -96,7 +122,7 @@ $(document).ready(function () {
                 }, 1000);
             }else{
                 $("body").spinModal(false);
-                $('#warn-info').html(alertIcon + result.message);
+                $('#warn-info-update').html(alertIcon + result.message);
             }
         }).fail(function(){
             setTimeout(function(){
@@ -108,7 +134,5 @@ $(document).ready(function () {
                 });
             },1500);
         });
-    });
-
-
+    })
 });

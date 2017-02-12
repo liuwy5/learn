@@ -2,8 +2,6 @@ package com.learning.service.impl;
 
 import com.learning.bean.Resp;
 import com.learning.common.enums.RespStatusEnum;
-import com.learning.common.util.TimeUtil;
-import com.learning.common.util.UuidUtil;
 import com.learning.domain.PrivilegeDomain;
 import com.learning.domain.RoleDomain;
 import com.learning.domain.RolePrivilegMappingDomain;
@@ -44,13 +42,12 @@ public class RoleServiceImpl implements IRoleService {
         RoleDomain roleDomain = roleDomainMapper.selectByPrimaryKey(id);
         if (roleDomain != null) {
             roleVo.setId(roleDomain.getId());
-            roleVo.setUuid(roleDomain.getUuid());
-            roleVo.setRoleName(roleDomain.getRoleName());
+            roleVo.setRoleName(roleDomain.getName());
 
             List<String> privilegeUuidList = new ArrayList<String>();
-            List<RolePrivilegMappingDomain> rolePrivilegeMappingList = rolePrivilegMappingDomainMapper.selectByRoleUuid(roleDomain.getUuid());
+            List<RolePrivilegMappingDomain> rolePrivilegeMappingList = rolePrivilegMappingDomainMapper.selectByRoleUuid(roleDomain.getName());
             for (RolePrivilegMappingDomain rolePrivilegMappingDomain : rolePrivilegeMappingList) {
-                privilegeUuidList.add(rolePrivilegMappingDomain.getPrivilegeUuid());
+                privilegeUuidList.add(rolePrivilegMappingDomain.getPrivilegeId());
             }
 
             roleVo.setPrivilegeUuidList(privilegeUuidList);
@@ -65,13 +62,11 @@ public class RoleServiceImpl implements IRoleService {
             return new Resp(RespStatusEnum.RESP_FAIL.getCode(), "该角色名已存在");
         } else {
             RoleDomain roleDomain = new RoleDomain();
-            roleDomain.setUuid(UuidUtil.getUuid());
-            roleDomain.setRoleName(roleVo.getRoleName());
-            roleDomain.setCreatedAt(TimeUtil.getDateNow());
+            roleDomain.setName(roleVo.getRoleName());
             roleDomainMapper.insert(roleDomain);
 
             // 添加角色权限映射
-            addRolePrivilegeMapping(roleVo.getPrivilegeUuidList(), roleDomain.getUuid());
+            addRolePrivilegeMapping(roleVo.getPrivilegeUuidList(), roleDomain.getName());
 
             return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "添加成功");
         }
@@ -89,14 +84,13 @@ public class RoleServiceImpl implements IRoleService {
             } else {
                 RoleDomain roleDomain = new RoleDomain();
                 roleDomain.setId(roleVo.getId());
-                roleDomain.setUuid(roleVo.getUuid());
-                roleDomain.setRoleName(roleVo.getRoleName());
+                roleDomain.setName(roleVo.getRoleName());
                 roleDomainMapper.updateByPrimaryKeySelective(roleDomain);
 
                 rolePrivilegMappingDomainMapper.deleteByRoleUuid(roleVo.getUuid());
 
                 // 添加角色权限映射
-                addRolePrivilegeMapping(roleVo.getPrivilegeUuidList(), roleDomain1.getUuid());
+                addRolePrivilegeMapping(roleVo.getPrivilegeUuidList(), roleDomain1.getName());
 
                 return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "修改成功");
             }
@@ -126,11 +120,11 @@ public class RoleServiceImpl implements IRoleService {
             PrivilegeDomain privilegeDomain = privilegeDomainMapper.selectByUuid(privilegeUuid);
             if (privilegeDomain != null) {
                 RolePrivilegMappingDomain rolePrivilegMappingDomain = new RolePrivilegMappingDomain();
-                rolePrivilegMappingDomain.setUuid(UuidUtil.getUuid());
-                rolePrivilegMappingDomain.setRoleUuid(roleUuid);
-                rolePrivilegMappingDomain.setPrivilegeUuid(privilegeUuid);
-                rolePrivilegMappingDomain.setPrivilegeNo(privilegeDomain.getPrivilegeNo());
-                rolePrivilegMappingDomain.setPrivilegeName(privilegeDomain.getPrivilegeName());
+//                rolePrivilegMappingDomain.setUuid(UuidUtil.getUuid());
+//                rolePrivilegMappingDomain.setRoleUuid(roleUuid);
+//                rolePrivilegMappingDomain.setPrivilegeUuid(privilegeUuid);
+//                rolePrivilegMappingDomain.setPrivilegeNo(privilegeDomain.getPrivilegeNo());
+//                rolePrivilegMappingDomain.setPrivilegeName(privilegeDomain.getPrivilegeName());
                 rolePrivilegMappingDomainMapper.insert(rolePrivilegMappingDomain);
             }
         }

@@ -21,10 +21,12 @@ create table if not EXISTS admin (
   id int(5) PRIMARY key auto_increment,
   login_name varchar(10) default '' comment '登录名',
   password varchar(15) default '' comment '密码',
+  name VARCHAR(20) NULL comment 'name',
   created_at datetime NULL,
-  role_id int(5) NULL
+  role_id int(5) NULL,
+  role_name VARCHAR(20) null
 ) comment='系统管理员表';
-insert INTO admin (login_name, password, role_id) VALUES ('admin1', '000000', 1), ('admin2', '000000', 2);
+insert INTO admin (login_name, password, name, role_id, role_name) VALUES ('admin1', '000000', '管理', 1, '管理员'), ('admin2', '000000', '操作', 2, '操作员');
 
 create table if not EXISTS friend(
   id int(5) PRIMARY key auto_increment,
@@ -62,3 +64,27 @@ create table if not EXISTS culture(
   content text null comment '内容',
   created_at VARCHAR(20) NULL
 ) comment='文化展示表';
+
+drop table if exists role;
+create table if not exists role (
+  id int(10) PRIMARY key auto_increment,
+  name varchar(10) null
+) comment='角色表';
+
+
+drop table if exists privilege;
+create table if not exists privilege (
+  id int(10) primary key auto_increment,
+  name varchar(20) null,
+  url varchar(50) null,
+  num int(3) null
+);
+insert into privilege (name, url, num) values ('注册用户管理', '/admin/register/customer', 1), ('系统用户管理', '/admin/system/customer', 2),
+('文化内容管理', '/admin/culture', 3), ('角色管理', '/admin/role', 4);
+
+drop table if exists role_privilege_mapping;
+CREATE TABLE if not EXISTS role_privilege_mapping (
+  id int(10) primary key auto_increment,
+  role_id int(10),
+  privilege_id int(10)
+);

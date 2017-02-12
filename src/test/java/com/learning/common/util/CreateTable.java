@@ -52,11 +52,13 @@ public class CreateTable {
                 "  id int(5) PRIMARY key auto_increment,\n" +
                 "  login_name varchar(10) default '' comment '登录名',\n" +
                 "  password varchar(15) default '' comment '密码',\n" +
+                "  name VARCHAR(20) NULL comment 'name',\n" +
                 "  created_at datetime NULL,\n" +
-                "  role_id int(5) not null default '',\n" +
+                "  role_id int(5) NULL,\n" +
+                "  role_name VARCHAR(20) null\n" +
                 ") comment='系统管理员表';";
         H2SqlUtil.updateSql(sqlString);
-        sqlString = "insert INTO admin (login_name, password, role_id) VALUES ('admin1', '000000', 1), ('admin2', '000000', 2);";
+        sqlString = "insert INTO admin (login_name, password, name, role_id, role_name) VALUES ('admin1', '000000', '管理', 1, '管理员'), ('admin2', '000000', '操作', 2, '操作员');";
         H2SqlUtil.updateSql(sqlString);
         sqlString = "select * from admin";
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -135,4 +137,65 @@ public class CreateTable {
                 ") comment='文化展示表';";
         H2SqlUtil.updateSql(sqlString);
     }
+
+    /**
+     * 创建role表
+     */
+    @Test
+    public void createRole() throws Exception {
+        String sqlString = "drop table if exists role;\n" +
+                "create table if not exists role (\n" +
+                "  id int(10) PRIMARY key auto_increment,\n" +
+                "  name varchar(10) null\n" +
+                ") comment='角色表';";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "insert INTO role (id, name) VALUES (1, '管理员'), (2, '操作员');";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "select * from role";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        while (resultSet.next()){
+            System.out.println(resultSet.getInt("id") + ": " + resultSet.getString("name"));
+        }
+    }
+
+    /**
+     * 创建privilege表
+     */
+    @Test
+    public void createpPivilege() throws Exception {
+        String sqlString = "drop table if exists privilege;\n" +
+                "create table if not exists privilege (\n" +
+                "  id int(10) primary key auto_increment,\n" +
+                "  name varchar(20) null,\n" +
+                "  url varchar(50) null,\n" +
+                "  num int(3) null\n" +
+                ");";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "insert into privilege (name, url, num) values ('注册用户管理', '/admin/register/customer', 1), ('系统用户管理', '/admin/system/customer', 2),\n" +
+                "('文化内容管理', '/admin/culture', 3), ('角色管理', '/admin/role', 4);";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "select * from privilege";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        if (resultSet != null) {
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("name") + " : " + resultSet.getString("url") + " : " + resultSet.getString("num"));
+            }
+        }
+    }
+
+
+    /**
+     * 创建role_privilege_mapping表
+     */
+    @Test
+    public void createRolePrivilegeMapping() throws Exception {
+        String sqlString = "drop table if exists role_privilege_mapping;\n" +
+                "CREATE TABLE if not EXISTS role_privilege_mapping (\n" +
+                "  id int(10) primary key auto_increment,\n" +
+                "  role_id int(10),\n" +
+                "  privilege_id int(10)\n" +
+                ");";
+        H2SqlUtil.updateSql(sqlString);
+    }
+
 }

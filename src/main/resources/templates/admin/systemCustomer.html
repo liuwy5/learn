@@ -22,8 +22,8 @@
                                 <div class="panel-title clearfix">
                                     <div class="title pull-left">系统用户管理</div>
                                     <div class="pull-right">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                           class="collapsed"><i class="fa fa-search"></i> 检索</a>
+                                        <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"-->
+                                           <!--class="collapsed"><i class="fa fa-search"></i> 检索</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -50,18 +50,33 @@
                             </div>
                             <div class="panel-body">
                                 <div class="margin-b-sm">
-                                    <button type="button" class="btn btn-success" id="addRole"><i class="fa fa-plus"></i> 新增</button>
-                                    <button type="button" class="btn btn-success" id="editRole"><i class="fa fa-edit"></i> 修改</button>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#addAdminInfoModal" id="addCultureBtn"><i class="fa fa-plus"></i> 新增</button>
                                 </div>
                                 <div class="table-responsive" style="overflow-x: hidden;">
                                     <table class="table table-striped table-bordered table-hover" id="dataTable">
                                         <thead>
                                         <tr>
-                                            <th class="col-md-3">系统用户号</th>
-                                            <th class="col-md-3">系统用户名称</th>
-                                            <th class="col-md-6">系统用户描述</th>
+                                            <th class="col-md-3">用户名</th>
+                                            <th class="col-md-3">姓名</th>
+                                            <th class="col-md-3">角色</th>
+                                            <th class="col-md-3">操作</th>
                                         </tr>
                                         </thead>
+                                        <tbody>
+                                        <tr th:each="admin, adminStat : ${adminList}">
+                                            <th class="col-md-3" th:text="${admin.loginName}">用户名</th>
+                                            <th class="col-md-3" th:text="${admin.name}">姓名</th>
+                                            <th class="col-md-3" th:text="${admin.roleName}">角色</th>
+                                            <th class="col-md-3">
+                                                <button type="button" class="btn btn-success" th:onclick="'javascript:adminDetail(' + ${admin.id} + ');'" >
+                                                    <span class="glyphicon glyphicon-pencil"></span> 修改
+                                                </button>
+                                                <button type="button" class="btn btn-success" th:onclick="'javascript:adminDelete(' + ${admin.id} + ');'" >
+                                                    <span class="glyphicon glyphicon-trash"></span> 删除
+                                                </button>
+                                            </th>
+                                        </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -73,8 +88,8 @@
     </div>
 </div>
 
-<!--用户新增、修改-->
-<div class="modal fade in" id="editInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!--系统用户新增-->
+<div class="modal fade in" id="addAdminInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="false" style="display: none; padding-right: 17px;">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -86,85 +101,147 @@
                 <form class="form-horizontal" id="filledData">
                     <div class="form-group" style="margin-bottom: 5px;">
                         <label class="col-md-3"></label>
-                        <div class="col-md-7 warn-info"></div>
+                        <div class="col-md-7 warn-info" id="warn-info"></div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"><span class="red-star">*</span> 系统用户号</label>
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 用户名</label>
                         <div class="col-md-7 clearfix">
-                            <input type="text" maxlength="20" class="form-control" name="roleNo"/>
-                            <div class="pull-right">(全英文，2-20位)</div>
+                            <input type="text" maxlength="20" class="form-control" name="loginName" id="loginName"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"><span class="red-star">*</span> 系统用户名称</label>
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 密码</label>
                         <div class="col-md-7 clearfix">
-                            <input type="text" maxlength="20" class="form-control" name="name"/>
-                            <div class="pull-right">(汉字，2-20位)</div>
+                            <input type="password" maxlength="20" class="form-control" name="password" id="password"/>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label"><span class="red-star">*</span> 菜单权限</label>
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 姓名</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="name" id="name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">角色</label>
                         <div class="col-md-7">
-                            <table class="table table-striped table-bordered table-hover" id="menu">
-                                <thead>
-                                <tr>
-                                    <th>选择</th>
-                                    <th>一级菜单</th>
-                                </tr>
-                                </thead>
-                                <body>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" data-id="menu_homepage"/>
-                                    </td>
-                                    <td>首页</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" data-id="menu_cus_manage"/>
-                                    </td>
-                                    <td>客户管理</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" data-id="menu_loan_manage"/>
-                                    </td>
-                                    <td>放贷管理</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" data-id="menu_postloan"/>
-                                    </td>
-                                    <td>贷后管理</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" data-id="menu_system"/>
-                                    </td>
-                                    <td>系统管理</td>
-                                </tr>
-                                </body>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label"><span class="red-star">*</span> 系统用户备注</label>
-                        <div class="col-md-7 clearfix">
-                            <textarea maxlength="150" class="form-control" name="memo" rows="4" style="resize: none;"></textarea>
-                            <div class="pull-right">(150个字符以内)</div>
+                            <select class="form-control" name="roleId" id="roleId">
+                                <option value=""></option>
+                                <option th:each="role:${roleList}" th:text="${role.name}" th:value="${role.id}" th:checked="${role.id == 1}" value="1"></option>
+                            </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
-                <button type="button" class="btn btn-success" id="saveData"><i class="fa fa-check"></i> 保存</button>
+                <button type="button" class="btn btn-success" id="addAdminInfo"><i class="fa fa-check"></i> 新增</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--系统用户修改-->
+<div class="modal fade in" id="updateAdminInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="false" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modalUpdateTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="filledUpdateData">
+                    <div class="form-group" style="margin-bottom: 5px;">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-7 warn-info" id="warn-info-update"></div>
+                        <div class="col-md-7"><input type="hidden" id="updateId"/></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 用户名</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="loginName" id="updateLoginName"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 密码</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="password" maxlength="20" class="form-control" name="password" id="updatePassword"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 姓名</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="name" id="updateName"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">角色</label>
+                        <div class="col-md-7">
+                            <select class="form-control" name="roleId" id="updateRoleId">
+                                <option th:each="role:${roleList}" th:text="${role.name} + ': ' + ${role.id}" th:value="${role.id}" th:checked="${role.id == 1}" value="1"></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
+                <button type="button" class="btn btn-success" id="updateAdminInfo"><i class="fa fa-check"></i> 保存</button>
             </div>
         </div>
     </div>
 </div>
 
 <div th:replace="include/meta :: javascript"/>
-<script src="/js/role.js"></script>
+<script src="/js/systemCustomer.js"></script>
+<script type="text/javascript">
+    // 查看详情
+    function adminDetail(id) {
+        $('#updateAdminInfoModal').modal('show');
+        $('#warn-info-update').html('');
+        var params = {
+            id : id
+        };
+        $.ajax({
+            url: "/admin/detail",
+            type: 'post',
+            data: params,
+            dataType: "json",
+            success: function (data) {
+                console.log('data: ' + data.id);
+                $('#updateId').val(data.id);
+                $('#updateLoginName').val(data.loginName);
+                $('#updatePassword').val(data.password);
+                $('#updateName').val(data.name);
+                $('#updateRoleId').val(data.roleId);
+            }
+        });
+    }
+
+    // 删除
+    function adminDelete(id) {
+        var params = {
+            id : id
+        };
+        $.ajax({
+            url: "/admin/delete",
+            type: 'post',
+            data: params,
+            dataType: "json",
+            success: function (result) {
+                if(result.code == 0){
+                    iosOverlay({
+                        text: "删除成功",
+                        duration: 2e3,
+                        icon: "/assets/img/check.png"
+                    });
+                    setTimeout(function(){
+                        location.reload(true);
+                    }, 1000);
+                }
+            }
+        });
+    }
+</script>
 </body>
 </html>

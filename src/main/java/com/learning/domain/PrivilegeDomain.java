@@ -1,17 +1,13 @@
 package com.learning.domain;
 
-import java.util.Date;
-
 public class PrivilegeDomain {
     private Integer id;
 
-    private String uuid;
+    private String name;
 
-    private String privilegeNo;
+    private String url;
 
-    private String privilegeName;
-
-    private Date createdAt;
+    private Integer num;
 
     public Integer getId() {
         return id;
@@ -21,35 +17,27 @@ public class PrivilegeDomain {
         this.id = id;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getName() {
+        return name;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid == null ? null : uuid.trim();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPrivilegeNo() {
-        return privilegeNo;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPrivilegeNo(String privilegeNo) {
-        this.privilegeNo = privilegeNo == null ? null : privilegeNo.trim();
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public String getPrivilegeName() {
-        return privilegeName;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setPrivilegeName(String privilegeName) {
-        this.privilegeName = privilegeName == null ? null : privilegeName.trim();
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 }
