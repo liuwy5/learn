@@ -159,7 +159,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label"><span class="red-star">*</span> 用户名</label>
                         <div class="col-md-7 clearfix">
-                            <input type="text" maxlength="20" class="form-control" name="loginName" id="updateLoginName"/>
+                            <input type="text" maxlength="20" class="form-control" name="loginName" id="updateLoginName" readonly="readonly"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -178,7 +178,7 @@
                         <label class="col-sm-3 control-label">角色</label>
                         <div class="col-md-7">
                             <select class="form-control" name="roleId" id="updateRoleId">
-                                <option th:each="role:${roleList}" th:text="${role.name} + ': ' + ${role.id}" th:value="${role.id}" th:checked="${role.id == 1}" value="1"></option>
+                                <option th:each="role:${roleList}" th:text="${role.name}" th:value="${role.id}" th:checked="${role.id == 1}" value="1"></option>
                             </select>
                         </div>
                     </div>
