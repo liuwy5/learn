@@ -146,10 +146,11 @@ public class CreateTable {
         String sqlString = "drop table if exists role;\n" +
                 "create table if not exists role (\n" +
                 "  id int(10) PRIMARY key auto_increment,\n" +
+                "  no varchar(10) null,\n" +
                 "  name varchar(10) null\n" +
                 ") comment='角色表';";
         H2SqlUtil.updateSql(sqlString);
-        sqlString = "insert INTO role (id, name) VALUES (1, '管理员'), (2, '操作员');";
+        sqlString = "insert INTO role (id, no, name) VALUES (1, 'admin', '管理员'), (2, 'operator', '操作员');";
         H2SqlUtil.updateSql(sqlString);
         sqlString = "select * from role";
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
@@ -178,7 +179,7 @@ public class CreateTable {
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         if (resultSet != null) {
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("name") + " : " + resultSet.getString("url") + " : " + resultSet.getString("num"));
+                System.out.println(resultSet.getInt("id") + " > " + resultSet.getString("name") + " : " + resultSet.getString("url") + " : " + resultSet.getString("num"));
             }
         }
     }
@@ -192,9 +193,12 @@ public class CreateTable {
         String sqlString = "drop table if exists role_privilege_mapping;\n" +
                 "CREATE TABLE if not EXISTS role_privilege_mapping (\n" +
                 "  id int(10) primary key auto_increment,\n" +
-                "  role_id int(10),\n" +
+                "  role_no varchar(10),\n" +
                 "  privilege_id int(10)\n" +
                 ");";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "insert into role_privilege_mapping (role_no, privilege_id) values " +
+                "('admin', 1), ('admin', 2), ('admin', 3), ('admin', 4), ('operator', 1), ('operator', 3)";
         H2SqlUtil.updateSql(sqlString);
     }
 

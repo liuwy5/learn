@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var lists = $("[name = chkItem1]:checkbox");
+            console.log(list.length);
+//            for (var i = 0; i < list.length; i++) {
+//                if (list[i].value == '2') {
+//                    list[i].checked = true;
+//                }
+//            }
+            lists.forEach(function (e) {
+                if (e.value == 2) {
+                    e.checked = true;
+                }
+            });
+
+//            for (var privilegeDomain in list) {
+//                if (privilegeDomain.value == 2) {
+//                    privilegeDomain.checked = true;
+//                }
+//            }
+
+        });
+    </script>
+    <title>check box test</title>
+</head>
+<body>
+<div>
+    <input name="chkItem1" type="checkbox" value="1" />旅游
+    <input name="chkItem1" type="checkbox" value="2" />旅游
+    <input name="chkItem1" type="checkbox" value="3" />旅游
+</div>
+<div>
+    <input id="btnCheckAll" type="button" value="全选" />
+    <input id="btnCheckNone" type="button" value="全不选" />
+    <input id="btnCheckReverse" type="button" value="反选" />
+    <input id="btnSubmit" type="button" value="提交" />
+</div>
+</body>
+</html>

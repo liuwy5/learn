@@ -1,6 +1,6 @@
 package com.learning.domain;
 
-public class RolePrivilegMappingDomain {
+public class RolePrivilegeMappingDomain {
     private Integer id;
 
     private String roleId;

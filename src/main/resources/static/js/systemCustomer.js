@@ -5,8 +5,9 @@ $(document).ready(function () {
     // 点击新增按钮
     $('#addAdminBtn').click(function () {
         $('#loginName').val('');
-        $('#password').val('');
         $('#name').val('');
+        $('#name').val('');
+        $('#warn-info').html('');
     });
 
     // 新增

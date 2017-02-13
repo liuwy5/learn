@@ -1,6 +1,6 @@
 package com.learning.persistence;
 
-import com.learning.domain.RolePrivilegMappingDomain;
+import com.learning.domain.RolePrivilegeMappingDomain;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,15 +10,15 @@ public interface RolePrivilegMappingDomainMapper {
 
     int deleteByRoleUuid(@Param("roleUuid") String roleUuid);
 
-    int insert(RolePrivilegMappingDomain record);
+    int insert(RolePrivilegeMappingDomain record);
 
-    int insertSelective(RolePrivilegMappingDomain record);
+    int insertSelective(RolePrivilegeMappingDomain record);
 
-    RolePrivilegMappingDomain selectByPrimaryKey(Integer id);
+    RolePrivilegeMappingDomain selectByPrimaryKey(Integer id);
 
-    List<RolePrivilegMappingDomain> selectByRoleUuid(@Param("roleUuid") String roleUuid);
+    List<RolePrivilegeMappingDomain> selectByRoleUuid(@Param("roleUuid") String roleUuid);
 
-    int updateByPrimaryKeySelective(RolePrivilegMappingDomain record);
+    int updateByPrimaryKeySelective(RolePrivilegeMappingDomain record);
 
-    int updateByPrimaryKey(RolePrivilegMappingDomain record);
+    int updateByPrimaryKey(RolePrivilegeMappingDomain record);
 }

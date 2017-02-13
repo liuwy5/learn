@@ -9,11 +9,11 @@ import java.util.List;
 public class RoleVo {
     private Integer id;
 
-    private String uuid;
+    private String no;
 
-    private String roleName;
+    private String name;
 
-    private List<String> privilegeUuidList;
+    private List<Integer> privilegeIdList;
 
     public Integer getId() {
         return id;
@@ -23,27 +23,27 @@ public class RoleVo {
         this.id = id;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getNo() {
+        return no;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setNo(String no) {
+        this.no = no;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getName() {
+        return name;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setName(String roleName) {
+        this.name = roleName == null ? null : roleName.trim();
     }
 
-    public List<String> getPrivilegeUuidList() {
-        return privilegeUuidList;
+    public List<Integer> getPrivilegeIdList() {
+        return privilegeIdList;
     }
 
-    public void setPrivilegeUuidList(List<String> privilegeUuidList) {
-        this.privilegeUuidList = privilegeUuidList;
+    public void setPrivilegeIdList(List<Integer> privilegeIdList) {
+        this.privilegeIdList = privilegeIdList;
     }
 }
