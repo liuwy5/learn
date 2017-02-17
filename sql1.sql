@@ -68,6 +68,7 @@ create table if not EXISTS culture(
 drop table if exists role;
 create table if not exists role (
   id int(10) PRIMARY key auto_increment,
+  no varchar(10) null,
   name varchar(10) null
 ) comment='角色表';
 
@@ -85,6 +86,6 @@ insert into privilege (name, url, num) values ('注册用户管理', '/admin/reg
 drop table if exists role_privilege_mapping;
 CREATE TABLE if not EXISTS role_privilege_mapping (
   id int(10) primary key auto_increment,
-  role_id int(10),
+  role_no varchar(10),
   privilege_id int(10)
 );

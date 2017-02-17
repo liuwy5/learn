@@ -17,7 +17,7 @@ public class LoginAdminAuthMgrController {
     private AdminLoginServiceImpl adminLoginService = new AdminLoginServiceImpl();
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public Integer auth(LoginVo loginVo, HttpSession session) {
+    public Object auth(LoginVo loginVo, HttpSession session) {
         return adminLoginService.auth(loginVo, session);
     }
 }

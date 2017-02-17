@@ -69,7 +69,7 @@ $(document).ready(function () {
                 }, 1000);
             }else{
                 $("body").spinModal(false);
-                $('#warn-info').html(alertIcon + result.message);
+                $('#warn-info').html(alertIcon + result.desc);
             }
         }).fail(function(){
             setTimeout(function(){
@@ -134,7 +134,7 @@ $(document).ready(function () {
                 }, 1000);
             }else{
                 $("body").spinModal(false);
-                $('#warn-info-update').html(alertIcon + result.message);
+                $('#warn-info-update').html(alertIcon + result.desc);
             }
         }).fail(function(){
             setTimeout(function(){

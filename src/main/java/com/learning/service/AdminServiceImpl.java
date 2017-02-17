@@ -43,17 +43,12 @@ public class AdminServiceImpl {
         if (adminDomainUnit == null) {
             return new Resp(RespStatusEnum.RESP_FAIL.getCode(), "该账号不存在");
         } else {
-            adminDomainUnit = AdminDao.selectByLoginName(adminDomain.getLoginName());
-            if (adminDomainUnit != null) {
-                return new Resp(RespStatusEnum.RESP_FAIL.getCode(), "该用户名已存在");
-            } else {
-                RoleDomain roleDomain = RoleDao.selectById(adminDomain.getRoleId());
-                if (roleDomain != null) {
-                    adminDomain.setRoleName(roleDomain.getName());
-                }
-                AdminDao.updateById(adminDomain);
-                return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "修改成功");
+            RoleDomain roleDomain = RoleDao.selectById(adminDomain.getRoleId());
+            if (roleDomain != null) {
+                adminDomain.setRoleName(roleDomain.getName());
             }
+            AdminDao.updateById(adminDomain);
+            return new Resp(RespStatusEnum.RESP_SUCCESS.getCode(), "修改成功");
         }
     }
 

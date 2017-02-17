@@ -18,12 +18,12 @@ $(document).ready(function () {
             type:'post',
             data:$('#loginForm').serialize(),
             success:function (data) {
-                if (data == 1) {
+                if (data.code == 1) {
                     $('.login-alert').html("登录名不存在");
-                } else if (data == 2) {
+                } else if (data.code == 2) {
                     $('.login-alert').html("登录密码不正确");
-                } else if (data == 0) {
-                    location.href = "/admin/register/customer";
+                } else if (data.code == 0) {
+                    location.href = data.url;
                 }
             }
         })

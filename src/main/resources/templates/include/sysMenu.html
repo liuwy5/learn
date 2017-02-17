@@ -8,20 +8,15 @@
 
 <nav th:fragment="menu" class="navbar-default navbar-side" role="navigation" style="float: left;">
     <div class="sidebar-collapse">
+        <div th:text="${sss}"></div>
+        <div>dddd</div>
         <ul class="nav" id="main-menu">
             <li class="active">
-                <ul class="nav nav-second-level collapse in">
-                    <li>
-                        <a th:class="${activeIndex} == 0 ? 'active-menu':''" th:href="@{/admin/register/customer}"><i class="fa fa-chevron-right"></i> 注册用户管理</a>
-                    </li>
-                    <li>
-                        <a th:class="${activeIndex} == 1 ? 'active-menu':''" th:href="@{/admin/system/customer}"><i class="fa fa-chevron-right"></i> 系统用户管理</a>
-                    </li>
-                    <li>
-                        <a th:class="${activeIndex} == 2 ? 'active-menu':''" th:href="@{/admin/culture}"><i class="fa fa-chevron-right"></i> 文化内容管理</a>
-                    </li>
-                    <li>
-                        <a th:class="${activeIndex} == 3 ? 'active-menu':''" th:href="@{/admin/role}"><i class="fa fa-chevron-right"></i> 角色管理</a>
+                <ul class="nav nav-second-level collapse in" >
+                    <li th:each="privilege, privilegeStat : ${privilegeList}">
+                        <a th:class="${activeIndex} == ${privilege.num} ? 'active-menu':''" th:href="@{${privilege.url}}" >
+                            <i class="fa fa-chevron-right"></i><span th:text="${privilege.name}"></span>
+                        </a>
                     </li>
                 </ul>
             </li>

@@ -2,6 +2,7 @@ package com.learning.dao;
 
 import com.learning.common.util.H2SqlUtil;
 import com.learning.domain.PrivilegeDomain;
+import netscape.security.Privilege;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,13 @@ public class PrivilegeDao {
     public static List<PrivilegeDomain> selectAllPrivilege() {
         String sqlString = "select * from privilege";
         logger.info("execute sql PrivilegeDao.selectAllPrivilege: " + sqlString);
+        return packageObjects(sqlString);
+    }
+
+    public static List<PrivilegeDomain> selectPrivilegeByLoginName(String loginName) {
+        String sqlString = "select p.* from admin a, role r, role_privilege_mapping m, privilege p " +
+                "where login_name = '" + loginName + "' and a.role_id = r.id and r.no = m.role_no and m.privilege_id = p.id order by p.id ";
+        logger.info("execute sql AdminDao.selectPrivilegeByLoginName: " + sqlString);
         return packageObjects(sqlString);
     }
 

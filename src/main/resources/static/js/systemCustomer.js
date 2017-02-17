@@ -58,7 +58,7 @@ $(document).ready(function () {
                 }, 1000);
             }else{
                 $("body").spinModal(false);
-                $('#warn-info').html(alertIcon + result.message);
+                $('#warn-info').html(alertIcon + result.desc);
             }
         }).fail(function(){
             setTimeout(function(){
@@ -93,7 +93,7 @@ $(document).ready(function () {
             return;
         }
         if (roleId == '') {
-            $('#warn-info').html(alertIcon + '角色不能为空');
+            $('#warn-info-update').html(alertIcon + '角色不能为空');
             return;
         }
         var params = {
@@ -103,13 +103,14 @@ $(document).ready(function () {
             name : name,
             roleId : roleId
         };
-        console.log(params);
+        console.log("update" + params);
         $.ajax({
             type: "POST",
             url: "/admin/update",
             data: params,
             dataType: "json"
         }).done(function (result) {
+            console.log(result);
             if(result.code == 0){
                 $("#updateAdminInfoModal").modal("hide");
                 iosOverlay({
@@ -123,7 +124,7 @@ $(document).ready(function () {
                 }, 1000);
             }else{
                 $("body").spinModal(false);
-                $('#warn-info-update').html(alertIcon + result.message);
+                $('#warn-info-update').html(alertIcon + result.desc);
             }
         }).fail(function(){
             setTimeout(function(){
