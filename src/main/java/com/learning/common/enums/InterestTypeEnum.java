@@ -7,7 +7,8 @@ package com.learning.common.enums;
 public enum InterestTypeEnum {
     INTEREST_SPORT(0, "体育"),
     INTEREST_MOVIE(1, "电影"),
-    INTEREST_MUSIC(2, "音乐");
+    INTEREST_MUSIC(2, "音乐"),
+    INTEREST_MATH(3, "数学");
 
     InterestTypeEnum(Integer code, String mean) {
         this.code = code;

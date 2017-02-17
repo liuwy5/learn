@@ -5,16 +5,13 @@ import com.learning.common.enums.RespStatusEnum;
 import com.learning.common.util.UuidUtil;
 import com.learning.dao.FriendDao;
 import com.learning.domain.FriendDomain;
-import com.learning.persistence.FriendDomainMapper;
 import com.learning.service.IFriendService;
 import com.learning.vo.FriendVo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * FriendServiceImpl

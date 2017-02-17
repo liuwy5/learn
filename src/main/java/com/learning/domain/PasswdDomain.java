@@ -23,7 +23,11 @@ public class PasswdDomain {
 
     private Integer national;
 
+    private String nationalDesc;
+
     private String interest;
+
+    private String interests;
 
     private Date createdAt;
 
@@ -107,12 +111,28 @@ public class PasswdDomain {
         this.national = national;
     }
 
+    public String getNationalDesc() {
+        return nationalDesc;
+    }
+
+    public void setNationalDesc(String nationalDesc) {
+        this.nationalDesc = nationalDesc;
+    }
+
     public String getInterest() {
         return interest;
     }
 
     public void setInterest(String interest) {
         this.interest = interest == null ? null : interest.trim();
+    }
+
+    public String getInterests() {
+        return interests;
+    }
+
+    public void setInterests(String interests) {
+        this.interests = interests;
     }
 
     public Date getCreatedAt() {

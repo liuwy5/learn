@@ -7,11 +7,9 @@ import com.learning.common.enums.RespStatusEnum;
 import com.learning.common.util.TicketUtil;
 import com.learning.dao.PasswdDao;
 import com.learning.domain.PasswdDomain;
-import com.learning.persistence.PasswdDomainMapper;
 import com.learning.service.ICustomerLoginService;
 import com.learning.vo.LoginVo;
 import com.learning.vo.ModifyPasswdVo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.servlet.http.HttpSession;
@@ -22,8 +20,6 @@ import javax.servlet.http.HttpSession;
  */
 @Service
 public class CustomerLoginServiceImpl implements ICustomerLoginService {
-    @Autowired
-    private PasswdDomainMapper passwdDomainMapper;
 
     public Integer auth(LoginVo loginVo, HttpSession session) {
         PasswdDomain passwdDomain = PasswdDao.selectByLoginName(loginVo.getLoginName());

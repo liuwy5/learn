@@ -14,7 +14,24 @@ import java.util.List;
  */
 public class PasswdServiceImpl {
     public List<PasswdDomain> passwdList() {
-        return PasswdDao.selectAllPasswd();
+        List<PasswdDomain> passwdDomainList = PasswdDao.selectAllPasswd();
+        for (PasswdDomain passwdDomain : passwdDomainList) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (String i : passwdDomain.getInterest().split(";")) {
+                Integer code = Integer.parseInt(i);
+                InterestTypeEnum interestTypeEnum = InterestTypeEnum.valueOfCode(code);
+                if (interestTypeEnum != null) {
+                    stringBuilder.append(interestTypeEnum.getMean()).append(";");
+                }
+            }
+            passwdDomain.setInterests(stringBuilder.toString());
+            if (passwdDomain.getNational() == 0) {
+                passwdDomain.setNationalDesc("中国");
+            } else {
+                passwdDomain.setNationalDesc("非中国");
+            }
+        }
+        return passwdDomainList;
     }
 
     /**
