@@ -28,10 +28,13 @@ public class TimeUtilTest {
     @Test
     public void de() {
         BigDecimal s = new BigDecimal("3.456723");
-        BigDecimal result = s.setScale(2, BigDecimal.ROUND_HALF_UP);
+        BigDecimal s1 = new BigDecimal("3.356723");
+
+        int result = s.compareTo(s1);
         System.out.println(result);
-        s = new BigDecimal("3.446723");
-        result = s.setScale(2, BigDecimal.ROUND_HALF_UP);
+        result = s.compareTo(s1);
+        System.out.println(result);
+        result = s1.compareTo(s);
         System.out.println(result);
     }
 }

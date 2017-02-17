@@ -1,5 +1,7 @@
 package com.learning.vo;
 
+import java.util.List;
+
 /**
  *
  * Created by liuw on 17-1-17.
@@ -10,6 +12,8 @@ public class CultureVo {
     private String title;
 
     private String content;
+
+    private List<String> contents;
 
     private String createdAt;
 
@@ -35,6 +39,14 @@ public class CultureVo {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<String> contents) {
+        this.contents = contents;
     }
 
     public String getCreatedAt() {

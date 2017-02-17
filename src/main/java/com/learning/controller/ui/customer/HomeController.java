@@ -2,18 +2,23 @@ package com.learning.controller.ui.customer;
 
 import com.learning.common.enums.InterestTypeEnum;
 import com.learning.common.util.TicketUtil;
+import com.learning.dao.CultureDao;
 import com.learning.dao.InterestDao;
 import com.learning.domain.InterestDomain;
 import com.learning.service.IFriendService;
 import com.learning.service.PasswdServiceImpl;
+import com.learning.vo.CultureVo;
 import com.learning.vo.FriendVo;
 import com.learning.vo.InterestFriendVo;
+import com.sun.javafx.sg.prism.NGShape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -49,6 +54,20 @@ public class HomeController {
         // 兴趣类别
         model.addAttribute("interestList", InterestTypeEnum.values());
 
+        model.addAttribute("cultureList", CultureDao.selectAllCulture());
+
         return "/customer/index";
+    }
+
+    @RequestMapping("article/{cultureId}")
+    public String article(@PathVariable("cultureId") Integer cultureId, Model model) {
+        CultureVo cultureVo = CultureDao.selectById(cultureId);
+        if (cultureVo != null) {
+            cultureVo.setContents(Arrays.asList(cultureVo.getContent().split("\n")));
+        }
+
+        model.addAttribute("culture", cultureVo);
+
+        return "/customer/article";
     }
 }

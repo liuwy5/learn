@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en"></html>-->
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/assets/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/css/customerHome.css" />
+    <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/customerIndex.js" type="text/javascript"></script>
+    <title>在线学习系统</title>
+</head>
+<body>
+<div class="container" style="padding-left: 1px;padding-right: 1px;">
+    <section id="main"><!-- #main content and sidebar area -->
+        <section id="content" style="width: 870px;"><!-- #content -->
+            <article>
+                <h2 th:text="${culture.title}" class="color: #407E80;">First Article Title</h2>
+                <!--<p th:text="${culture.content}" class="text-indent:2em;"> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>-->
+                <p th:each="cont, contStat : ${culture.contents}" th:text="'  ' + ${cont}" style="font-size: 20px;line-height: 27px;text-indent: 2em;"></p>
+            </article>
+        </section>
+    </section>
+</div>
+</body>
+</html>

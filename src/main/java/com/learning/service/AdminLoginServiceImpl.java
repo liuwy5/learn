@@ -35,7 +35,6 @@ public class AdminLoginServiceImpl {
                 // 查看第一个url
                 List<PrivilegeDomain> privilegeDomainList = PrivilegeDao.selectPrivilegeByLoginName(loginVo.getLoginName());
                 if (privilegeDomainList != null) {
-                    System.out.println("------" + privilegeDomainList.get(0).getUrl());
                     return new LoginRetVo(LoginRespEnum.LOGIN_SUCCESS.getCode(), privilegeDomainList.get(0).getUrl());
 
                 } else {

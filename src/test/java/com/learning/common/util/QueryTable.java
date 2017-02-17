@@ -28,4 +28,15 @@ public class QueryTable {
                     resultSet.getString("email") + ": " + resultSet.getString("national") + ": " + resultSet.getString("interest"));
         }
     }
+
+    @Test
+    public void query() throws Exception {
+        String sqlString = "select p.* from admin a, role r, role_privilege_mapping m, privilege p " +
+                "where login_name = 'admin2' and a.role_id = r.id and r.no = m.role_no and m.privilege_id = p.id order by p.id ";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        while (resultSet.next()){
+            System.out.println(resultSet.getInt("id") + ": " + resultSet.getString("name") + ": " +
+                    resultSet.getString("url") + ": " + resultSet.getInt("num"));
+        }
+    }
 }
