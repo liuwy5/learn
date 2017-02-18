@@ -386,7 +386,7 @@
                             <label class="col-sm-3 control-label">兴趣类别</label>
                             <div class="col-md-7">
                                 <select class="form-control" name="interestType" id="interestType">
-                                    <option th:each="interest:${interestList}" th:text="${interest.mean} + ': ' + ${interest.code}" th:value="${interest.code}" value="1"></option>
+                                    <option th:each="interest:${interestList}" th:text="${interest.mean}" th:value="${interest.code}" value="1"></option>
                                 </select>
                             </div>
                         </div>
