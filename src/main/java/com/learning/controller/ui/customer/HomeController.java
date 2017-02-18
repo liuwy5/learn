@@ -56,6 +56,7 @@ public class HomeController {
 
         model.addAttribute("cultureList", CultureDao.selectAllCulture());
 
+
         return "/customer/index";
     }
 

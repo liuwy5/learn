@@ -1,6 +1,7 @@
 package com.learning.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class PasswdDomain {
     private Integer id;
@@ -26,6 +27,8 @@ public class PasswdDomain {
     private String nationalDesc;
 
     private String interest;
+
+    private List<Integer> interestList;
 
     private String interests;
 
@@ -125,6 +128,14 @@ public class PasswdDomain {
 
     public void setInterest(String interest) {
         this.interest = interest == null ? null : interest.trim();
+    }
+
+    public List<Integer> getInterestList() {
+        return interestList;
+    }
+
+    public void setInterestList(List<Integer> interestList) {
+        this.interestList = interestList;
     }
 
     public String getInterests() {

@@ -62,6 +62,16 @@ public class PasswdDao {
         return packageObject(resultSet);
     }
 
+    public static void addPasswd(PasswdDomain passwdDomain) {
+        String formatter = "insert into passwd (login_name, password, name, gender, tel, email, national, interest) " +
+                "values ('%s', '%s', '%s', %d, '%s', '%s', %d, '%s')";
+        String sqlString = String.format(formatter, passwdDomain.getLoginName(), passwdDomain.getPassword(),
+                passwdDomain.getName(), passwdDomain.getGender(), passwdDomain.getTel(),
+                passwdDomain.getEmail(), passwdDomain.getNational(), passwdDomain.getInterest());
+        logger.info("execute sql PasswdDao.addPasswd: " + sqlString);
+        H2SqlUtil.updateSql(sqlString);
+    }
+
 
     public static void updatePasswordByPrimaryKey(PasswdDomain record) {
         String sqlString = "update passwd set password = '" + record.getPassword() + "' where id = " + record.getId();

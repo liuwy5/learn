@@ -17,11 +17,13 @@ public class PasswdServiceImpl {
         List<PasswdDomain> passwdDomainList = PasswdDao.selectAllPasswd();
         for (PasswdDomain passwdDomain : passwdDomainList) {
             StringBuilder stringBuilder = new StringBuilder();
-            for (String i : passwdDomain.getInterest().split(";")) {
-                Integer code = Integer.parseInt(i);
-                InterestTypeEnum interestTypeEnum = InterestTypeEnum.valueOfCode(code);
-                if (interestTypeEnum != null) {
-                    stringBuilder.append(interestTypeEnum.getMean()).append(";");
+            for (String interest : passwdDomain.getInterest().split(";")) {
+                if (interest != null && !"".equals(interest)) {
+                    Integer code = Integer.parseInt(interest);
+                    InterestTypeEnum interestTypeEnum = InterestTypeEnum.valueOfCode(code);
+                    if (interestTypeEnum != null) {
+                        stringBuilder.append(interestTypeEnum.getMean()).append(";");
+                    }
                 }
             }
             passwdDomain.setInterests(stringBuilder.toString());

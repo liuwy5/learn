@@ -23,7 +23,7 @@ public class QueryTable {
         String sqlString = "select * from passwd";
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         while (resultSet.next()){
-            System.out.println(resultSet.getString("login_name") + ": " + resultSet.getString("password") + ": " +
+            System.out.println(resultSet.getInt("id") + ":" + resultSet.getString("login_name") + ": " + resultSet.getString("password") + ": " +
                     resultSet.getString("name") + ": " + resultSet.getString("gender") + ": " + resultSet.getString("tel") + ": " +
                     resultSet.getString("email") + ": " + resultSet.getString("national") + ": " + resultSet.getString("interest"));
         }

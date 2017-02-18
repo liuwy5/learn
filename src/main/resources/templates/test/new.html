@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
     <title>Title</title>
 </head>
 <body>
 new
+<input type="radio" id="genderOptionsRadios1" name="gender" value="0" checked="checked" />男
+<button id="registerButton"></button>
 </body>
+<script type="text/javascript">
+    $('#registerButton').click(function () {
+//        var registerName = $('#registerName').val().trim();
+//        var registerPwd = $('#registerPwd').val().trim();
+//        var name = $('#name').val().trim();
+//        var gender = $('input[name="gender"]:checked').val();
+//        var tel = $('#tel').val().trim();
+//        var email = $('#email').val().trim();
+//        var national = $('input[name="national"]:checked').val();
+//        var interest = $("[name = interest]:checkbox");
+//
+//        if ('' == registerName) {
+//            $('.register-alert').html('用户名不能为空');
+//            return false;
+//        }
+//        if ('' == registerPwd) {
+//            $('.register-alert').html('密码不能为空');
+//            return false;
+//        }
+//        if ('' == name) {
+//            $('.register-alert').html('姓名不能为空');
+//            return false;
+//        }
+//        if ('' == tel) {
+//            $('.register-alert').html('电话不能为空');
+//            return false;
+//        }
+//        if ('' == email) {
+//            $('.register-alert').html('邮箱不能为空');
+//            return false;
+//        }
+//
+//        var interestList = [];
+//        var count = 0;
+//        for (var i in interest) {
+//            if (interest[i].checked) {
+//                interestList.push(interest[i].value);
+//                count++;
+//            }
+//        }
+//        if (count == 0) {
+//            $('.register-alert').html('请选择兴趣');
+//            return false;
+//        }
+//
+//        var params = {
+//            loginName: registerName,
+//            password: registerPwd,
+//            name: name,
+//            gender: gender,
+//            tel: tel,
+//            email: email,
+//            national: national,
+//            interestList: interestList
+//        };
+        var gender = $('input[name="gender"]:checked').val();
+        console.log(gender);
+    });
+</script>
 </html>

@@ -10,7 +10,11 @@ $(document).ready(function () {
 
     // 显示注册模态框
     $('#register').click(function () {
-        $('#registerForm').find("input").val("");
+        $('#registerName').val("");
+        $('#registerPwd').val("");
+        $('#name').val("");
+        $('#tel').val("");
+        $('#email').val("");
         $('.register-alert').html('');
     });
 

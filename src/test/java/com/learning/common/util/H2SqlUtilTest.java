@@ -13,7 +13,7 @@ public class H2SqlUtilTest {
     public void updateSqlTest() throws Exception{
         Integer interestType = 3;
         String chatName = "1234567";
-        String sqlString = "insert into culture (title, content) values ('sqtitle1', 's2')";
+        String sqlString = "delete from passwd where id in (4, 5, 6, 7, 8, 9);";
         H2SqlUtil.updateSql(sqlString);
 
 
