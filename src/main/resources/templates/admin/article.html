@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>文化内容管理</title>
+    <meta th:replace="include/meta :: meta"/>
+</head>
+
+<body>
+<div class="index" id="wrapper">
+    <div th:replace="include/nav :: nav"></div>
+    <div th:replace="include/sysMenu :: menu(activeIndex=${500 + learnType.num*10 + learnLevel.num})"></div>
+
+    <div id="page-wrapper">
+        <!--<div th:replace="include/bread :: system(type='综合管理', breadText='角色管理', url='/ui/system/role')"></div>-->
+
+        <div class="page-inner">
+            <div class="row">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="panel-title clearfix">
+                                    <div class="title pull-left" th:text="'学习内容管理 > ' + ${learnType.mean} + ' > ' + ${learnLevel.mean}">文化内容管理</div>
+                                    <div class="pull-right">
+                                        <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"-->
+                                           <!--class="collapsed"><i class="fa fa-search"></i> 检索</a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="margin-b-sm">
+                                <button class="btn btn-success" data-toggle="modal" data-target="#addArticleInfoModal" id="addArticleBtn"><i class="fa fa-plus"></i> 新增</button>
+                            </div>
+                            <div class="table-responsive" style="overflow-x: hidden;">
+                                <table class="table table-striped table-bordered table-hover" id="dataTable">
+                                    <thead>
+                                    <tr>
+                                        <th class="col-md-9">标题</th>
+                                        <th class="col-md-1">时间</th>
+                                        <th class="col-md-2">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!--<tr th:each="Article, ArticleStat : ${ArticleList}" >-->
+                                        <!--<td class="col-md-9" th:text="${Article.title}">标题</td>-->
+                                        <!--<td class="col-md-1" th:text="${Article.createdAt}">时间</td>-->
+                                        <!--<td class="col-md-2">-->
+                                            <!--<button type="button" class="btn btn-success" th:onclick="'javascript:ArticleDetail(' + ${Article.id} + ');'" >-->
+                                                <!--<span class="glyphicon glyphicon-pencil"></span> 修改-->
+                                            <!--</button>-->
+                                            <!--<button type="button" class="btn btn-success" th:onclick="'javascript:ArticleDelete(' + ${Article.id} + ');'" >-->
+                                                <!--<span class="glyphicon glyphicon-trash"></span> 删除-->
+                                            <!--</button>-->
+                                        <!--</td>-->
+                                    <!--</tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--新增-->
+<div class="modal fade in" id="addArticleInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="false" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modalTitleAdd"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="filledDataAdd">
+                    <div class="form-group" style="margin-bottom: 5px;">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-7 warn-info" id="warn-info-add"></div>
+                        <div class="col-md-7"><input type="hidden" id="idAdd"/></div>
+                        <div class="col-md-1"><input type="hidden" th:value="${learnType.code}" name="learnTypeAdd" id="learnTypeAdd"/></div>
+                        <div class="col-md-1"><input type="hidden" th:value="${learnLevel.code}" name="learnLevelAdd" id="learnLevelAdd"/></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 课时</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="periodAdd" id="periodAdd"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 标题</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="titleAdd" id="titleAdd"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 内容</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="10" cols="10" class="form-control" name="contentAdd" id="contentAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
+                <button type="button" class="btn btn-success" id="addArticleInfo"><i class="fa fa-check"></i> 新增</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改-->
+<div class="modal fade in" id="editArticleInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="false" style="display: none; padding-right: 17px;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="modalTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="filledData">
+                    <div class="form-group" style="margin-bottom: 5px;">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-7 warn-info" id="warn-info"></div>
+                        <div class="col-md-7"><input type="hidden" id="id"/></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 标题</label>
+                        <div class="col-md-7 clearfix">
+                            <input type="text" maxlength="20" class="form-control" name="title" id="title"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 内容</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="10" cols="10" class="form-control" name="content" id="content" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-reply"></i> 取消</button>
+                <button type="button" class="btn btn-success" id="saveArticleInfo"><i class="fa fa-check"></i> 保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="include/meta :: javascript"/>
+<script src="/js/Article.js"></script>
+<script type="text/javascript">
+    // 查看详情
+    function ArticleDetail(id) {
+        console.log('id: ' + id);
+        $('#editArticleInfo').modal('show');
+        $('#warn-info').html('');
+        var params = {
+            id : id
+        };
+        $.ajax({
+            url: "/Article/detail",
+            type: 'post',
+            data: params,
+            dataType: "json",
+            success: function (data) {
+                console.log('data: ' + data);
+                $('#id').val(data.id);
+                $('#title').val(data.title);
+                $('#content').val(data.content);
+            }
+        });
+    }
+
+    // 删除
+    function ArticleDelete(id) {
+        console.log('id: ' + id);
+        var params = {
+            id : id
+        };
+        $.ajax({
+            url: "/Article/delete",
+            type: 'post',
+            data: params,
+            dataType: "json",
+            success: function (result) {
+                if(result.code == 0){
+                    iosOverlay({
+                        text: "删除成功",
+                        duration: 2e3,
+                        icon: "/assets/img/check.png"
+                    });
+                    setTimeout(function(){
+                        location.reload(true);
+                    }, 1000);
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,6 +1,8 @@
 package com.learning.interceptor;
 
 import com.learning.bean.Ticket;
+import com.learning.common.enums.LearnLevelEnum;
+import com.learning.common.enums.LearnTypeEnum;
 import com.learning.common.util.TicketUtil;
 import com.learning.dao.PrivilegeDao;
 import com.learning.domain.PrivilegeDomain;
@@ -31,7 +33,8 @@ public class AuthInterceptor implements HandlerInterceptor {
             List<PrivilegeDomain> privilegeDomainList = PrivilegeDao.selectPrivilegeByLoginName(loginName);
             if (modelAndView != null) {
                 modelAndView.addObject("privilegeList", privilegeDomainList);
-                modelAndView.addObject("sss", "sss");
+                modelAndView.addObject("learnTypeList", LearnTypeEnum.values());
+                modelAndView.addObject("learnLevelList", LearnLevelEnum.values());
             }
         }
     }

@@ -2,53 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c39ab176-a622-48bd-97a2-120810050995" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql1.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/common/enums/ChatModeEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/common/util/H2SqlUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/InterestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/AdminDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/CultureDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/FriendDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/InterestDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/MessageDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/InterestServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/vo/InterestVo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/test/new.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/learning/common/util/CreateTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/url" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_39.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/IAdminLoginService.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/AdminLoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/AdminLoginServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/js/customerLogin.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/customerIndex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnLevelEnum.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/learning.iml" afterPath="$PROJECT_DIR$/learning.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql.sql" afterPath="$PROJECT_DIR$/sql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/LoginAdminAuthMgrController.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/LoginAdminAuthMgrController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/domain/InterestDomain.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/domain/InterestDomain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerLoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerLoginServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/FriendServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/FriendServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/vo/MessageVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/vo/MessageVo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/customerHome.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/customerHome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/chat.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/chat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/customer/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/customer/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/test/customerLogin.js" afterPath="$PROJECT_DIR$/src/main/resources/templates/test/customerLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/test/styles.css" afterPath="$PROJECT_DIR$/src/main/resources/templates/test/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/test/test.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/test/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h2db/sample.sql.mv.db" afterPath="$PROJECT_DIR$/h2db/sample.sql.mv.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/h2db/sample.sql.trace.db" afterPath="$PROJECT_DIR$/h2db/sample.sql.trace.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/learning/interceptor/AuthInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/interceptor/AuthInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/include/sysMenu.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/include/sysMenu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java" afterPath="$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java" />
     </list>
     <ignored path="learning.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="GROUP_SCHEMA" value="true" />
@@ -79,85 +40,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="ChatController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java">
+      <file leaf-file-name="sysMenu.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/sysMenu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="38" />
+            <state relative-caret-position="378">
+              <caret line="24" column="116" lean-forward="true" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyWebSocket.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java">
+      <file leaf-file-name="ArticleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/ArticleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="36" column="64" lean-forward="true" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/MessageDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="85" column="21" lean-forward="false" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+            <state relative-caret-position="588">
+              <caret line="28" column="61" lean-forward="false" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1928#1943#0" expanded="true" />
-                <element signature="e#3501#3516#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/FriendDao.java">
+      <file leaf-file-name="article.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/article.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+            <state relative-caret-position="168">
+              <caret line="80" column="81" lean-forward="true" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswdDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java">
+      <file leaf-file-name="QueryTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessageVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/vo/MessageVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/CreateTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="105" column="37" lean-forward="true" selection-start-line="97" selection-start-column="19" selection-end-line="105" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatModeEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/ChatModeEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+            <state relative-caret-position="90">
+              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -166,18 +85,48 @@
       <file leaf-file-name="H2SqlUtilTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="34" column="9" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="210">
+              <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customer/chat.html">
+      <file leaf-file-name="sql1.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql1.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="142" column="48" lean-forward="false" selection-start-line="142" selection-start-column="48" selection-end-line="142" selection-end-column="48" />
+            <state relative-caret-position="386">
+              <caret line="89" column="14" lean-forward="false" selection-start-line="88" selection-start-column="2" selection-end-line="89" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LearnTypeEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnTypeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerSystemController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/CustomerSystemController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/interceptor/AuthInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="36" column="82" lean-forward="true" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -190,8 +139,9 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="HTML File" />
+        <option value="AnnotationType" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -199,30 +149,46 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>a1</find>
-      <find>selectOne</find>
-      <find>IAdminLoginService</find>
-      <find>COLLATE utf8_bin not null</find>
-      <find>selectByLoginName</find>
-      <find>passwdDomainMapper</find>
       <find>updateByPrimaryKey</find>
+      <find>getFriendByLoginName</find>
+      <find>selectByLoginName</find>
+      <find>selectByLoginNameAndFriendName</find>
+      <find>selectByInterest</find>
+      <find>LoginActionEnum</find>
+      <find>warn-info</find>
+      <find>deleteById</find>
+      <find>editCultureInfo</find>
+      <find>role.name</find>
+      <find>roleId</find>
+      <find>updateLoginName</find>
+      <find>&quot;id&quot;</find>
+      <find>privilegeId</find>
+      <find>addAdminBtn</find>
+      <find>updateRoleInfo</find>
+      <find>addRoleInfoModal</find>
+      <find>updateAdminInfoModal</find>
+      <find>updateAdminInfo</find>
+      <find>warn-info-update</find>
       <find>message</find>
-      <find>Dao</find>
-      <find>InterestTypeEnum</find>
-      <find>interestType</find>
-      <find>th:each</find>
-      <find>id=&quot;login&quot;</find>
-      <find>addChatModal</find>
-      <find>editPwd</find>
-      <find>editPasswordAlert</find>
-      <find>loginButton</find>
-      <find>editPassword</find>
-      <find>execute sql InterestDao.selectById:</find>
-      <find>type</find>
+      <find>------</find>
+      <find>register</find>
+      <find>registerButton</find>
+      <find>insert</find>
+      <find>LearnTypeEnum</find>
+      <find>privilegeList</find>
+      <find>admin/article</find>
+      <find>learnType:</find>
+      <find>Culture</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>LoginTypeEnum</replace>
+      <replace>LearnLevelEnum</replace>
+      <replace>Article</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main/resources/static/js</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -235,57 +201,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/date.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/ICustomerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/IFriendService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/InterestFriendVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/IPasswdService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/persistence/PasswdDomainMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/PasswdServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/persistence/PasswdDomainMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/new.html" />
-        <option value="$PROJECT_DIR$/src/test/java/com/learning/test/TestC.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/testHui.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/styles.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/customerHome.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/customerHome.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/CultureDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/AdminLoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/LoginAdminAuthMgrController.java" />
-        <option value="$PROJECT_DIR$/url" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/AdminDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/FriendDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/FriendServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerLoginServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sql.sql" />
         <option value="$PROJECT_DIR$/sql1.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/RoleController.java" />
+        <option value="$PROJECT_DIR$/url" />
         <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/CreateTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/domain/InterestDomain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/InterestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/InterestVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/InterestController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/test.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/customer/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/test/checkBoxTest.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/RoleVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/RoleMgrController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/RoleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/AdminPrivilegeVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/AdminDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/PrivilegeDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/TimeUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/aop/LoginAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/systemCustomer.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/culture.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/role.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/config/WebMvcConfigurer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/systemCustomer.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/culture.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/role.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/LoginAdminAuthMgrController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/LoginRetVo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/adminLogin.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/CultureDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/CultureVo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/AdminLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/customer/article.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/persistence/CultureDomainMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/TestJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/domain/PasswdDomain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/PasswdServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/test/new.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/customerIndex.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/test/customerLogin.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/util/H2SqlUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/InterestServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/PasswdMgrController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/customer/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/registerCustomer.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/interceptor/AuthInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnLevelEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnTypeEnum.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/InterestDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/enums/ChatModeEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/vo/MessageVo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/customer/chat.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/MessageDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/ArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/include/sysMenu.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/admin/article.html" />
       </list>
     </option>
   </component>
@@ -372,8 +338,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -464,7 +430,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="customer" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,7 +456,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -539,66 +509,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -673,38 +583,8 @@
               <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="socket" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -765,10 +645,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -806,20 +682,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="h2db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -834,14 +696,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/test" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.learning.controller.api.customer" />
       <recent name="com.learning.service" />
+      <recent name="com.learning.controller.api.admin" />
       <recent name="com.learning.service.impl" />
       <recent name="com.learning.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/admin" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/test" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/include" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/customer" />
+      <recent name="$PROJECT_DIR$/src/test" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.learning.common.enums" />
@@ -850,12 +717,8 @@
       <recent name="com.learning.vo" />
       <recent name="com.learning.domain" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/assets/fonts" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/learning/persistence" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/learning/domain" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/assets/css" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/test" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
@@ -871,7 +734,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="CreateTable.createInterest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="QueryTable.query" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.learning.common.util.*" />
@@ -882,8 +745,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.learning.common.util" />
-      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.CreateTable" />
-      <option name="METHOD_NAME" value="createInterest" />
+      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.QueryTable" />
+      <option name="METHOD_NAME" value="query" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -897,7 +760,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CreateTable.createMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="QueryTable.queryRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.learning.common.util.*" />
@@ -908,8 +771,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.learning.common.util" />
-      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.CreateTable" />
-      <option name="METHOD_NAME" value="createMessage" />
+      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.QueryTable" />
+      <option name="METHOD_NAME" value="queryRole" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -923,7 +786,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="H2SqlUtilTest.querySqlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="QueryTable.queryPrivilege" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.learning.common.util.*" />
@@ -934,8 +797,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.learning.common.util" />
-      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.H2SqlUtilTest" />
-      <option name="METHOD_NAME" value="querySqlTest" />
+      <option name="MAIN_CLASS_NAME" value="com.learning.common.util.QueryTable" />
+      <option name="METHOD_NAME" value="queryPrivilege" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1380,18 +1243,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CreateTable.createInterest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CreateTable.createMessage" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.H2SqlUtilTest.querySqlTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.QueryTable.query" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.QueryTable.queryRole" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.QueryTable.queryPrivilege" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.H2SqlUtilTest.updateSqlTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.H2SqlUtilTest.querySqlTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.H2SqlUtilTest.updateSqlTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CreateTable.createInterest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CreateTable.createMessage" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.H2SqlUtilTest.updateSqlTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.QueryTable.queryPrivilege" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.QueryTable.queryRole" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.QueryTable.query" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1450,44 +1313,227 @@
       <workItem from="1483932305305" duration="20849000" />
       <workItem from="1484029300014" duration="2301000" />
       <workItem from="1484098953011" duration="676000" />
-      <workItem from="1484113199626" duration="9413000" />
+      <workItem from="1484113199626" duration="18958000" />
+      <workItem from="1484269981511" duration="10205000" />
+      <workItem from="1484287665984" duration="11750000" />
+      <workItem from="1484530486209" duration="15834000" />
+      <workItem from="1484620358546" duration="16410000" />
+      <workItem from="1484705951532" duration="7632000" />
+      <workItem from="1484877745125" duration="17644000" />
+      <workItem from="1486520763195" duration="1948000" />
+      <workItem from="1486608616821" duration="40689000" />
+      <workItem from="1486950008729" duration="18886000" />
+      <workItem from="1487066718175" duration="711000" />
+      <workItem from="1487121999456" duration="6285000" />
+      <workItem from="1487208442107" duration="19759000" />
+      <workItem from="1487294798267" duration="7434000" />
+      <workItem from="1487323846946" duration="10378000" />
+      <workItem from="1487381557092" duration="7810000" />
+      <workItem from="1487579418447" duration="730000" />
+      <workItem from="1491962191650" duration="3596000" />
+      <workItem from="1493017818012" duration="3439000" />
+      <workItem from="1493192826078" duration="670000" />
+      <workItem from="1493282602948" duration="8392000" />
+      <workItem from="1493345133840" duration="6386000" />
     </task>
+    <task id="LOCAL-00001" summary="聊天记录存储">
+      <created>1484203432486</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1484203432486</updated>
+    </task>
+    <task id="LOCAL-00002" summary="聊天记录显示">
+      <created>1484290298912</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1484290298912</updated>
+    </task>
+    <task id="LOCAL-00003" summary="聊天记录显示">
+      <created>1484292470721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1484292470721</updated>
+    </task>
+    <task id="LOCAL-00004" summary="聊天记录显示">
+      <created>1484295796419</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1484295796419</updated>
+    </task>
+    <task id="LOCAL-00005" summary="聊天记录显示">
+      <created>1484296463098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1484296463098</updated>
+    </task>
+    <task id="LOCAL-00006" summary="不登录查看群聊消息">
+      <created>1484298149693</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1484298149693</updated>
+    </task>
+    <task id="LOCAL-00007" summary="添加好友">
+      <created>1484628393547</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1484628393547</updated>
+    </task>
+    <task id="LOCAL-00008" summary="culture.html">
+      <created>1484895776781</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1484895776781</updated>
+    </task>
+    <task id="LOCAL-00009" summary="显示文化详情">
+      <created>1484897351321</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1484897351321</updated>
+    </task>
+    <task id="LOCAL-00010" summary="文化内容 增删改查">
+      <created>1484904411977</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1484904411977</updated>
+    </task>
+    <task id="LOCAL-00011" summary="passwdDao">
+      <created>1486609461208</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1486609461208</updated>
+    </task>
+    <task id="LOCAL-00012" summary="passwdDao">
+      <created>1486611647630</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1486611647630</updated>
+    </task>
+    <task id="LOCAL-00013" summary="后台未登录时 跳到登录界面">
+      <created>1486710340125</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1486710340125</updated>
+    </task>
+    <task id="LOCAL-00014" summary="注册用户">
+      <created>1486712436455</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1486712436455</updated>
+    </task>
+    <task id="LOCAL-00015" summary="系统用户">
+      <created>1486895738633</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1486895738633</updated>
+    </task>
+    <task id="LOCAL-00016" summary="系统用户">
+      <created>1486898390498</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1486898390498</updated>
+    </task>
+    <task id="LOCAL-00017" summary="角色管理">
+      <created>1486994908023</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1486994908023</updated>
+    </task>
+    <task id="LOCAL-00018" summary="角色管理">
+      <created>1487296591221</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1487296591221</updated>
+    </task>
+    <task id="LOCAL-00019" summary="文化">
+      <created>1487337059133</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1487337059133</updated>
+    </task>
+    <task id="LOCAL-00020" summary="显示">
+      <created>1487339095102</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1487339095102</updated>
+    </task>
+    <task id="LOCAL-00021" summary="注册">
+      <created>1487389275725</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1487389275725</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix">
+      <created>1487396770997</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1487396770998</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix">
+      <created>1487396803385</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1487396803385</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateTable_createInterest - 2017.01.09 at 21h 07m 33s.xml">
-      <configuration name="CreateTable.createInterest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="H2SqlUtilTest_querySqlTest - 2017.01.09 at 20h 49m 17s.xml">
-      <configuration name="H2SqlUtilTest.querySqlTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="H2SqlUtilTest_querySqlTest - 2017.01.09 at 20h 53m 56s.xml">
-      <configuration name="H2SqlUtilTest.querySqlTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="H2SqlUtilTest_querySqlTest - 2017.01.09 at 23h 25m 36s.xml">
-      <configuration name="H2SqlUtilTest.querySqlTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="H2SqlUtilTest_querySqlTest - 2017.01.09 at 23h 26m 05s.xml">
-      <configuration name="H2SqlUtilTest.querySqlTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.01.09 at 20h 57m 36s.xml">
+    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.04.28 at 10h 47m 14s.xml">
       <configuration name="H2SqlUtilTest.updateSqlTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.01.09 at 20h 58m 04s.xml">
+    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.04.28 at 10h 54m 32s.xml">
       <configuration name="H2SqlUtilTest.updateSqlTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.01.09 at 21h 08m 25s.xml">
+    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.04.28 at 10h 55m 23s.xml">
       <configuration name="H2SqlUtilTest.updateSqlTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.01.09 at 21h 09m 07s.xml">
+    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.04.28 at 10h 56m 41s.xml">
       <configuration name="H2SqlUtilTest.updateSqlTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="H2SqlUtilTest_updateSqlTest - 2017.01.09 at 21h 17m 05s.xml">
-      <configuration name="H2SqlUtilTest.updateSqlTest" configurationId="JUnit" />
+    <history-entry file="QueryTable_queryPrivilege - 2017.04.28 at 10h 44m 24s.xml">
+      <configuration name="QueryTable.queryPrivilege" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryTable_queryPrivilege - 2017.04.28 at 10h 50m 38s.xml">
+      <configuration name="QueryTable.queryPrivilege" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryTable_queryPrivilege - 2017.04.28 at 10h 55m 33s.xml">
+      <configuration name="QueryTable.queryPrivilege" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryTable_queryRole - 2017.04.28 at 10h 42m 34s.xml">
+      <configuration name="QueryTable.queryRole" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryTable_queryRole - 2017.04.28 at 10h 42m 51s.xml">
+      <configuration name="QueryTable.queryRole" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryTable_queryRole - 2017.04.28 at 10h 49m 33s.xml">
+      <configuration name="QueryTable.queryRole" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195632000" />
+    <option name="totallyTimeSpent" value="421765000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1500,11 +1546,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4243421" sideWeight="0.50215286" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35386223" sideWeight="0.50426894" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14461046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1513,27 +1559,27 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497309" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979124" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3257024" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25887266" sideWeight="0.49784714" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3423517" sideWeight="0.49573106" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19903949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20607029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1568,9 +1614,48 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="聊天记录存储" />
+    <MESSAGE value="聊天记录显示" />
+    <MESSAGE value="不登录查看群聊消息" />
+    <MESSAGE value="添加好友" />
+    <MESSAGE value="culture.html" />
+    <MESSAGE value="显示文化详情" />
+    <MESSAGE value="文化内容 增删改查" />
+    <MESSAGE value="passwdDao" />
+    <MESSAGE value="后台未登录时 跳到登录界面" />
+    <MESSAGE value="注册用户" />
+    <MESSAGE value="系统用户" />
+    <MESSAGE value="角色管理" />
+    <MESSAGE value="文化" />
+    <MESSAGE value="显示" />
+    <MESSAGE value="注册" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1579,114 +1664,251 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/persistence/PasswdDomainMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/FriendController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="184" column="32" lean-forward="false" selection-start-line="184" selection-start-column="14" selection-end-line="184" selection-end-column="32" />
+        <state relative-caret-position="210">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/persistence/FriendDomainMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/persistence/PasswdDomainMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/config/DatabaseConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/InterestServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="61" />
+          <caret line="23" column="102" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="102" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/PasswdServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/RoleMgrController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="420">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/FriendServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/TestJson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="63">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/CustomerLoginServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/domain/PasswdDomain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        <state relative-caret-position="541">
+          <caret line="132" column="23" lean-forward="false" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/PasswdServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="110" column="84" lean-forward="false" selection-start-line="110" selection-start-column="84" selection-end-line="110" selection-end-column="84" />
+        <state relative-caret-position="190">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/bean/Ticket.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="-782">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/url">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/role.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="35" />
+        <state relative-caret-position="466">
+          <caret line="91" column="68" lean-forward="false" selection-start-line="91" selection-start-column="60" selection-end-line="91" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test/new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1407">
+          <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/InterestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/systemCustomer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="60" column="60" lean-forward="false" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/customerIndex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/PasswdMgrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="20" column="72" lean-forward="false" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/config/DatabaseConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/registerCustomer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="65" column="26" lean-forward="false" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/LoginAdminAuthMgrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/AdminLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/admin/AdminMgrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/url">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/custom-scripts.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customer/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="2457">
+          <caret line="117" column="46" lean-forward="false" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/bread.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1149">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/comFunction.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-365">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/adminLogin.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-1134">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customer/login.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="189">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/assets/img/error.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/CreateTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="175" column="43" lean-forward="false" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/ChatModeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/LoginAdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/LoginCustomerController.java">
@@ -1697,265 +1919,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/LoginCustomerAuthMgrController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnLevelEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/CustomerRegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/domain/InterestDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="33" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="258" column="76" lean-forward="false" selection-start-line="258" selection-start-column="76" selection-end-line="258" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/vo/InterestVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customer/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="390" column="78" lean-forward="false" selection-start-line="390" selection-start-column="78" selection-end-line="390" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/customerIndex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="136" column="28" lean-forward="false" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/AdminDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/meta.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/culture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/CultureController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/AdminLoginServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/bean/Resp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/RespStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test/customerLogin.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/CustomerSystemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="827">
-          <caret line="169" column="26" lean-forward="false" selection-start-line="169" selection-start-column="26" selection-end-line="169" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/api/customer/InterestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/local/lib/jdk/src.zip!/java/sql/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="353" column="12" lean-forward="false" selection-start-line="353" selection-start-column="12" selection-end-line="353" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/util/H2SqlUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/LoginRespEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="189">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/InterestServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/interceptor/AuthInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="102" lean-forward="false" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+        <state relative-caret-position="504">
+          <caret line="36" column="82" lean-forward="true" selection-start-line="36" selection-start-column="82" selection-end-line="36" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java">
+    <entry file="file://$PROJECT_DIR$/sql.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/config/GetHttpSessionConfigurator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sql1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="35" lean-forward="false" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/IMessageService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/InterestTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="5" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/InterestDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/domain/MessageDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/ChatModeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        <state relative-caret-position="386">
+          <caret line="89" column="14" lean-forward="false" selection-start-line="88" selection-start-column="2" selection-end-line="89" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/H2SqlUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="34" column="9" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="12" column="49" lean-forward="true" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/CreateTable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/include/sysMenu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="105" column="37" lean-forward="true" selection-start-line="97" selection-start-column="19" selection-end-line="105" selection-end-column="37" />
+        <state relative-caret-position="378">
+          <caret line="24" column="116" lean-forward="true" selection-start-line="24" selection-start-column="116" selection-end-line="24" selection-end-column="116" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/vo/MessageVo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/common/enums/LearnTypeEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="756">
+          <caret line="48" column="43" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/PasswdDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/learning/common/util/QueryTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        <state relative-caret-position="90">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/FriendDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/admin/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/MessageDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="85" column="21" lean-forward="false" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
+        <state relative-caret-position="588">
+          <caret line="28" column="61" lean-forward="false" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1928#1943#0" expanded="true" />
-            <element signature="e#3501#3516#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/ui/customer/ChatController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/admin/article.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/customer/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="142" column="48" lean-forward="false" selection-start-line="142" selection-start-column="48" selection-end-line="142" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/socket/MyWebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="36" column="64" lean-forward="true" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
+        <state relative-caret-position="168">
+          <caret line="80" column="81" lean-forward="true" selection-start-line="80" selection-start-column="81" selection-end-line="80" selection-end-column="81" />
           <folding />
         </state>
       </provider>
