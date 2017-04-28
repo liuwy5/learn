@@ -202,4 +202,89 @@ public class CreateTable {
         H2SqlUtil.updateSql(sqlString);
     }
 
+    /**
+     * 创建article表
+     */
+    @Test
+    public void createArticle() throws Exception {
+        String sqlString = "drop table if exists article;\n" +
+                "CREATE TABLE article (\n" +
+                "  id int(10) PRIMARY KEY auto_increment,\n" +
+                "  type varchar(20),\n" +
+                "  level VARCHAR(20),\n" +
+                "  period VARCHAR(2),\n" +
+                "  num INT(3),\n" +
+                "  title VARCHAR(50),\n" +
+                "  content varchar(5000),\n" +
+                "  first_question varchar(200),\n" +
+                "  first_a varchar(100),\n" +
+                "  first_a_explain varchar(100),\n" +
+                "  first_b varchar(100),\n" +
+                "  first_b_explain varchar(100),\n" +
+                "  first_c varchar(100),\n" +
+                "  first_c_explain varchar(100),\n" +
+                "  first_d varchar(100),\n" +
+                "  first_d_explain varchar(100),\n" +
+                "  first_answer varchar(1),\n" +
+                "  second_question varchar(200),\n" +
+                "  second_a varchar(100),\n" +
+                "  second_a_explain varchar(100),\n" +
+                "  second_b varchar(100),\n" +
+                "  second_b_explain varchar(100),\n" +
+                "  second_c varchar(100),\n" +
+                "  second_c_explain varchar(100),\n" +
+                "  second_d varchar(100),\n" +
+                "  second_d_explain varchar(100),\n" +
+                "  second_answer varchar(1),\n" +
+                "  third_question varchar(200),\n" +
+                "  third_a varchar(100),\n" +
+                "  third_a_explain varchar(100),\n" +
+                "  third_b varchar(100),\n" +
+                "  third_b_explain varchar(100),\n" +
+                "  third_c varchar(100),\n" +
+                "  third_c_explain varchar(100),\n" +
+                "  third_d varchar(100),\n" +
+                "  third_d_explain varchar(100),\n" +
+                "  third_answer varchar(1),\n" +
+                "  fourth_question varchar(200),\n" +
+                "  fourth_a varchar(100),\n" +
+                "  fourth_a_explain varchar(100),\n" +
+                "  fourth_b varchar(100),\n" +
+                "  fourth_b_explain varchar(100),\n" +
+                "  fourth_c varchar(100),\n" +
+                "  fourth_c_explain varchar(100),\n" +
+                "  fourth_d varchar(100),\n" +
+                "  fourth_d_explain varchar(100),\n" +
+                "  fourth_answer varchar(1),\n" +
+                "  fifth_question varchar(200),\n" +
+                "  fifth_a varchar(100),\n" +
+                "  fifth_a_explain varchar(100),\n" +
+                "  fifth_b varchar(100),\n" +
+                "  fifth_b_explain varchar(100),\n" +
+                "  fifth_c varchar(100),\n" +
+                "  fifth_c_explain varchar(100),\n" +
+                "  fifth_d varchar(100),\n" +
+                "  fifth_d_explain varchar(100),\n" +
+                "  fifth_answer varchar(1)\n" +
+                ");";
+        H2SqlUtil.updateSql(sqlString);
+    }
+
+    /**
+     * 创建progress表
+     */
+    @Test
+    public void createProgress() throws Exception {
+        String sqlString = "DROP TABLE if EXISTS progress;\n" +
+                "CREATE TABLE progress (\n" +
+                "  id int(10) PRIMARY KEY auto_increment,\n" +
+                "  login_name varchar(20),\n" +
+                "  type varchar(20),\n" +
+                "  level VARCHAR(20),\n" +
+                "  period VARCHAR(2),\n" +
+                "  num INT(3)\n" +
+                ");";
+        H2SqlUtil.updateSql(sqlString);
+    }
+
 }

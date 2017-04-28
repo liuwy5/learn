@@ -86,7 +86,10 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label"><span class="red-star">*</span> 课时</label>
                         <div class="col-md-7 clearfix">
-                            <input type="text" maxlength="20" class="form-control" name="periodAdd" id="periodAdd"/>
+                            <select class="form-control" name="roleId" id="updateRoleId">
+                                <option th:each="period:${periodList}"
+                                        th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'" th:value="${period}" value="1"></option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
