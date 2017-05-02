@@ -36,24 +36,24 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th class="col-md-9">标题</th>
-                                        <th class="col-md-1">时间</th>
+                                        <th class="col-md-8">标题</th>
+                                        <th class="col-md-2">课时</th>
                                         <th class="col-md-2">操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <!--<tr th:each="Article, ArticleStat : ${ArticleList}" >-->
-                                        <!--<td class="col-md-9" th:text="${Article.title}">标题</td>-->
-                                        <!--<td class="col-md-1" th:text="${Article.createdAt}">时间</td>-->
-                                        <!--<td class="col-md-2">-->
-                                            <!--<button type="button" class="btn btn-success" th:onclick="'javascript:ArticleDetail(' + ${Article.id} + ');'" >-->
-                                                <!--<span class="glyphicon glyphicon-pencil"></span> 修改-->
-                                            <!--</button>-->
-                                            <!--<button type="button" class="btn btn-success" th:onclick="'javascript:ArticleDelete(' + ${Article.id} + ');'" >-->
-                                                <!--<span class="glyphicon glyphicon-trash"></span> 删除-->
-                                            <!--</button>-->
-                                        <!--</td>-->
-                                    <!--</tr>-->
+                                    <tr th:each="article, articleStat : ${articleList}" >
+                                        <td class="col-md-8" th:text="${article.title}">标题</td>
+                                        <td class="col-md-2" th:text="${article.period} le 16 ? '第' + ${article.period} + '课时第' + ${article.num} + '篇': '测评第' + ${article.num} + '篇'">课时</td>
+                                        <td class="col-md-2">
+                                            <button type="button" class="btn btn-success" th:onclick="'javascript:articleDetail(' + ${article.id} + ');'" >
+                                                <span class="glyphicon glyphicon-pencil"></span> 修改
+                                            </button>
+                                            <button type="button" class="btn btn-success" th:onclick="'javascript:articleDelete(' + ${article.id} + ');'" >
+                                                <span class="glyphicon glyphicon-trash"></span> 删除
+                                            </button>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -68,14 +68,14 @@
 <!--新增-->
 <div class="modal fade in" id="addArticleInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="false" style="display: none; padding-right: 17px;">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog" style="width: 1600px;">
+        <div class="modal-content" style="width: 1600px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="modalTitleAdd"></h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="filledDataAdd">
+                <form class="form-horizontal" id="filledDataAdd" width="1500">
                     <div class="form-group" style="margin-bottom: 5px;">
                         <label class="col-md-3"></label>
                         <div class="col-md-7 warn-info" id="warn-info-add"></div>
@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label"><span class="red-star">*</span> 课时</label>
                         <div class="col-md-7 clearfix">
-                            <select class="form-control" name="roleId" id="updateRoleId">
+                            <select class="form-control" name="periodAdd" id="periodAdd">
                                 <option th:each="period:${periodList}"
                                         th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'" th:value="${period}" value="1"></option>
                             </select>
@@ -104,6 +104,331 @@
                             <textarea rows="10" cols="10" class="form-control" name="contentAdd" id="contentAdd" style="resize: none;"></textarea>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题1</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstQuestionAdd" id="firstQuestionAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstAAdd" id="firstAAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstAExplainAdd" id="firstAExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstBAdd" id="firstBAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstBExplainAdd" id="firstBExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstCAdd" id="firstCAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstCExplainAdd" id="firstCExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstDAdd" id="firstDAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstDExplainAdd" id="firstDExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题1答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="firstAnswerAdd" id="firstAnswerAdd">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题2</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondQuestionAdd" id="secondQuestionAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondAAdd" id="secondAAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondAExplainAdd" id="secondAExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondBAdd" id="secondBAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondBExplainAdd" id="secondBExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondCAdd" id="secondCAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondCExplainAdd" id="secondCExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondDAdd" id="secondDAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondDExplainAdd" id="secondDExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题2答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="secondAnswerAdd" id="secondAnswerAdd">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题3</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdQuestionAdd" id="thirdQuestionAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdAAdd" id="thirdAAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdAExplainAdd" id="thirdAExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdBAdd" id="thirdBAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdBExplainAdd" id="thirdBExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdCAdd" id="thirdCAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdCExplainAdd" id="thirdCExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdDAdd" id="thirdDAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdDExplainAdd" id="thirdDExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题3答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="thirdAnswerAdd" id="thirdAnswerAdd">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题4</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthQuestionAdd" id="fourthQuestionAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthAAdd" id="fourthAAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthAExplainAdd" id="fourthAExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthBAdd" id="fourthBAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthBExplainAdd" id="fourthBExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthCAdd" id="fourthCAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthCExplainAdd" id="fourthCExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthDAdd" id="fourthDAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthDExplainAdd" id="fourthDExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题4答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="fourthAnswerAdd" id="fourthAnswerAdd">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题5</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthQuestionAdd" id="fifthQuestionAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthAAdd" id="fifthAAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthAExplainAdd" id="fifthAExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthBAdd" id="fifthBAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthBExplainAdd" id="fifthBExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthCAdd" id="fifthCAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthCExplainAdd" id="fifthCExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthDAdd" id="fifthDAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthDExplainAdd" id="fifthDExplainAdd" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题5答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="fifthAnswerAdd" id="fifthAnswerAdd">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -117,8 +442,8 @@
 <!--修改-->
 <div class="modal fade in" id="editArticleInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="false" style="display: none; padding-right: 17px;">
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog" style="width: 1600px;">
+        <div class="modal-content" style="width: 1600px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="modalTitle"></h4>
@@ -131,15 +456,349 @@
                         <div class="col-md-7"><input type="hidden" id="id"/></div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 课时</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="periodUpdate" id="periodUpdate" disabled="disabled">
+                                <option th:each="period:${periodList}"
+                                        th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'" th:value="${period}" value="1"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-3 control-label"><span class="red-star">*</span> 标题</label>
                         <div class="col-md-7 clearfix">
-                            <input type="text" maxlength="20" class="form-control" name="title" id="title"/>
+                            <input type="text" maxlength="20" class="form-control" name="titleUpdate" id="titleUpdate"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"><span class="red-star">*</span> 内容</label>
                         <div class="col-md-7 clearfix">
-                            <textarea rows="10" cols="10" class="form-control" name="content" id="content" style="resize: none;"></textarea>
+                            <textarea rows="10" cols="10" class="form-control" name="contentUpdate" id="contentUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题1</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstQuestionUpdate" id="firstQuestionUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstAUpdate" id="firstAUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstAExplainUpdate" id="firstAExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstBUpdate" id="firstBUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstBExplainUpdate" id="firstBExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstCUpdate" id="firstCUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstCExplainUpdate" id="firstCExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstDUpdate" id="firstDUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="firstDExplainUpdate" id="firstDExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题1答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="firstAnswerUpdate" id="firstAnswerUpdate">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题2</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondQuestionUpdate" id="secondQuestionUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondAUpdate" id="secondAUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondAExplainUpdate" id="secondAExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondBUpdate" id="secondBUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondBExplainUpdate" id="secondBExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondCUpdate" id="secondCUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondCExplainUpdate" id="secondCExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondDUpdate" id="secondDUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="secondDExplainUpdate" id="secondDExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题2答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="secondAnswerUpdate" id="secondAnswerUpdate">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题3</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdQuestionUpdate" id="thirdQuestionUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdAUpdate" id="thirdAUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdAExplainUpdate" id="thirdAExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdBUpdate" id="thirdBUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdBExplainUpdate" id="thirdBExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdCUpdate" id="thirdCUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdCExplainUpdate" id="thirdCExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdDUpdate" id="thirdDUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="thirdDExplainUpdate" id="thirdDExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题3答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="thirdAnswerUpdate" id="thirdAnswerUpdate">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题4</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthQuestionUpdate" id="fourthQuestionUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthAUpdate" id="fourthAUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthAExplainUpdate" id="fourthAExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthBUpdate" id="fourthBUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthBExplainUpdate" id="fourthBExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthCUpdate" id="fourthCUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthCExplainUpdate" id="fourthCExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthDUpdate" id="fourthDUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fourthDExplainUpdate" id="fourthDExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题4答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="fourthAnswerUpdate" id="fourthAnswerUpdate">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题5</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthQuestionUpdate" id="fifthQuestionUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthAUpdate" id="fifthAUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项a解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthAExplainUpdate" id="fifthAExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthBUpdate" id="fifthBUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项b解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthBExplainUpdate" id="fifthBExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthCUpdate" id="fifthCUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项c解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthCExplainUpdate" id="fifthCExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthDUpdate" id="fifthDUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 选项d解释</label>
+                        <div class="col-md-7 clearfix">
+                            <textarea rows="３" cols="10" class="form-control" name="fifthDExplainUpdate" id="fifthDExplainUpdate" style="resize: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"><span class="red-star">*</span> 问题5答案</label>
+                        <div class="col-md-7 clearfix">
+                            <select class="form-control" name="fifthAnswerUpdate" id="fifthAnswerUpdate">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
                         </div>
                     </div>
                 </form>
@@ -153,10 +812,10 @@
 </div>
 
 <div th:replace="include/meta :: javascript"/>
-<script src="/js/Article.js"></script>
+<script src="/js/article.js"></script>
 <script type="text/javascript">
     // 查看详情
-    function ArticleDetail(id) {
+    function articleDetail(id) {
         console.log('id: ' + id);
         $('#editArticleInfo').modal('show');
         $('#warn-info').html('');
@@ -164,27 +823,78 @@
             id : id
         };
         $.ajax({
-            url: "/Article/detail",
+            url: "/article/detail",
             type: 'post',
             data: params,
             dataType: "json",
             success: function (data) {
-                console.log('data: ' + data);
+//                console.log('data: ' + data);
                 $('#id').val(data.id);
-                $('#title').val(data.title);
-                $('#content').val(data.content);
+                $('#periodUpdate').val(data.period);
+                $('#titleUpdate').val(data.title);
+                $('#contentUpdate').val(data.content);
+                $('#firstQuestionUpdate').val(data.firstQuestion);
+                $('#firstAUpdate').val(data.firstA);
+                $('#firstAExplainUpdate').val(data.firstAExplain);
+                $('#firstBUpdate').val(data.firstB);
+                $('#firstBExplainUpdate').val(data.firstBExplain);
+                $('#firstCUpdate').val(data.firstC);
+                $('#firstCExplainUpdate').val(data.firstCExplain);
+                $('#firstDUpdate').val(data.firstD);
+                $('#firstDExplainUpdate').val(data.firstDExplain);
+                $('#firstAnswerUpdate').val(data.firstAnswer);
+                $('#secondQuestionUpdate').val(data.secondQuestion);
+                $('#secondAUpdate').val(data.secondA);
+                $('#secondAExplainUpdate').val(data.secondAExplain);
+                $('#secondBUpdate').val(data.secondB);
+                $('#secondBExplainUpdate').val(data.secondBExplain);
+                $('#secondCUpdate').val(data.secondC);
+                $('#secondCExplainUpdate').val(data.secondCExplain);
+                $('#secondDUpdate').val(data.secondD);
+                $('#secondDExplainUpdate').val(data.secondDExplain);
+                $('#secondAnswerUpdate').val(data.secondAnswer);
+                $('#thirdQuestionUpdate').val(data.thirdQuestion);
+                $('#thirdAUpdate').val(data.thirdA);
+                $('#thirdAExplainUpdate').val(data.thirdAExplain);
+                $('#thirdBUpdate').val(data.thirdB);
+                $('#thirdBExplainUpdate').val(data.thirdBExplain);
+                $('#thirdCUpdate').val(data.thirdC);
+                $('#thirdCExplainUpdate').val(data.thirdCExplain);
+                $('#thirdDUpdate').val(data.thirdD);
+                $('#thirdDExplainUpdate').val(data.thirdDExplain);
+                $('#thirdAnswerUpdate').val(data.thirdAnswer);
+                $('#fourthQuestionUpdate').val(data.fourthQuestion);
+                $('#fourthAUpdate').val(data.fourthA);
+                $('#fourthAExplainUpdate').val(data.fourthAExplain);
+                $('#fourthBUpdate').val(data.fourthB);
+                $('#fourthBExplainUpdate').val(data.fourthBExplain);
+                $('#fourthCUpdate').val(data.fourthC);
+                $('#fourthCExplainUpdate').val(data.fourthCExplain);
+                $('#fourthDUpdate').val(data.fourthD);
+                $('#fourthDExplainUpdate').val(data.fourthDExplain);
+                $('#fourthAnswerUpdate').val(data.fourthAnswer);
+                $('#fifthQuestionUpdate').val(data.fifthQuestion);
+                $('#fifthAUpdate').val(data.fifthA);
+                $('#fifthAExplainUpdate').val(data.fifthAExplain);
+                $('#fifthBUpdate').val(data.fifthB);
+                $('#fifthBExplainUpdate').val(data.fifthBExplain);
+                $('#fifthCUpdate').val(data.fifthC);
+                $('#fifthCExplainUpdate').val(data.fifthCExplain);
+                $('#fifthDUpdate').val(data.fifthD);
+                $('#fifthDExplainUpdate').val(data.fifthDExplain);
+                $('#fifthAnswerUpdate').val(data.fifthAnswer);
             }
         });
     }
 
     // 删除
-    function ArticleDelete(id) {
+    function articleDelete(id) {
         console.log('id: ' + id);
         var params = {
             id : id
         };
         $.ajax({
-            url: "/Article/delete",
+            url: "/article/delete",
             type: 'post',
             data: params,
             dataType: "json",

@@ -33,6 +33,7 @@ public class ArticleController {
         }
 
         model.addAttribute("periodList", articleService.toFillPeriodList(learnType, learnLevel));
+        model.addAttribute("articleList", articleService.articleList(learnType, learnLevel));
 
         return "admin/article";
     }
