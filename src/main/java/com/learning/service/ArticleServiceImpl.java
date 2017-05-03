@@ -36,6 +36,10 @@ public class ArticleServiceImpl {
         return toFillPeriodList;
     }
 
+    public List<Integer> periodList(String learnType, String learnLevel) {
+        return ArticleDao.periodList(learnType, learnLevel);
+    }
+
     public List<ArticleDomain> articleList(String type, String level) {
         return ArticleDao.articleList(type, level);
     }

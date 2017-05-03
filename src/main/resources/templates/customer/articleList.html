@@ -14,13 +14,27 @@
 <body>
 <div class="container" style="padding-left: 1px;padding-right: 1px;">
     <section id="main"><!-- #main content and sidebar area -->
-        <section id="content" style="width: 870px;"><!-- #content -->
-            <article>
-                <h2 th:text="${article.title}" class="color: #407E80;">First Article Title</h2>
-                <p th:text="${article.content}" class="text-indent:2em;"> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+        <section id="content" style="width: 870px; height: 1000px;"><!-- #content -->
+            <!--<article>-->
+                <!--<h2 th:text="${culture.title}" class="color: #407E80;">First Article Title</h2>-->
+                <!--&lt;!&ndash;<p th:text="${culture.content}" class="text-indent:2em;"> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>&ndash;&gt;-->
                 <!--<p th:each="cont, contStat : ${culture.contents}" th:text="'  ' + ${cont}" style="font-size: 20px;line-height: 27px;text-indent: 2em;"></p>-->
+            <!--</article>-->
+
+            <article>
+                <h2 th:each="period, periodStat : ${periodList}">
+                    <a href="#" target="_blank"
+                       th:href="@{'/customer/articleDetail/' + ${learnType} + '/' + ${learnLevel} + '/' + ${period}}"
+                       th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'">First Article Title</a>
+                </h2>
+
             </article>
+
+            <!--<div th:each="period, periodStat : ${periodList}" th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'">-->
+                <!--&lt;!&ndash;<a th:href="@{'/customer/articleDetail/' + ${learnType} + '/' + ${learnLevel} + '/' + ${period}"></a>&ndash;&gt;-->
+            <!--</div>-->
         </section>
+
     </section>
 </div>
 </body>

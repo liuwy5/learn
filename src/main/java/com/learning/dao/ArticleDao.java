@@ -22,7 +22,18 @@ public class ArticleDao {
     public static List<Integer> fullPeriodList(String articleType, String articleLevel) {
         String sqlString = "select a.period, count(*) count from article a where a.type = '" + articleType + "' and a.level = '" + articleLevel + "' " +
                 "group by a.period having count >= 3 order by a.period asc";
+        logger.info("execute sql ArticleDao.fullPeriodList: " + sqlString);
+        return fillPeriodList(sqlString);
+    }
+
+    public static List<Integer> periodList(String articleType, String articleLevel) {
+        String sqlString = "select distinct(a.period) period from article a where a.type = '" + articleType + "' and a.level = '" + articleLevel + "' " +
+                "order by a.period asc";
         logger.info("execute sql ArticleDao.periodList: " + sqlString);
+        return fillPeriodList(sqlString);
+    }
+
+    private static List<Integer> fillPeriodList(String sqlString) {
         List<Integer> periodList = new ArrayList<Integer>();
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         if (resultSet != null) {

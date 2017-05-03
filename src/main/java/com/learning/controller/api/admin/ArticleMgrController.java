@@ -37,4 +37,12 @@ public class ArticleMgrController {
         return articleService.deleteById(id);
     }
 
+    @RequestMapping("/articleList")
+    public ArticleVo s(String learnType, String learnLevel) {
+        ArticleVo articleVo = new ArticleVo();
+        articleVo.setType(learnType);
+        articleVo.setLevel(learnLevel);
+        return articleVo;
+    }
+
 }

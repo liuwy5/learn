@@ -1,6 +1,8 @@
 package com.learning.controller.ui.customer;
 
 import com.learning.common.enums.InterestTypeEnum;
+import com.learning.common.enums.LearnLevelEnum;
+import com.learning.common.enums.LearnTypeEnum;
 import com.learning.common.util.TicketUtil;
 import com.learning.dao.CultureDao;
 import com.learning.dao.InterestDao;
@@ -56,11 +58,13 @@ public class HomeController {
 
         model.addAttribute("cultureList", CultureDao.selectAllCulture());
 
+        model.addAttribute("learnTypeList", LearnTypeEnum.values());
+        model.addAttribute("learnLevelList", LearnLevelEnum.values());
 
         return "/customer/index";
     }
 
-    @RequestMapping("article/{cultureId}")
+    @RequestMapping("culture/{cultureId}")
     public String article(@PathVariable("cultureId") Integer cultureId, Model model) {
         CultureVo cultureVo = CultureDao.selectById(cultureId);
         if (cultureVo != null) {
@@ -69,6 +73,6 @@ public class HomeController {
 
         model.addAttribute("culture", cultureVo);
 
-        return "/customer/article";
+        return "/customer/culture";
     }
 }

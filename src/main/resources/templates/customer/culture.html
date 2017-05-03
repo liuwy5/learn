@@ -16,9 +16,9 @@
     <section id="main"><!-- #main content and sidebar area -->
         <section id="content" style="width: 870px;"><!-- #content -->
             <article>
-                <h2 th:text="${article.title}" class="color: #407E80;">First Article Title</h2>
-                <p th:text="${article.content}" class="text-indent:2em;"> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
-                <!--<p th:each="cont, contStat : ${culture.contents}" th:text="'  ' + ${cont}" style="font-size: 20px;line-height: 27px;text-indent: 2em;"></p>-->
+                <h2 th:text="${culture.title}" class="color: #407E80;">First Article Title</h2>
+                <!--<p th:text="${culture.content}" class="text-indent:2em;"> Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>-->
+                <p th:each="cont, contStat : ${culture.contents}" th:text="'  ' + ${cont}" style="font-size: 20px;line-height: 27px;text-indent: 2em;"></p>
             </article>
         </section>
     </section>

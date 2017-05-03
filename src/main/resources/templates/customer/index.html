@@ -43,9 +43,32 @@
         </nav>
 
         <section id="main"><!-- #main content and sidebar area -->
+            <div th:if="${session.ticket != null}">
+                <section id="learnContent" style="float: left; width: 580px; margin-left: 40px;">
+                    <h3>学习内容</h3>
+                    <form class="form-inline" role="form" id="learnForm">
+                        <div class="form-group">
+                            <select class="form-control" name="learnType" id="learnType">
+                                <option th:each="learnType:${learnTypeList}"
+                                        th:text="${learnType.mean}" th:value="${learnType.code}" value="1"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="learnType" id="learnLevel">
+                                <option th:each="learnLevel:${learnLevelList}"
+                                        th:text="${learnLevel.mean}" th:value="${learnLevel.code}" value="1"></option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-default" id="learnButton">开始学习</button>
+                    </form>
+                </section>
+                <section style="height: 3px;"></section>
+            </div>
+
             <section id="content"><!-- #content -->
+                <h3>文化内容</h3>
                 <article th:each="culture, cultureStat : ${cultureList}">
-                    <h2><a href="#" target="_blank" th:href="@{'/article/' + ${culture.id}}" th:text="${culture.title}">First Article Title</a></h2>
+                    <h2><a href="#" target="_blank" th:href="@{'/culture/' + ${culture.id}}" th:text="${culture.title}">First Article Title</a></h2>
                     <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>-->
                 <!---->
                 </article>
@@ -503,6 +526,24 @@
                         });
                     },1500);
                 });
+            });
+
+            //　点击开始学习按钮
+            $('#learnButton').click(function () {
+                var learnType = $('#learnType option:selected').val();
+                var learnLevel = $('#learnLevel option:selected').val();
+                var params = {
+                    learnType : learnType,
+                    learnLevel : learnLevel
+                };
+                $.ajax({
+                    url:"/article/articleList",
+                    type:'post',
+                    data: params,
+                    success:function (data) {
+                        location.href = '/customer/articleList/' + data.type + '/' + data.level;
+                    }
+                })
             });
         });
     </script>
