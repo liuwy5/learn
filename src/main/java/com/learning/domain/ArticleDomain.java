@@ -1,5 +1,7 @@
 package com.learning.domain;
 
+import java.util.List;
+
 public class ArticleDomain {
     private Integer id;
 
@@ -14,6 +16,8 @@ public class ArticleDomain {
     private String title;
 
     private String content;
+
+    private List<String> contents;
 
     private String firstQuestion;
 
@@ -169,6 +173,14 @@ public class ArticleDomain {
 
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    public void setContents(List<String> contents) {
+        this.contents = contents;
     }
 
     public String getFirstQuestion() {

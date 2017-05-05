@@ -96,6 +96,36 @@ public class QueryTable {
     }
 
     @Test
+    public void queryProgress() throws Exception {
+        String sqlString = "select * from progress";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        if (resultSet != null) {
+            while (resultSet.next()) {
+                System.out.println(resultSet.getInt("id") + " " + resultSet.getString("login_name") + ">>"
+                        + resultSet.getString("type") + " level: " + resultSet.getInt("level") + " num: " +
+                        resultSet.getInt("num"));
+            }
+
+        }
+    }
+
+    @Test
+    public void queryHistory() throws Exception {
+        String sqlString = "select * from history";
+        ResultSet resultSet = H2SqlUtil.querySql(sqlString);
+        if (resultSet != null) {
+            while (resultSet.next()) {
+                System.out.println(resultSet.getInt("id") + " " + resultSet.getString("login_name") + ">>"
+                        + resultSet.getString("type") + " level: " + resultSet.getInt("level") +
+                        " period: " + resultSet.getString("period") + " num: " + resultSet.getInt("num") +
+                        "first: " + resultSet.getString("first") + " " + resultSet.getString("second") +
+                resultSet.getString("third") + " " + resultSet.getString("fourth") + " " + resultSet.getString("fifth"));
+            }
+
+        }
+    }
+
+    @Test
     public void query() throws Exception {
         String sqlString = "select p.* from admin a, role r, role_privilege_mapping m, privilege p " +
                 "where login_name = 'admin1' and a.role_id = r.id and r.no = m.role_no and m.privilege_id = p.id order by p.id ";

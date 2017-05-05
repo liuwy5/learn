@@ -287,4 +287,26 @@ public class CreateTable {
         H2SqlUtil.updateSql(sqlString);
     }
 
+    /**
+     * 创建history表
+     */
+    @Test
+    public void createHistory() throws Exception {
+        String sqlString = "DROP TABLE if EXISTS history;\n" +
+                "CREATE TABLE history (\n" +
+                "  id int(10) PRIMARY KEY auto_increment,\n" +
+                "  login_name varchar(20),\n" +
+                "  type varchar(20),\n" +
+                "  level VARCHAR(20),\n" +
+                "  period VARCHAR(2),\n" +
+                "  num INT(3),\n" +
+                "  first varchar(2),\n" +
+                "  second varchar(2),\n" +
+                "  third varchar(2),\n" +
+                "  fourth varchar(2),\n" +
+                "  fifth varchar(2)\n" +
+                ");";
+        H2SqlUtil.updateSql(sqlString);
+    }
+
 }

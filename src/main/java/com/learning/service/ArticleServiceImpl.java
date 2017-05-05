@@ -44,8 +44,53 @@ public class ArticleServiceImpl {
         return ArticleDao.articleList(type, level);
     }
 
+    public Integer selectMaxNum(String type, String level, String period) {
+        return ArticleDao.selectMaxNum(type, level, period);
+    }
+
     public ArticleDomain detail(Integer id) {
         return ArticleDao.detail(id);
+    }
+
+    public ArticleDomain detail(String type, String level, String period, Integer num) {
+        return ArticleDao.select(type, level, period, num);
+    }
+
+    public ArticleDomain selectLast(String type, String level, String period, Integer num) {
+        if (num > 1) {
+            ArticleDomain articleDomain = ArticleDao.select(type, level, period, num - 1);
+            if (articleDomain != null) {
+                return articleDomain;
+            }
+        }
+        for (int i = Integer.parseInt(period) - 1; i >= 1; i--) {
+            for (int j = 3; j >= 1; j--) {
+                ArticleDomain articleDomain = ArticleDao.select(type, level, String.valueOf(i), j);
+                if (articleDomain != null) {
+                    return articleDomain;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public ArticleDomain selectNext(String type, String level, String period, Integer num) {
+        if (num < 3) {
+            ArticleDomain articleDomain = ArticleDao.select(type, level, period, num + 1);
+            if (articleDomain != null) {
+                return articleDomain;
+            }
+        }
+        for (int i = Integer.parseInt(period) + 1; i <= 16; i++) {
+            for (int j = 1; j <= 3; j++) {
+                ArticleDomain articleDomain = ArticleDao.select(type, level, String.valueOf(i), j);
+                if (articleDomain != null) {
+                    return articleDomain;
+                }
+            }
+        }
+        return null;
     }
 
     public Resp addArticle(ArticleVo articleVo) {

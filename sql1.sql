@@ -160,3 +160,18 @@ CREATE TABLE progress (
   period VARCHAR(2),
   num INT(3)
 );
+
+DROP TABLE if EXISTS history;
+CREATE TABLE history (
+  id int(10) PRIMARY KEY auto_increment,
+  login_name varchar(20),
+  type varchar(20),
+  level VARCHAR(20),
+  period VARCHAR(2),
+  num INT(3),
+  first varchar(2),
+  second varchar(2),
+  third varchar(2),
+  fourth varchar(2),
+  fifth varchar(2)
+);
