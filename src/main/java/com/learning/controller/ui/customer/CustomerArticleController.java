@@ -200,10 +200,6 @@ public class CustomerArticleController {
                 canSubmit = 1;
             }
         }
-        System.out.println("==========can submit: " + canSubmit);
-        System.out.println("==========hasLast: " + (lastArticle == null ? 0 : 1));
-        System.out.println("==========hasNext: " + (nextArticle == null ? 0 : 1));
-//        System.out.println("==========can submit: " + canSubmit);
         model.addAttribute("canSubmit", canSubmit);
     }
 }

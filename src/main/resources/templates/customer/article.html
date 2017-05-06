@@ -46,6 +46,9 @@
                         <span th:if="${answer} == 1 and ${history.first} == ${article.firstAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.first} ne ${article.firstAnswer}" class="glyphicon glyphicon-remove"></span>
                     </p>
+                    <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
+                        <span th:if="${answer} == 1" th:text="'解释：' + ${article.firstExplain}">自己答案：c </span>
+                    </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="first" value="a" id="first1"/> &nbsp;
                         <span th:text="${article.firstA}"></span>
@@ -69,6 +72,9 @@
                         <span th:if="${answer} == 1 and ${history.second} == ${article.secondAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.second} ne ${article.secondAnswer}" class="glyphicon glyphicon-remove"></span>
                     </p>
+                    <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
+                        <span th:if="${answer} == 1" th:text="'解释：' + ${article.secondExplain}">自己答案：c </span>
+                    </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="second" value="a" id="second1"/> &nbsp; <span th:text="${article.secondA}"></span>
                     </p>
@@ -90,6 +96,9 @@
                         <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.thirdAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.third} == ${article.thirdAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.third} ne ${article.thirdAnswer}" class="glyphicon glyphicon-remove"></span>
+                    </p>
+                    <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
+                        <span th:if="${answer} == 1" th:text="'解释：' + ${article.thirdExplain}">自己答案：c </span>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="third" value="a" id="third1"/> &nbsp; <span th:text="${article.thirdA}"></span>
@@ -113,6 +122,9 @@
                         <span th:if="${answer} == 1 and ${history.fourth} == ${article.fourthAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.fourth} ne ${article.fourthAnswer}" class="glyphicon glyphicon-remove"></span>
                     </p>
+                    <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
+                        <span th:if="${answer} == 1" th:text="'解释：' + ${article.fourthExplain}">自己答案：c </span>
+                    </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="fourth" value="a" id="fourth1"/> &nbsp; <span th:text="${article.fourthA}"></span>
                     </p>
@@ -133,6 +145,9 @@
                         <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.fifthAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.fifth} == ${article.fifthAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.fifth} ne ${article.fifthAnswer}" class="glyphicon glyphicon-remove"></span>
+                    </p>
+                    <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
+                        <span th:if="${answer} == 1" th:text="'解释：' + ${article.fifthExplain}">自己答案：c </span>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="fifth" value="a" id="fifth1"/> &nbsp; <span th:text="${article.fifthA}"></span>

@@ -23,101 +23,71 @@ public class ArticleDomain {
 
     private String firstA;
 
-    private String firstAExplain;
-
     private String firstB;
-
-    private String firstBExplain;
 
     private String firstC;
 
-    private String firstCExplain;
-
     private String firstD;
 
-    private String firstDExplain;
-
     private String firstAnswer;
+
+    private String firstExplain;
 
     private String secondQuestion;
 
     private String secondA;
 
-    private String secondAExplain;
-
     private String secondB;
-
-    private String secondBExplain;
 
     private String secondC;
 
-    private String secondCExplain;
-
     private String secondD;
 
-    private String secondDExplain;
-
     private String secondAnswer;
+
+    private String secondExplain;
 
     private String thirdQuestion;
 
     private String thirdA;
 
-    private String thirdAExplain;
-
     private String thirdB;
-
-    private String thirdBExplain;
 
     private String thirdC;
 
-    private String thirdCExplain;
-
     private String thirdD;
 
-    private String thirdDExplain;
-
     private String thirdAnswer;
+
+    private String thirdExplain;
 
     private String fourthQuestion;
 
     private String fourthA;
 
-    private String fourthAExplain;
-
     private String fourthB;
-
-    private String fourthBExplain;
 
     private String fourthC;
 
-    private String fourthCExplain;
-
     private String fourthD;
 
-    private String fourthDExplain;
-
     private String fourthAnswer;
+
+    private String fourthExplain;
 
     private String fifthQuestion;
 
     private String fifthA;
 
-    private String fifthAExplain;
-
     private String fifthB;
-
-    private String fifthBExplain;
 
     private String fifthC;
 
-    private String fifthCExplain;
-
     private String fifthD;
 
-    private String fifthDExplain;
-
     private String fifthAnswer;
+
+    private String fifthExplain;
 
     public Integer getId() {
         return id;
@@ -132,7 +102,7 @@ public class ArticleDomain {
     }
 
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type;
     }
 
     public String getLevel() {
@@ -140,7 +110,7 @@ public class ArticleDomain {
     }
 
     public void setLevel(String level) {
-        this.level = level == null ? null : level.trim();
+        this.level = level;
     }
 
     public String getPeriod() {
@@ -148,7 +118,7 @@ public class ArticleDomain {
     }
 
     public void setPeriod(String period) {
-        this.period = period == null ? null : period.trim();
+        this.period = period;
     }
 
     public Integer getNum() {
@@ -164,7 +134,7 @@ public class ArticleDomain {
     }
 
     public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
+        this.title = title;
     }
 
     public String getContent() {
@@ -172,7 +142,7 @@ public class ArticleDomain {
     }
 
     public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+        this.content = content;
     }
 
     public List<String> getContents() {
@@ -188,7 +158,7 @@ public class ArticleDomain {
     }
 
     public void setFirstQuestion(String firstQuestion) {
-        this.firstQuestion = firstQuestion == null ? null : firstQuestion.trim();
+        this.firstQuestion = firstQuestion;
     }
 
     public String getFirstA() {
@@ -196,15 +166,7 @@ public class ArticleDomain {
     }
 
     public void setFirstA(String firstA) {
-        this.firstA = firstA == null ? null : firstA.trim();
-    }
-
-    public String getFirstAExplain() {
-        return firstAExplain;
-    }
-
-    public void setFirstAExplain(String firstAExplain) {
-        this.firstAExplain = firstAExplain == null ? null : firstAExplain.trim();
+        this.firstA = firstA;
     }
 
     public String getFirstB() {
@@ -212,15 +174,7 @@ public class ArticleDomain {
     }
 
     public void setFirstB(String firstB) {
-        this.firstB = firstB == null ? null : firstB.trim();
-    }
-
-    public String getFirstBExplain() {
-        return firstBExplain;
-    }
-
-    public void setFirstBExplain(String firstBExplain) {
-        this.firstBExplain = firstBExplain == null ? null : firstBExplain.trim();
+        this.firstB = firstB;
     }
 
     public String getFirstC() {
@@ -228,15 +182,7 @@ public class ArticleDomain {
     }
 
     public void setFirstC(String firstC) {
-        this.firstC = firstC == null ? null : firstC.trim();
-    }
-
-    public String getFirstCExplain() {
-        return firstCExplain;
-    }
-
-    public void setFirstCExplain(String firstCExplain) {
-        this.firstCExplain = firstCExplain == null ? null : firstCExplain.trim();
+        this.firstC = firstC;
     }
 
     public String getFirstD() {
@@ -244,15 +190,7 @@ public class ArticleDomain {
     }
 
     public void setFirstD(String firstD) {
-        this.firstD = firstD == null ? null : firstD.trim();
-    }
-
-    public String getFirstDExplain() {
-        return firstDExplain;
-    }
-
-    public void setFirstDExplain(String firstDExplain) {
-        this.firstDExplain = firstDExplain == null ? null : firstDExplain.trim();
+        this.firstD = firstD;
     }
 
     public String getFirstAnswer() {
@@ -260,7 +198,15 @@ public class ArticleDomain {
     }
 
     public void setFirstAnswer(String firstAnswer) {
-        this.firstAnswer = firstAnswer == null ? null : firstAnswer.trim();
+        this.firstAnswer = firstAnswer;
+    }
+
+    public String getFirstExplain() {
+        return firstExplain;
+    }
+
+    public void setFirstExplain(String firstExplain) {
+        this.firstExplain = firstExplain;
     }
 
     public String getSecondQuestion() {
@@ -268,7 +214,7 @@ public class ArticleDomain {
     }
 
     public void setSecondQuestion(String secondQuestion) {
-        this.secondQuestion = secondQuestion == null ? null : secondQuestion.trim();
+        this.secondQuestion = secondQuestion;
     }
 
     public String getSecondA() {
@@ -276,15 +222,7 @@ public class ArticleDomain {
     }
 
     public void setSecondA(String secondA) {
-        this.secondA = secondA == null ? null : secondA.trim();
-    }
-
-    public String getSecondAExplain() {
-        return secondAExplain;
-    }
-
-    public void setSecondAExplain(String secondAExplain) {
-        this.secondAExplain = secondAExplain == null ? null : secondAExplain.trim();
+        this.secondA = secondA;
     }
 
     public String getSecondB() {
@@ -292,15 +230,7 @@ public class ArticleDomain {
     }
 
     public void setSecondB(String secondB) {
-        this.secondB = secondB == null ? null : secondB.trim();
-    }
-
-    public String getSecondBExplain() {
-        return secondBExplain;
-    }
-
-    public void setSecondBExplain(String secondBExplain) {
-        this.secondBExplain = secondBExplain == null ? null : secondBExplain.trim();
+        this.secondB = secondB;
     }
 
     public String getSecondC() {
@@ -308,15 +238,7 @@ public class ArticleDomain {
     }
 
     public void setSecondC(String secondC) {
-        this.secondC = secondC == null ? null : secondC.trim();
-    }
-
-    public String getSecondCExplain() {
-        return secondCExplain;
-    }
-
-    public void setSecondCExplain(String secondCExplain) {
-        this.secondCExplain = secondCExplain == null ? null : secondCExplain.trim();
+        this.secondC = secondC;
     }
 
     public String getSecondD() {
@@ -324,15 +246,7 @@ public class ArticleDomain {
     }
 
     public void setSecondD(String secondD) {
-        this.secondD = secondD == null ? null : secondD.trim();
-    }
-
-    public String getSecondDExplain() {
-        return secondDExplain;
-    }
-
-    public void setSecondDExplain(String secondDExplain) {
-        this.secondDExplain = secondDExplain == null ? null : secondDExplain.trim();
+        this.secondD = secondD;
     }
 
     public String getSecondAnswer() {
@@ -340,7 +254,15 @@ public class ArticleDomain {
     }
 
     public void setSecondAnswer(String secondAnswer) {
-        this.secondAnswer = secondAnswer == null ? null : secondAnswer.trim();
+        this.secondAnswer = secondAnswer;
+    }
+
+    public String getSecondExplain() {
+        return secondExplain;
+    }
+
+    public void setSecondExplain(String secondExplain) {
+        this.secondExplain = secondExplain;
     }
 
     public String getThirdQuestion() {
@@ -348,7 +270,7 @@ public class ArticleDomain {
     }
 
     public void setThirdQuestion(String thirdQuestion) {
-        this.thirdQuestion = thirdQuestion == null ? null : thirdQuestion.trim();
+        this.thirdQuestion = thirdQuestion;
     }
 
     public String getThirdA() {
@@ -356,15 +278,7 @@ public class ArticleDomain {
     }
 
     public void setThirdA(String thirdA) {
-        this.thirdA = thirdA == null ? null : thirdA.trim();
-    }
-
-    public String getThirdAExplain() {
-        return thirdAExplain;
-    }
-
-    public void setThirdAExplain(String thirdAExplain) {
-        this.thirdAExplain = thirdAExplain == null ? null : thirdAExplain.trim();
+        this.thirdA = thirdA;
     }
 
     public String getThirdB() {
@@ -372,15 +286,7 @@ public class ArticleDomain {
     }
 
     public void setThirdB(String thirdB) {
-        this.thirdB = thirdB == null ? null : thirdB.trim();
-    }
-
-    public String getThirdBExplain() {
-        return thirdBExplain;
-    }
-
-    public void setThirdBExplain(String thirdBExplain) {
-        this.thirdBExplain = thirdBExplain == null ? null : thirdBExplain.trim();
+        this.thirdB = thirdB;
     }
 
     public String getThirdC() {
@@ -388,15 +294,7 @@ public class ArticleDomain {
     }
 
     public void setThirdC(String thirdC) {
-        this.thirdC = thirdC == null ? null : thirdC.trim();
-    }
-
-    public String getThirdCExplain() {
-        return thirdCExplain;
-    }
-
-    public void setThirdCExplain(String thirdCExplain) {
-        this.thirdCExplain = thirdCExplain == null ? null : thirdCExplain.trim();
+        this.thirdC = thirdC;
     }
 
     public String getThirdD() {
@@ -404,15 +302,7 @@ public class ArticleDomain {
     }
 
     public void setThirdD(String thirdD) {
-        this.thirdD = thirdD == null ? null : thirdD.trim();
-    }
-
-    public String getThirdDExplain() {
-        return thirdDExplain;
-    }
-
-    public void setThirdDExplain(String thirdDExplain) {
-        this.thirdDExplain = thirdDExplain == null ? null : thirdDExplain.trim();
+        this.thirdD = thirdD;
     }
 
     public String getThirdAnswer() {
@@ -420,7 +310,15 @@ public class ArticleDomain {
     }
 
     public void setThirdAnswer(String thirdAnswer) {
-        this.thirdAnswer = thirdAnswer == null ? null : thirdAnswer.trim();
+        this.thirdAnswer = thirdAnswer;
+    }
+
+    public String getThirdExplain() {
+        return thirdExplain;
+    }
+
+    public void setThirdExplain(String thirdExplain) {
+        this.thirdExplain = thirdExplain;
     }
 
     public String getFourthQuestion() {
@@ -428,7 +326,7 @@ public class ArticleDomain {
     }
 
     public void setFourthQuestion(String fourthQuestion) {
-        this.fourthQuestion = fourthQuestion == null ? null : fourthQuestion.trim();
+        this.fourthQuestion = fourthQuestion;
     }
 
     public String getFourthA() {
@@ -436,15 +334,7 @@ public class ArticleDomain {
     }
 
     public void setFourthA(String fourthA) {
-        this.fourthA = fourthA == null ? null : fourthA.trim();
-    }
-
-    public String getFourthAExplain() {
-        return fourthAExplain;
-    }
-
-    public void setFourthAExplain(String fourthAExplain) {
-        this.fourthAExplain = fourthAExplain == null ? null : fourthAExplain.trim();
+        this.fourthA = fourthA;
     }
 
     public String getFourthB() {
@@ -452,15 +342,7 @@ public class ArticleDomain {
     }
 
     public void setFourthB(String fourthB) {
-        this.fourthB = fourthB == null ? null : fourthB.trim();
-    }
-
-    public String getFourthBExplain() {
-        return fourthBExplain;
-    }
-
-    public void setFourthBExplain(String fourthBExplain) {
-        this.fourthBExplain = fourthBExplain == null ? null : fourthBExplain.trim();
+        this.fourthB = fourthB;
     }
 
     public String getFourthC() {
@@ -468,15 +350,7 @@ public class ArticleDomain {
     }
 
     public void setFourthC(String fourthC) {
-        this.fourthC = fourthC == null ? null : fourthC.trim();
-    }
-
-    public String getFourthCExplain() {
-        return fourthCExplain;
-    }
-
-    public void setFourthCExplain(String fourthCExplain) {
-        this.fourthCExplain = fourthCExplain == null ? null : fourthCExplain.trim();
+        this.fourthC = fourthC;
     }
 
     public String getFourthD() {
@@ -484,15 +358,7 @@ public class ArticleDomain {
     }
 
     public void setFourthD(String fourthD) {
-        this.fourthD = fourthD == null ? null : fourthD.trim();
-    }
-
-    public String getFourthDExplain() {
-        return fourthDExplain;
-    }
-
-    public void setFourthDExplain(String fourthDExplain) {
-        this.fourthDExplain = fourthDExplain == null ? null : fourthDExplain.trim();
+        this.fourthD = fourthD;
     }
 
     public String getFourthAnswer() {
@@ -500,7 +366,15 @@ public class ArticleDomain {
     }
 
     public void setFourthAnswer(String fourthAnswer) {
-        this.fourthAnswer = fourthAnswer == null ? null : fourthAnswer.trim();
+        this.fourthAnswer = fourthAnswer;
+    }
+
+    public String getFourthExplain() {
+        return fourthExplain;
+    }
+
+    public void setFourthExplain(String fourthExplain) {
+        this.fourthExplain = fourthExplain;
     }
 
     public String getFifthQuestion() {
@@ -508,7 +382,7 @@ public class ArticleDomain {
     }
 
     public void setFifthQuestion(String fifthQuestion) {
-        this.fifthQuestion = fifthQuestion == null ? null : fifthQuestion.trim();
+        this.fifthQuestion = fifthQuestion;
     }
 
     public String getFifthA() {
@@ -516,15 +390,7 @@ public class ArticleDomain {
     }
 
     public void setFifthA(String fifthA) {
-        this.fifthA = fifthA == null ? null : fifthA.trim();
-    }
-
-    public String getFifthAExplain() {
-        return fifthAExplain;
-    }
-
-    public void setFifthAExplain(String fifthAExplain) {
-        this.fifthAExplain = fifthAExplain == null ? null : fifthAExplain.trim();
+        this.fifthA = fifthA;
     }
 
     public String getFifthB() {
@@ -532,15 +398,7 @@ public class ArticleDomain {
     }
 
     public void setFifthB(String fifthB) {
-        this.fifthB = fifthB == null ? null : fifthB.trim();
-    }
-
-    public String getFifthBExplain() {
-        return fifthBExplain;
-    }
-
-    public void setFifthBExplain(String fifthBExplain) {
-        this.fifthBExplain = fifthBExplain == null ? null : fifthBExplain.trim();
+        this.fifthB = fifthB;
     }
 
     public String getFifthC() {
@@ -548,15 +406,7 @@ public class ArticleDomain {
     }
 
     public void setFifthC(String fifthC) {
-        this.fifthC = fifthC == null ? null : fifthC.trim();
-    }
-
-    public String getFifthCExplain() {
-        return fifthCExplain;
-    }
-
-    public void setFifthCExplain(String fifthCExplain) {
-        this.fifthCExplain = fifthCExplain == null ? null : fifthCExplain.trim();
+        this.fifthC = fifthC;
     }
 
     public String getFifthD() {
@@ -564,15 +414,7 @@ public class ArticleDomain {
     }
 
     public void setFifthD(String fifthD) {
-        this.fifthD = fifthD == null ? null : fifthD.trim();
-    }
-
-    public String getFifthDExplain() {
-        return fifthDExplain;
-    }
-
-    public void setFifthDExplain(String fifthDExplain) {
-        this.fifthDExplain = fifthDExplain == null ? null : fifthDExplain.trim();
+        this.fifthD = fifthD;
     }
 
     public String getFifthAnswer() {
@@ -580,71 +422,14 @@ public class ArticleDomain {
     }
 
     public void setFifthAnswer(String fifthAnswer) {
-        this.fifthAnswer = fifthAnswer == null ? null : fifthAnswer.trim();
+        this.fifthAnswer = fifthAnswer;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("ArticleDomain{");
-        sb.append("id=").append(id);
-        sb.append(", type='").append(type).append('\'');
-        sb.append(", level='").append(level).append('\'');
-        sb.append(", period='").append(period).append('\'');
-        sb.append(", num=").append(num);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", content='").append(content).append('\'');
-        sb.append(", contents=").append(contents);
-        sb.append(", firstQuestion='").append(firstQuestion).append('\'');
-        sb.append(", firstA='").append(firstA).append('\'');
-        sb.append(", firstAExplain='").append(firstAExplain).append('\'');
-        sb.append(", firstB='").append(firstB).append('\'');
-        sb.append(", firstBExplain='").append(firstBExplain).append('\'');
-        sb.append(", firstC='").append(firstC).append('\'');
-        sb.append(", firstCExplain='").append(firstCExplain).append('\'');
-        sb.append(", firstD='").append(firstD).append('\'');
-        sb.append(", firstDExplain='").append(firstDExplain).append('\'');
-        sb.append(", firstAnswer='").append(firstAnswer).append('\'');
-        sb.append(", secondQuestion='").append(secondQuestion).append('\'');
-        sb.append(", secondA='").append(secondA).append('\'');
-        sb.append(", secondAExplain='").append(secondAExplain).append('\'');
-        sb.append(", secondB='").append(secondB).append('\'');
-        sb.append(", secondBExplain='").append(secondBExplain).append('\'');
-        sb.append(", secondC='").append(secondC).append('\'');
-        sb.append(", secondCExplain='").append(secondCExplain).append('\'');
-        sb.append(", secondD='").append(secondD).append('\'');
-        sb.append(", secondDExplain='").append(secondDExplain).append('\'');
-        sb.append(", secondAnswer='").append(secondAnswer).append('\'');
-        sb.append(", thirdQuestion='").append(thirdQuestion).append('\'');
-        sb.append(", thirdA='").append(thirdA).append('\'');
-        sb.append(", thirdAExplain='").append(thirdAExplain).append('\'');
-        sb.append(", thirdB='").append(thirdB).append('\'');
-        sb.append(", thirdBExplain='").append(thirdBExplain).append('\'');
-        sb.append(", thirdC='").append(thirdC).append('\'');
-        sb.append(", thirdCExplain='").append(thirdCExplain).append('\'');
-        sb.append(", thirdD='").append(thirdD).append('\'');
-        sb.append(", thirdDExplain='").append(thirdDExplain).append('\'');
-        sb.append(", thirdAnswer='").append(thirdAnswer).append('\'');
-        sb.append(", fourthQuestion='").append(fourthQuestion).append('\'');
-        sb.append(", fourthA='").append(fourthA).append('\'');
-        sb.append(", fourthAExplain='").append(fourthAExplain).append('\'');
-        sb.append(", fourthB='").append(fourthB).append('\'');
-        sb.append(", fourthBExplain='").append(fourthBExplain).append('\'');
-        sb.append(", fourthC='").append(fourthC).append('\'');
-        sb.append(", fourthCExplain='").append(fourthCExplain).append('\'');
-        sb.append(", fourthD='").append(fourthD).append('\'');
-        sb.append(", fourthDExplain='").append(fourthDExplain).append('\'');
-        sb.append(", fourthAnswer='").append(fourthAnswer).append('\'');
-        sb.append(", fifthQuestion='").append(fifthQuestion).append('\'');
-        sb.append(", fifthA='").append(fifthA).append('\'');
-        sb.append(", fifthAExplain='").append(fifthAExplain).append('\'');
-        sb.append(", fifthB='").append(fifthB).append('\'');
-        sb.append(", fifthBExplain='").append(fifthBExplain).append('\'');
-        sb.append(", fifthC='").append(fifthC).append('\'');
-        sb.append(", fifthCExplain='").append(fifthCExplain).append('\'');
-        sb.append(", fifthD='").append(fifthD).append('\'');
-        sb.append(", fifthDExplain='").append(fifthDExplain).append('\'');
-        sb.append(", fifthAnswer='").append(fifthAnswer).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public String getFifthExplain() {
+        return fifthExplain;
+    }
+
+    public void setFifthExplain(String fifthExplain) {
+        this.fifthExplain = fifthExplain;
     }
 }

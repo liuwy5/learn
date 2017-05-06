@@ -106,53 +106,53 @@ public class ArticleDao {
 
     public static void add(ArticleVo articleVo) {
         String formatter = "insert into article (type, level, period, num, title, content, " +
-                "first_question, first_a, first_a_explain, first_b, first_b_explain, first_c, first_c_explain, first_d, first_d_explain, first_answer, " +
-                "second_question, second_a, second_a_explain, second_b, second_b_explain, second_c, second_c_explain, second_d, second_d_explain, second_answer, " +
-                "third_question, third_a, third_a_explain, third_b, third_b_explain, third_c, third_c_explain, third_d, third_d_explain, third_answer, " +
-                "fourth_question, fourth_a, fourth_a_explain, fourth_b, fourth_b_explain, fourth_c, fourth_c_explain, fourth_d, fourth_d_explain, fourth_answer, " +
-                "fifth_question, fifth_a, fifth_a_explain, fifth_b, fifth_b_explain, fifth_c, fifth_c_explain, fifth_d, fifth_d_explain, fifth_answer) " +
+                "first_question, first_a, first_b, first_c, first_d, first_answer, first_explain, " +
+                "second_question, second_a, second_b, second_c, second_d, second_answer, second_explain, " +
+                "third_question, third_a, third_b, third_c, third_d, third_answer, third_explain, " +
+                "fourth_question, fourth_a, fourth_b, fourth_c, fourth_d, fourth_answer, fourth_explain, " +
+                "fifth_question, fifth_a, fifth_b, fifth_c, fifth_d, fifth_answer, fifth_explain) " +
                 "values ('%s', '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', " +
                 "'%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', " +
-                "'%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+                "'%s', '%s', '%s', '%s', '%s')";
         String sqlString = String.format(formatter, articleVo.getType(), articleVo.getLevel(), articleVo.getPeriod(), articleVo.getNum(),
-                articleVo.getTitle(), articleVo.getContent(), articleVo.getFirstQuestion(), articleVo.getFirstA(), articleVo.getFirstAExplain(),
-                articleVo.getFirstB(), articleVo.getFirstBExplain(), articleVo.getFirstC(), articleVo.getFirstCExplain(), articleVo.getFirstD(),
-                articleVo.getFirstDExplain(), articleVo.getFirstAnswer(), articleVo.getSecondQuestion(), articleVo.getSecondA(), articleVo.getSecondAExplain(),
-                articleVo.getSecondB(), articleVo.getSecondBExplain(), articleVo.getSecondC(), articleVo.getSecondCExplain(), articleVo.getSecondD(),
-                articleVo.getSecondDExplain(), articleVo.getSecondAnswer(), articleVo.getThirdQuestion(), articleVo.getThirdA(), articleVo.getThirdAExplain(),
-                articleVo.getThirdB(), articleVo.getThirdBExplain(), articleVo.getThirdC(), articleVo.getThirdCExplain(), articleVo.getThirdD(),
-                articleVo.getThirdDExplain(), articleVo.getThirdAnswer(), articleVo.getFourthQuestion(), articleVo.getFourthA(), articleVo.getFourthAExplain(),
-                articleVo.getFourthB(), articleVo.getFourthBExplain(), articleVo.getFourthC(), articleVo.getFourthCExplain(), articleVo.getFourthD(),
-                articleVo.getFourthDExplain(), articleVo.getFourthAnswer(), articleVo.getFifthQuestion(), articleVo.getFifthA(), articleVo.getFifthAExplain(),
-                articleVo.getFifthB(), articleVo.getFifthBExplain(), articleVo.getFifthC(), articleVo.getFifthCExplain(), articleVo.getFifthD(),
-                articleVo.getFifthDExplain(), articleVo.getFifthAnswer());
+                articleVo.getTitle(), articleVo.getContent(), articleVo.getFirstQuestion(), articleVo.getFirstA(),
+                articleVo.getFirstB(), articleVo.getFirstC(), articleVo.getFirstD(),
+                articleVo.getFirstAnswer(), articleVo.getFirstExplain(), articleVo.getSecondQuestion(), articleVo.getSecondA(),
+                articleVo.getSecondB(), articleVo.getSecondC(), articleVo.getSecondD(),
+                articleVo.getSecondAnswer(), articleVo.getSecondExplain(), articleVo.getThirdQuestion(), articleVo.getThirdA(),
+                articleVo.getThirdB(), articleVo.getThirdC(), articleVo.getThirdD(),
+                articleVo.getThirdAnswer(), articleVo.getThirdExplain(), articleVo.getFourthQuestion(), articleVo.getFourthA(),
+                articleVo.getFourthB(), articleVo.getFourthC(), articleVo.getFourthD(),
+                articleVo.getFourthAnswer(), articleVo.getFourthExplain(), articleVo.getFifthQuestion(), articleVo.getFifthA(),
+                articleVo.getFifthB(), articleVo.getFifthC(), articleVo.getFifthD(),
+                articleVo.getFifthAnswer(), articleVo.getFifthExplain());
         logger.info("execute sql ArticleDao.add: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }
 
     public static void updateById(ArticleVo articleVo) {
         String formatter = "update article set title = '%s', content = '%s', " +
-                "first_question = '%s', first_a = '%s', first_a_explain = '%s', first_b = '%s', first_b_explain = '%s', " +
-                "first_c = '%s', first_c_explain = '%s', first_d = '%s', first_d_explain = '%s', first_answer = '%s'," +
-                "second_question = '%s', second_a = '%s', second_a_explain = '%s', second_b = '%s', second_b_explain = '%s', " +
-                "second_c = '%s', second_c_explain = '%s', second_d = '%s', second_d_explain = '%s', second_answer = '%s', " +
-                "third_question = '%s', third_a = '%s', third_a_explain = '%s', third_b = '%s', third_b_explain = '%s', " +
-                "third_c = '%s', third_c_explain = '%s', third_d = '%s', third_d_explain = '%s', third_answer = '%s', " +
-                "fourth_question = '%s', fourth_a = '%s', fourth_a_explain = '%s', fourth_b = '%s', fourth_b_explain = '%s', " +
-                "fourth_c = '%s', fourth_c_explain = '%s', fourth_d = '%s', fourth_d_explain = '%s', fourth_answer = '%s', " +
-                "fifth_question = '%s', fifth_a = '%s', fifth_a_explain = '%s', fifth_b = '%s', fifth_b_explain = '%s', " +
-                "fifth_c = '%s', fifth_c_explain = '%s', fifth_d = '%s', fifth_d_explain = '%s', fifth_answer = '%s' where id = %d";
-        String sqlString = String.format(formatter, articleVo.getTitle(), articleVo.getContent(), articleVo.getFirstQuestion(), articleVo.getFirstA(), articleVo.getFirstAExplain(),
-                articleVo.getFirstB(), articleVo.getFirstBExplain(), articleVo.getFirstC(), articleVo.getFirstCExplain(), articleVo.getFirstD(),
-                articleVo.getFirstDExplain(), articleVo.getFirstAnswer(), articleVo.getSecondQuestion(), articleVo.getSecondA(), articleVo.getSecondAExplain(),
-                articleVo.getSecondB(), articleVo.getSecondBExplain(), articleVo.getSecondC(), articleVo.getSecondCExplain(), articleVo.getSecondD(),
-                articleVo.getSecondDExplain(), articleVo.getSecondAnswer(), articleVo.getThirdQuestion(), articleVo.getThirdA(), articleVo.getThirdAExplain(),
-                articleVo.getThirdB(), articleVo.getThirdBExplain(), articleVo.getThirdC(), articleVo.getThirdCExplain(), articleVo.getThirdD(),
-                articleVo.getThirdDExplain(), articleVo.getThirdAnswer(), articleVo.getFourthQuestion(), articleVo.getFourthA(), articleVo.getFourthAExplain(),
-                articleVo.getFourthB(), articleVo.getFourthBExplain(), articleVo.getFourthC(), articleVo.getFourthCExplain(), articleVo.getFourthD(),
-                articleVo.getFourthDExplain(), articleVo.getFourthAnswer(), articleVo.getFifthQuestion(), articleVo.getFifthA(), articleVo.getFifthAExplain(),
-                articleVo.getFifthB(), articleVo.getFifthBExplain(), articleVo.getFifthC(), articleVo.getFifthCExplain(), articleVo.getFifthD(),
-                articleVo.getFifthDExplain(), articleVo.getFifthAnswer(), articleVo.getId());
+                "first_question = '%s', first_a = '%s', first_b = '%s',  " +
+                "first_c = '%s', first_d = '%s', first_answer = '%s', first_explain = '%s', " +
+                "second_question = '%s', second_a = '%s', second_b = '%s', " +
+                "second_c = '%s', second_d = '%s', second_answer = '%s', second_explain = '%s', " +
+                "third_question = '%s', third_a = '%s', third_b = '%s', " +
+                "third_c = '%s', third_d = '%s', third_answer = '%s', third_explain = '%s', " +
+                "fourth_question = '%s', fourth_a = '%s', fourth_b = '%s', " +
+                "fourth_c = '%s', fourth_d = '%s', fourth_answer = '%s', fourth_explain = '%s', " +
+                "fifth_question = '%s', fifth_a = '%s', fifth_b = '%s', " +
+                "fifth_c = '%s', fifth_d = '%s', fifth_answer = '%s', fifth_explain = '%s' where id = %d";
+        String sqlString = String.format(formatter, articleVo.getTitle(), articleVo.getContent(), articleVo.getFirstQuestion(), articleVo.getFirstA(),
+                articleVo.getFirstB(),articleVo.getFirstC(), articleVo.getFirstD(),
+                articleVo.getFirstAnswer(), articleVo.getFirstExplain(), articleVo.getSecondQuestion(), articleVo.getSecondA(),
+                articleVo.getSecondB(), articleVo.getSecondC(), articleVo.getSecondD(),
+                articleVo.getSecondAnswer(), articleVo.getSecondExplain(),articleVo.getThirdQuestion(), articleVo.getThirdA(),
+                articleVo.getThirdB(), articleVo.getThirdC(), articleVo.getThirdD(),
+                articleVo.getThirdAnswer(), articleVo.getThirdExplain(),articleVo.getFourthQuestion(), articleVo.getFourthA(),
+                articleVo.getFourthB(), articleVo.getFourthC(), articleVo.getFourthD(),
+                articleVo.getFourthAnswer(), articleVo.getFourthExplain(), articleVo.getFifthQuestion(), articleVo.getFifthA(),
+                articleVo.getFifthB(), articleVo.getFifthC(), articleVo.getFifthD(),
+                articleVo.getFifthAnswer(),  articleVo.getFifthExplain(), articleVo.getId());
         logger.info("execute sql ArticleDao.updateById: " + sqlString);
         H2SqlUtil.updateSql(sqlString);
     }
@@ -185,54 +185,39 @@ public class ArticleDao {
                     articleDomain.setContent(resultSet.getString("content"));
                     articleDomain.setFirstQuestion(resultSet.getString("first_question"));
                     articleDomain.setFirstA(resultSet.getString("first_a"));
-                    articleDomain.setFirstAExplain(resultSet.getString("first_a_explain"));
                     articleDomain.setFirstB(resultSet.getString("first_b"));
-                    articleDomain.setFirstBExplain(resultSet.getString("first_b_explain"));
                     articleDomain.setFirstC(resultSet.getString("first_c"));
-                    articleDomain.setFirstCExplain(resultSet.getString("first_c_explain"));
                     articleDomain.setFirstD(resultSet.getString("first_d"));
-                    articleDomain.setFirstDExplain(resultSet.getString("first_d_explain"));
                     articleDomain.setFirstAnswer(resultSet.getString("first_answer"));
+                    articleDomain.setFirstExplain(resultSet.getString("first_explain"));
                     articleDomain.setSecondQuestion(resultSet.getString("second_question"));
                     articleDomain.setSecondA(resultSet.getString("second_a"));
-                    articleDomain.setSecondAExplain(resultSet.getString("second_a_explain"));
                     articleDomain.setSecondB(resultSet.getString("second_b"));
-                    articleDomain.setSecondBExplain(resultSet.getString("second_b_explain"));
                     articleDomain.setSecondC(resultSet.getString("second_c"));
-                    articleDomain.setSecondCExplain(resultSet.getString("second_c_explain"));
                     articleDomain.setSecondD(resultSet.getString("second_d"));
-                    articleDomain.setSecondDExplain(resultSet.getString("second_d_explain"));
                     articleDomain.setSecondAnswer(resultSet.getString("second_answer"));
+                    articleDomain.setSecondExplain(resultSet.getString("second_explain"));
                     articleDomain.setThirdQuestion(resultSet.getString("third_question"));
                     articleDomain.setThirdA(resultSet.getString("third_a"));
-                    articleDomain.setThirdAExplain(resultSet.getString("third_a_explain"));
                     articleDomain.setThirdB(resultSet.getString("third_b"));
-                    articleDomain.setThirdBExplain(resultSet.getString("third_b_explain"));
                     articleDomain.setThirdC(resultSet.getString("third_c"));
-                    articleDomain.setThirdCExplain(resultSet.getString("third_c_explain"));
                     articleDomain.setThirdD(resultSet.getString("third_d"));
-                    articleDomain.setThirdDExplain(resultSet.getString("third_d_explain"));
                     articleDomain.setThirdAnswer(resultSet.getString("third_answer"));
+                    articleDomain.setThirdExplain(resultSet.getString("third_explain"));
                     articleDomain.setFourthQuestion(resultSet.getString("fourth_question"));
                     articleDomain.setFourthA(resultSet.getString("fourth_a"));
-                    articleDomain.setFourthAExplain(resultSet.getString("fourth_a_explain"));
                     articleDomain.setFourthB(resultSet.getString("fourth_b"));
-                    articleDomain.setFourthBExplain(resultSet.getString("fourth_b_explain"));
                     articleDomain.setFourthC(resultSet.getString("fourth_c"));
-                    articleDomain.setFourthCExplain(resultSet.getString("fourth_c_explain"));
                     articleDomain.setFourthD(resultSet.getString("fourth_d"));
-                    articleDomain.setFourthDExplain(resultSet.getString("fourth_d_explain"));
                     articleDomain.setFourthAnswer(resultSet.getString("fourth_answer"));
+                    articleDomain.setFourthExplain(resultSet.getString("fourth_explain"));
                     articleDomain.setFifthQuestion(resultSet.getString("fifth_question"));
                     articleDomain.setFifthA(resultSet.getString("fifth_a"));
-                    articleDomain.setFifthAExplain(resultSet.getString("fifth_a_explain"));
                     articleDomain.setFifthB(resultSet.getString("fifth_b"));
-                    articleDomain.setFifthBExplain(resultSet.getString("fifth_b_explain"));
                     articleDomain.setFifthC(resultSet.getString("fifth_c"));
-                    articleDomain.setFifthCExplain(resultSet.getString("fifth_c_explain"));
                     articleDomain.setFifthD(resultSet.getString("fifth_d"));
-                    articleDomain.setFifthDExplain(resultSet.getString("fifth_d_explain"));
                     articleDomain.setFifthAnswer(resultSet.getString("fifth_answer"));
+                    articleDomain.setFifthExplain(resultSet.getString("fifth_explain"));
                     articleDomainList.add(articleDomain);
                 }
             } catch (SQLException e) {
@@ -258,54 +243,39 @@ public class ArticleDao {
                     articleDomain.setContent(resultSet.getString("content"));
                     articleDomain.setFirstQuestion(resultSet.getString("first_question"));
                     articleDomain.setFirstA(resultSet.getString("first_a"));
-                    articleDomain.setFirstAExplain(resultSet.getString("first_a_explain"));
                     articleDomain.setFirstB(resultSet.getString("first_b"));
-                    articleDomain.setFirstBExplain(resultSet.getString("first_b_explain"));
                     articleDomain.setFirstC(resultSet.getString("first_c"));
-                    articleDomain.setFirstCExplain(resultSet.getString("first_c_explain"));
                     articleDomain.setFirstD(resultSet.getString("first_d"));
-                    articleDomain.setFirstDExplain(resultSet.getString("first_d_explain"));
                     articleDomain.setFirstAnswer(resultSet.getString("first_answer"));
+                    articleDomain.setFirstExplain(resultSet.getString("first_explain"));
                     articleDomain.setSecondQuestion(resultSet.getString("second_question"));
                     articleDomain.setSecondA(resultSet.getString("second_a"));
-                    articleDomain.setSecondAExplain(resultSet.getString("second_a_explain"));
                     articleDomain.setSecondB(resultSet.getString("second_b"));
-                    articleDomain.setSecondBExplain(resultSet.getString("second_b_explain"));
                     articleDomain.setSecondC(resultSet.getString("second_c"));
-                    articleDomain.setSecondCExplain(resultSet.getString("second_c_explain"));
                     articleDomain.setSecondD(resultSet.getString("second_d"));
-                    articleDomain.setSecondDExplain(resultSet.getString("second_d_explain"));
                     articleDomain.setSecondAnswer(resultSet.getString("second_answer"));
+                    articleDomain.setSecondExplain(resultSet.getString("second_explain"));
                     articleDomain.setThirdQuestion(resultSet.getString("third_question"));
                     articleDomain.setThirdA(resultSet.getString("third_a"));
-                    articleDomain.setThirdAExplain(resultSet.getString("third_a_explain"));
                     articleDomain.setThirdB(resultSet.getString("third_b"));
-                    articleDomain.setThirdBExplain(resultSet.getString("third_b_explain"));
                     articleDomain.setThirdC(resultSet.getString("third_c"));
-                    articleDomain.setThirdCExplain(resultSet.getString("third_c_explain"));
                     articleDomain.setThirdD(resultSet.getString("third_d"));
-                    articleDomain.setThirdDExplain(resultSet.getString("third_d_explain"));
                     articleDomain.setThirdAnswer(resultSet.getString("third_answer"));
+                    articleDomain.setThirdExplain(resultSet.getString("third_explain"));
                     articleDomain.setFourthQuestion(resultSet.getString("fourth_question"));
                     articleDomain.setFourthA(resultSet.getString("fourth_a"));
-                    articleDomain.setFourthAExplain(resultSet.getString("fourth_a_explain"));
                     articleDomain.setFourthB(resultSet.getString("fourth_b"));
-                    articleDomain.setFourthBExplain(resultSet.getString("fourth_b_explain"));
                     articleDomain.setFourthC(resultSet.getString("fourth_c"));
-                    articleDomain.setFourthCExplain(resultSet.getString("fourth_c_explain"));
                     articleDomain.setFourthD(resultSet.getString("fourth_d"));
-                    articleDomain.setFourthDExplain(resultSet.getString("fourth_d_explain"));
                     articleDomain.setFourthAnswer(resultSet.getString("fourth_answer"));
+                    articleDomain.setFourthExplain(resultSet.getString("fourth_explain"));
                     articleDomain.setFifthQuestion(resultSet.getString("fifth_question"));
                     articleDomain.setFifthA(resultSet.getString("fifth_a"));
-                    articleDomain.setFifthAExplain(resultSet.getString("fifth_a_explain"));
                     articleDomain.setFifthB(resultSet.getString("fifth_b"));
-                    articleDomain.setFifthBExplain(resultSet.getString("fifth_b_explain"));
                     articleDomain.setFifthC(resultSet.getString("fifth_c"));
-                    articleDomain.setFifthCExplain(resultSet.getString("fifth_c_explain"));
                     articleDomain.setFifthD(resultSet.getString("fifth_d"));
-                    articleDomain.setFifthDExplain(resultSet.getString("fifth_d_explain"));
                     articleDomain.setFifthAnswer(resultSet.getString("fifth_answer"));
+                    articleDomain.setFifthExplain(resultSet.getString("fifth_explain"));
                     return articleDomain;
                 }
             } catch (SQLException e) {

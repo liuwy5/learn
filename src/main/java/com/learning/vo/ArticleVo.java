@@ -23,101 +23,71 @@ public class ArticleVo {
 
     private String firstA;
 
-    private String firstAExplain;
-
     private String firstB;
-
-    private String firstBExplain;
 
     private String firstC;
 
-    private String firstCExplain;
-
     private String firstD;
 
-    private String firstDExplain;
-
     private String firstAnswer;
+
+    private String firstExplain;
 
     private String secondQuestion;
 
     private String secondA;
 
-    private String secondAExplain;
-
     private String secondB;
-
-    private String secondBExplain;
 
     private String secondC;
 
-    private String secondCExplain;
-
     private String secondD;
 
-    private String secondDExplain;
-
     private String secondAnswer;
+
+    private String secondExplain;
 
     private String thirdQuestion;
 
     private String thirdA;
 
-    private String thirdAExplain;
-
     private String thirdB;
-
-    private String thirdBExplain;
 
     private String thirdC;
 
-    private String thirdCExplain;
-
     private String thirdD;
 
-    private String thirdDExplain;
-
     private String thirdAnswer;
+
+    private String thirdExplain;
 
     private String fourthQuestion;
 
     private String fourthA;
 
-    private String fourthAExplain;
-
     private String fourthB;
-
-    private String fourthBExplain;
 
     private String fourthC;
 
-    private String fourthCExplain;
-
     private String fourthD;
 
-    private String fourthDExplain;
-
     private String fourthAnswer;
+
+    private String fourthExplain;
 
     private String fifthQuestion;
 
     private String fifthA;
 
-    private String fifthAExplain;
-
     private String fifthB;
-
-    private String fifthBExplain;
 
     private String fifthC;
 
-    private String fifthCExplain;
-
     private String fifthD;
 
-    private String fifthDExplain;
-
     private String fifthAnswer;
+
+    private String fifthExplain;
 
     public Integer getId() {
         return id;
@@ -191,28 +161,12 @@ public class ArticleVo {
         this.firstA = firstA;
     }
 
-    public String getFirstAExplain() {
-        return firstAExplain;
-    }
-
-    public void setFirstAExplain(String firstAExplain) {
-        this.firstAExplain = firstAExplain;
-    }
-
     public String getFirstB() {
         return firstB;
     }
 
     public void setFirstB(String firstB) {
         this.firstB = firstB;
-    }
-
-    public String getFirstBExplain() {
-        return firstBExplain;
-    }
-
-    public void setFirstBExplain(String firstBExplain) {
-        this.firstBExplain = firstBExplain;
     }
 
     public String getFirstC() {
@@ -223,14 +177,6 @@ public class ArticleVo {
         this.firstC = firstC;
     }
 
-    public String getFirstCExplain() {
-        return firstCExplain;
-    }
-
-    public void setFirstCExplain(String firstCExplain) {
-        this.firstCExplain = firstCExplain;
-    }
-
     public String getFirstD() {
         return firstD;
     }
@@ -239,20 +185,20 @@ public class ArticleVo {
         this.firstD = firstD;
     }
 
-    public String getFirstDExplain() {
-        return firstDExplain;
-    }
-
-    public void setFirstDExplain(String firstDExplain) {
-        this.firstDExplain = firstDExplain;
-    }
-
     public String getFirstAnswer() {
         return firstAnswer;
     }
 
     public void setFirstAnswer(String firstAnswer) {
         this.firstAnswer = firstAnswer;
+    }
+
+    public String getFirstExplain() {
+        return firstExplain;
+    }
+
+    public void setFirstExplain(String firstExplain) {
+        this.firstExplain = firstExplain;
     }
 
     public String getSecondQuestion() {
@@ -271,28 +217,12 @@ public class ArticleVo {
         this.secondA = secondA;
     }
 
-    public String getSecondAExplain() {
-        return secondAExplain;
-    }
-
-    public void setSecondAExplain(String secondAExplain) {
-        this.secondAExplain = secondAExplain;
-    }
-
     public String getSecondB() {
         return secondB;
     }
 
     public void setSecondB(String secondB) {
         this.secondB = secondB;
-    }
-
-    public String getSecondBExplain() {
-        return secondBExplain;
-    }
-
-    public void setSecondBExplain(String secondBExplain) {
-        this.secondBExplain = secondBExplain;
     }
 
     public String getSecondC() {
@@ -303,14 +233,6 @@ public class ArticleVo {
         this.secondC = secondC;
     }
 
-    public String getSecondCExplain() {
-        return secondCExplain;
-    }
-
-    public void setSecondCExplain(String secondCExplain) {
-        this.secondCExplain = secondCExplain;
-    }
-
     public String getSecondD() {
         return secondD;
     }
@@ -319,20 +241,20 @@ public class ArticleVo {
         this.secondD = secondD;
     }
 
-    public String getSecondDExplain() {
-        return secondDExplain;
-    }
-
-    public void setSecondDExplain(String secondDExplain) {
-        this.secondDExplain = secondDExplain;
-    }
-
     public String getSecondAnswer() {
         return secondAnswer;
     }
 
     public void setSecondAnswer(String secondAnswer) {
         this.secondAnswer = secondAnswer;
+    }
+
+    public String getSecondExplain() {
+        return secondExplain;
+    }
+
+    public void setSecondExplain(String secondExplain) {
+        this.secondExplain = secondExplain;
     }
 
     public String getThirdQuestion() {
@@ -351,28 +273,12 @@ public class ArticleVo {
         this.thirdA = thirdA;
     }
 
-    public String getThirdAExplain() {
-        return thirdAExplain;
-    }
-
-    public void setThirdAExplain(String thirdAExplain) {
-        this.thirdAExplain = thirdAExplain;
-    }
-
     public String getThirdB() {
         return thirdB;
     }
 
     public void setThirdB(String thirdB) {
         this.thirdB = thirdB;
-    }
-
-    public String getThirdBExplain() {
-        return thirdBExplain;
-    }
-
-    public void setThirdBExplain(String thirdBExplain) {
-        this.thirdBExplain = thirdBExplain;
     }
 
     public String getThirdC() {
@@ -383,14 +289,6 @@ public class ArticleVo {
         this.thirdC = thirdC;
     }
 
-    public String getThirdCExplain() {
-        return thirdCExplain;
-    }
-
-    public void setThirdCExplain(String thirdCExplain) {
-        this.thirdCExplain = thirdCExplain;
-    }
-
     public String getThirdD() {
         return thirdD;
     }
@@ -399,20 +297,20 @@ public class ArticleVo {
         this.thirdD = thirdD;
     }
 
-    public String getThirdDExplain() {
-        return thirdDExplain;
-    }
-
-    public void setThirdDExplain(String thirdDExplain) {
-        this.thirdDExplain = thirdDExplain;
-    }
-
     public String getThirdAnswer() {
         return thirdAnswer;
     }
 
     public void setThirdAnswer(String thirdAnswer) {
         this.thirdAnswer = thirdAnswer;
+    }
+
+    public String getThirdExplain() {
+        return thirdExplain;
+    }
+
+    public void setThirdExplain(String thirdExplain) {
+        this.thirdExplain = thirdExplain;
     }
 
     public String getFourthQuestion() {
@@ -431,28 +329,12 @@ public class ArticleVo {
         this.fourthA = fourthA;
     }
 
-    public String getFourthAExplain() {
-        return fourthAExplain;
-    }
-
-    public void setFourthAExplain(String fourthAExplain) {
-        this.fourthAExplain = fourthAExplain;
-    }
-
     public String getFourthB() {
         return fourthB;
     }
 
     public void setFourthB(String fourthB) {
         this.fourthB = fourthB;
-    }
-
-    public String getFourthBExplain() {
-        return fourthBExplain;
-    }
-
-    public void setFourthBExplain(String fourthBExplain) {
-        this.fourthBExplain = fourthBExplain;
     }
 
     public String getFourthC() {
@@ -463,14 +345,6 @@ public class ArticleVo {
         this.fourthC = fourthC;
     }
 
-    public String getFourthCExplain() {
-        return fourthCExplain;
-    }
-
-    public void setFourthCExplain(String fourthCExplain) {
-        this.fourthCExplain = fourthCExplain;
-    }
-
     public String getFourthD() {
         return fourthD;
     }
@@ -479,20 +353,20 @@ public class ArticleVo {
         this.fourthD = fourthD;
     }
 
-    public String getFourthDExplain() {
-        return fourthDExplain;
-    }
-
-    public void setFourthDExplain(String fourthDExplain) {
-        this.fourthDExplain = fourthDExplain;
-    }
-
     public String getFourthAnswer() {
         return fourthAnswer;
     }
 
     public void setFourthAnswer(String fourthAnswer) {
         this.fourthAnswer = fourthAnswer;
+    }
+
+    public String getFourthExplain() {
+        return fourthExplain;
+    }
+
+    public void setFourthExplain(String fourthExplain) {
+        this.fourthExplain = fourthExplain;
     }
 
     public String getFifthQuestion() {
@@ -511,28 +385,12 @@ public class ArticleVo {
         this.fifthA = fifthA;
     }
 
-    public String getFifthAExplain() {
-        return fifthAExplain;
-    }
-
-    public void setFifthAExplain(String fifthAExplain) {
-        this.fifthAExplain = fifthAExplain;
-    }
-
     public String getFifthB() {
         return fifthB;
     }
 
     public void setFifthB(String fifthB) {
         this.fifthB = fifthB;
-    }
-
-    public String getFifthBExplain() {
-        return fifthBExplain;
-    }
-
-    public void setFifthBExplain(String fifthBExplain) {
-        this.fifthBExplain = fifthBExplain;
     }
 
     public String getFifthC() {
@@ -543,14 +401,6 @@ public class ArticleVo {
         this.fifthC = fifthC;
     }
 
-    public String getFifthCExplain() {
-        return fifthCExplain;
-    }
-
-    public void setFifthCExplain(String fifthCExplain) {
-        this.fifthCExplain = fifthCExplain;
-    }
-
     public String getFifthD() {
         return fifthD;
     }
@@ -559,19 +409,19 @@ public class ArticleVo {
         this.fifthD = fifthD;
     }
 
-    public String getFifthDExplain() {
-        return fifthDExplain;
-    }
-
-    public void setFifthDExplain(String fifthDExplain) {
-        this.fifthDExplain = fifthDExplain;
-    }
-
     public String getFifthAnswer() {
         return fifthAnswer;
     }
 
     public void setFifthAnswer(String fifthAnswer) {
         this.fifthAnswer = fifthAnswer;
+    }
+
+    public String getFifthExplain() {
+        return fifthExplain;
+    }
+
+    public void setFifthExplain(String fifthExplain) {
+        this.fifthExplain = fifthExplain;
     }
 }
