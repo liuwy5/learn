@@ -2,24 +2,24 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <!--<html lang="en"></html>-->
 <head>
-    <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/assets/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/assets/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/css/customerHome.css" />
     <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
     <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/js/customerIndex.js" type="text/javascript"></script>
+    <!--<script src="/js/customerArticle.js" type="text/javascript"></script>-->
     <title>在线学习系统</title>
+    <meta th:replace="include/meta :: meta"/>
 </head>
 <body>
 <div class="container" style="padding-left: 1px;padding-right: 1px;">
     <section id="main"><!-- #main content and sidebar area -->
-        <div style="height: 30px; margin-left: 45px;">
+        <div style="height: 30px; margin-left: 45px;" th:if="${hasLast} == 1">
             <a href="http://www.baidu.com"
-               th:href="@{'/customer/articleDetail/last/' + ${article.type} + '/' + ${article.level} + '/' + ${article.period} + '/' + ${article.num} + '/0/0'}"
+               th:href="@{'/customer/articleDetail/' + ${article.type} + '/' + ${article.level} + '/' + ${lastPeriod} + '/' + ${lastNum} + '/0/0'}"
                style="font-size: 20px;line-height: 27px; text-decoration: underline; ">上一篇</a>
         </div>
-        <h6 th:text="${article.period} le 16 ? '       第' + ${period} + '课时第' + ${article.num} + '篇' : '       测评第' + ${article.num} + '篇'" class="color: #407E80;">First Article Title</h6>
+        <h4 th:text="${article.period} le 16 ? '第' + ${period} + '课时第' + ${article.num} + '篇' : '测评第' + ${article.num} + '篇'" style="color: #407E80; margin-left: 40px; margin-top: 20px;">First Article Title</h4>
         <div style="min-height: 50px;">
             <section id="content" style="width: 870px;"><!-- #content -->
                 <article>
@@ -31,17 +31,20 @@
         </div>
         <div>
             <form>
+                <input type="hidden" th:value="${article.type}" name="type" id="type" />
+                <input type="hidden" th:value="${article.level}" name="level" id="level" />
+                <input type="hidden" th:value="${article.period}" name="period" id="period" />
+                <input type="hidden" th:value="${article.num}" name="num" id="num"/>
                 <section style="margin-left: 20px; margin-right: 20px;">
                     <p style="font-size: 20px;line-height: 27px;text-indent: 1em; color: #333;">请回答问题：</p>
                     <!-- first -->
                     <p style="font-size: 18px;text-indent: 2em;" th:text="'1. ' + ${article.firstQuestion}">1.question.</p>
                     <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
                         <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.first}">自己答案：c </span>
-                    <div th:if="${answer} == 1">
-                        <span th:text="'正确答案：' + ${article.firstAnswer}">自己答案：c </span>
+                        &nbsp;&nbsp;
+                        <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.firstAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.first} == ${article.firstAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.first} ne ${article.firstAnswer}" class="glyphicon glyphicon-remove"></span>
-                    </div>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="first" value="a" id="first1"/> &nbsp;
@@ -61,11 +64,10 @@
                     <p style="font-size: 18px;text-indent: 2em;" th:text="'2. ' + ${article.secondQuestion}">1.question.</p>
                     <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
                         <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.second}">自己答案：c </span>
-                    <div th:if="${answer} == 1">
-                        <span th:text="'正确答案：' + ${article.secondAnswer}">自己答案：c </span>
+                        &nbsp;&nbsp;
+                        <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.secondAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.second} == ${article.secondAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.second} ne ${article.secondAnswer}" class="glyphicon glyphicon-remove"></span>
-                    </div>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="second" value="a" id="second1"/> &nbsp; <span th:text="${article.secondA}"></span>
@@ -84,11 +86,10 @@
                     <p style="font-size: 18px;text-indent: 2em;" th:text="'3. ' + ${article.thirdQuestion}">1.question.</p>
                     <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
                         <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.third}">自己答案：c </span>
-                    <div th:if="${answer} == 1">
-                        <span th:text="'正确答案：' + ${article.thirdAnswer}">自己答案：c </span>
+                        &nbsp;&nbsp;
+                        <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.thirdAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.third} == ${article.thirdAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.third} ne ${article.thirdAnswer}" class="glyphicon glyphicon-remove"></span>
-                    </div>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="third" value="a" id="third1"/> &nbsp; <span th:text="${article.thirdA}"></span>
@@ -107,11 +108,10 @@
                     <p style="font-size: 18px;text-indent: 2em;" th:text="'4. ' + ${article.fourthQuestion}">1.question.</p>
                     <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
                         <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.fourth}">自己答案：c </span>
-                    <div th:if="${answer} == 1">
-                        <span th:text="'正确答案：' + ${article.fourthAnswer}">自己答案：c </span>
+                        &nbsp;&nbsp;
+                        <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.fourthAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.fourth} == ${article.fourthAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.fourth} ne ${article.fourthAnswer}" class="glyphicon glyphicon-remove"></span>
-                    </div>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="fourth" value="a" id="fourth1"/> &nbsp; <span th:text="${article.fourthA}"></span>
@@ -129,12 +129,10 @@
                     <!-- fifth -->
                     <p style="font-size: 18px;text-indent: 2em;" th:text="'5. ' + ${article.fifthQuestion}">1.question.</p>
                     <p style="font-size: 18px;text-indent: 2em; text-align: right; color: red;">
-                        <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.fifth}">自己答案：c </span>
-                    <div th:if="${answer} == 1">
-                        <span th:text="'正确答案：' + ${article.fifthAnswer}">自己答案：c </span>
+                        <span th:if="${selfAnswer} == 1" th:text="'自己答案：' + ${history.fifth}">自己答案：c </span>　&nbsp;&nbsp;
+                        <span th:if="${answer} == 1" th:text="'正确答案：' + ${article.fifthAnswer}">自己答案：c </span>
                         <span th:if="${answer} == 1 and ${history.fifth} == ${article.fifthAnswer}" class="glyphicon glyphicon-ok"></span>
                         <span th:if="${answer} == 1 and ${history.fifth} ne ${article.fifthAnswer}" class="glyphicon glyphicon-remove"></span>
-                    </div>
                     </p>
                     <p style="font-size: 18px;text-indent: 3em;">
                         <input type="radio" name="fifth" value="a" id="fifth1"/> &nbsp; <span th:text="${article.fifthA}"></span>
@@ -149,37 +147,95 @@
                         <input type="radio" name="fifth" value="d" id="fifth4"/> &nbsp; <span th:text="${article.fifthD}"></span>
                     </p>
                 </section>
+
+                <div style="height: 60px; margin-right: 45px; text-align: right;" th:if="${answer} == 0 and ${canSubmit} == 1">
+                    <button type="button" class="btn btn-default" name="answer" id="answer" >
+                        提交答案
+                    </button>
+                </div>
             </form>
         </div>
+
         <div style="height: 60px; margin-right: 45px; text-align: right;">
-            <a href="http://www.baidu.com"
+            <a href="http://www.baidu.com" th:if="${seeAnswer} == 1"
+               th:href="@{'/customer/articleDetail/' + ${article.type} + '/' + ${article.level} + '/' + ${article.period} + '/' + ${article.num} + '/0/0'}"
+               style="font-size: 20px;line-height: 27px; text-decoration: underline; ">重做</a>
+            &nbsp;
+            <a href="http://www.baidu.com" th:if="${seeAnswer} == 1 and ${answer} == 0"
                th:href="@{'/customer/articleDetail/' + ${article.type} + '/' + ${article.level} + '/' + ${article.period} + '/' + ${article.num} + '/0/1'}"
                style="font-size: 20px;line-height: 27px; text-decoration: underline; ">查看之前答案</a>
-
-            <a href="http://www.baidu.com"
+            &nbsp;
+            <a href="http://www.baidu.com" th:if="${seeAnswer} == 1"
                th:href="@{'/customer/articleDetail/' + ${article.type} + '/' + ${article.level} + '/' + ${article.period} + '/' + ${article.num} + '/1/1'}"
                style="font-size: 20px;line-height: 27px; text-decoration: underline; ">查看正确答案</a>
-            <!--<a href="http://www.baidu.com" style="font-size: 20px;line-height: 27px; text-decoration: underline; ">下一篇</a>-->
-            <a href="http://www.baidu.com"
-               th:href="@{'/customer/articleDetail/next/' + ${article.type} + '/' + ${article.level} + '/' + ${article.period} + '/' + ${article.num} + '/0/0'}"
+            &nbsp;
+            <a href="http://www.baidu.com" th:if="${hasNext} == 1"
+               th:href="@{'/customer/articleDetail/' + ${article.type} + '/' + ${article.level} + '/' + ${nextPeriod} + '/' + ${nextNum} + '/0/0'}"
                style="font-size: 20px;line-height: 27px; text-decoration: underline; ">下一篇</a>
         </div>
     </section>
 </div>
 </body>
+<div th:replace="include/meta :: javascript"/>
 <script type="text/javascript" th:inline="javascript">
     $(function() {
-        function hrefClick(){
-            var target=event.target;
-            if(target.className.indexOf("disableHref")>-1){
-                // 加入判断,有"变灰"时返回
+        $('#answer').click(function () {
+            var type = $('#type').val();
+            var level = $('#level').val();
+            var period = $('#period').val();
+            var num = $('#num').val();
+            var first = $('input[name="first"]:checked').val();
+            var second = $('input[name="second"]:checked').val();
+            var third = $('input[name="third"]:checked').val();
+            var fourth = $('input[name="fourth"]:checked').val();
+            var fifth = $('input[name="fifth"]:checked').val();
+
+            if (first == '' || second == '' || third == '' || fourth == '' || fifth == '' ||
+                first == 'null' || second == 'null' || third == 'null' || fourth == 'null' || fifth == 'null' ||
+                first == undefined || second == undefined || third == undefined || fourth == undefined || fifth == undefined) {
+                alert("请完成所有题目");
                 return false;
             }
-            // do something u need
-            // for example
-            alert("jump previous");
-            window.open("http://www.jb51.net");
-        }
+
+            var params = {
+                type : type,
+                level : level,
+                period : period,
+                num : num,
+                first : first,
+                second : second,
+                third : third,
+                fourth : fourth,
+                fifth : fifth
+            };
+            $.ajax({
+                type: "POST",
+                url: "/customer/history/insertOrUpdate",
+                data: params,
+                dataType: "json",
+                traditional: true
+            }).done(function (result) {
+                if(result.code == 0){
+                    alert("提交成功");
+                    $("body").spinModal(false);
+                    setTimeout(function(){
+                        location.href =/*[[${url}]]*/
+                    }, 1000);
+                }else{
+                    $("body").spinModal(false);
+                    alert(result.desc);
+                }
+            }).fail(function(){
+                setTimeout(function(){
+                    $("body").spinModal(false);
+                    iosOverlay({
+                        text: '服务异常',
+                        duration: 2e3,
+                        icon: "/assets/img/error.png"
+                    });
+                },1500);
+            });
+        });
     });
 
 </script>

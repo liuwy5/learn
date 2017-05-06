@@ -24,11 +24,11 @@
             <article>
                 <h2 th:each="period, periodStat : ${periodList}">
                     <a href="#" target="_blank"
-                       th:href="@{'/customer/articleDetail/' + ${learnType} + '/' + ${learnLevel} + '/' + ${period} + '/0/0'}"
-                       th:text="${period} le 16 ? '第' + ${period} + '课时' : '测评'">First Article Title</a>
+                       th:href="@{'/customer/articleDetail/' + ${learnType} + '/' + ${learnLevel} + '/' + ${period.period} + '/0/0'}"
+                       th:text="${period.period} le 16 ? '第' + ${period.period} + '课时' : '测评'">First Article Title</a>
                     &nbsp;&nbsp;
 
-                    <span class="glyphicon glyphicon-ok" th:if="${period} lt ${periodProgress}"></span>
+                    <span class="glyphicon glyphicon-ok" th:if="${period.hasDone} eq 1"></span>
                 </h2>
 
             </article>

@@ -582,4 +582,69 @@ public class ArticleDomain {
     public void setFifthAnswer(String fifthAnswer) {
         this.fifthAnswer = fifthAnswer == null ? null : fifthAnswer.trim();
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ArticleDomain{");
+        sb.append("id=").append(id);
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", level='").append(level).append('\'');
+        sb.append(", period='").append(period).append('\'');
+        sb.append(", num=").append(num);
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", content='").append(content).append('\'');
+        sb.append(", contents=").append(contents);
+        sb.append(", firstQuestion='").append(firstQuestion).append('\'');
+        sb.append(", firstA='").append(firstA).append('\'');
+        sb.append(", firstAExplain='").append(firstAExplain).append('\'');
+        sb.append(", firstB='").append(firstB).append('\'');
+        sb.append(", firstBExplain='").append(firstBExplain).append('\'');
+        sb.append(", firstC='").append(firstC).append('\'');
+        sb.append(", firstCExplain='").append(firstCExplain).append('\'');
+        sb.append(", firstD='").append(firstD).append('\'');
+        sb.append(", firstDExplain='").append(firstDExplain).append('\'');
+        sb.append(", firstAnswer='").append(firstAnswer).append('\'');
+        sb.append(", secondQuestion='").append(secondQuestion).append('\'');
+        sb.append(", secondA='").append(secondA).append('\'');
+        sb.append(", secondAExplain='").append(secondAExplain).append('\'');
+        sb.append(", secondB='").append(secondB).append('\'');
+        sb.append(", secondBExplain='").append(secondBExplain).append('\'');
+        sb.append(", secondC='").append(secondC).append('\'');
+        sb.append(", secondCExplain='").append(secondCExplain).append('\'');
+        sb.append(", secondD='").append(secondD).append('\'');
+        sb.append(", secondDExplain='").append(secondDExplain).append('\'');
+        sb.append(", secondAnswer='").append(secondAnswer).append('\'');
+        sb.append(", thirdQuestion='").append(thirdQuestion).append('\'');
+        sb.append(", thirdA='").append(thirdA).append('\'');
+        sb.append(", thirdAExplain='").append(thirdAExplain).append('\'');
+        sb.append(", thirdB='").append(thirdB).append('\'');
+        sb.append(", thirdBExplain='").append(thirdBExplain).append('\'');
+        sb.append(", thirdC='").append(thirdC).append('\'');
+        sb.append(", thirdCExplain='").append(thirdCExplain).append('\'');
+        sb.append(", thirdD='").append(thirdD).append('\'');
+        sb.append(", thirdDExplain='").append(thirdDExplain).append('\'');
+        sb.append(", thirdAnswer='").append(thirdAnswer).append('\'');
+        sb.append(", fourthQuestion='").append(fourthQuestion).append('\'');
+        sb.append(", fourthA='").append(fourthA).append('\'');
+        sb.append(", fourthAExplain='").append(fourthAExplain).append('\'');
+        sb.append(", fourthB='").append(fourthB).append('\'');
+        sb.append(", fourthBExplain='").append(fourthBExplain).append('\'');
+        sb.append(", fourthC='").append(fourthC).append('\'');
+        sb.append(", fourthCExplain='").append(fourthCExplain).append('\'');
+        sb.append(", fourthD='").append(fourthD).append('\'');
+        sb.append(", fourthDExplain='").append(fourthDExplain).append('\'');
+        sb.append(", fourthAnswer='").append(fourthAnswer).append('\'');
+        sb.append(", fifthQuestion='").append(fifthQuestion).append('\'');
+        sb.append(", fifthA='").append(fifthA).append('\'');
+        sb.append(", fifthAExplain='").append(fifthAExplain).append('\'');
+        sb.append(", fifthB='").append(fifthB).append('\'');
+        sb.append(", fifthBExplain='").append(fifthBExplain).append('\'');
+        sb.append(", fifthC='").append(fifthC).append('\'');
+        sb.append(", fifthCExplain='").append(fifthCExplain).append('\'');
+        sb.append(", fifthD='").append(fifthD).append('\'');
+        sb.append(", fifthDExplain='").append(fifthDExplain).append('\'');
+        sb.append(", fifthAnswer='").append(fifthAnswer).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

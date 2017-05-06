@@ -13,7 +13,10 @@ public class H2SqlUtilTest {
     public void updateSqlTest() throws Exception{
         Integer interestType = 3;
         String chatName = "1234567";
-        String sqlString = "update article set num = 2 where id = 5;";
+        String sqlString = "delete from progress where id >= 1";
+//        String sqlString = "insert into privilege (name, url, num) values ('学习内容管理', '/admin/article', 5)";
+        H2SqlUtil.updateSql(sqlString);
+        sqlString = "delete from history where id >= 1";
 //        String sqlString = "insert into privilege (name, url, num) values ('学习内容管理', '/admin/article', 5)";
         H2SqlUtil.updateSql(sqlString);
 

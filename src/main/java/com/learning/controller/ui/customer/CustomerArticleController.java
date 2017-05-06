@@ -8,12 +8,14 @@ import com.learning.domain.ProgressDomain;
 import com.learning.service.ArticleServiceImpl;
 import com.learning.service.HistoryServiceImpl;
 import com.learning.service.ProgressServiceImpl;
+import com.learning.vo.PeriodVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/customer")
@@ -31,12 +33,36 @@ public class CustomerArticleController {
         model.addAttribute("learnType", type);
         model.addAttribute("learnLevel", level);
 
-        model.addAttribute("periodList", articleService.periodList(type, level));
+        // periodList
+        List<Integer> periodList = articleService.periodList(type, level);
+        List<PeriodVo> periodVoList = new ArrayList<PeriodVo>();
+        ProgressDomain progressDomain = progressService.selectProgress(loginName, type, level);
+        for (Integer period : periodList) {
+            PeriodVo periodVo = new PeriodVo();
+            periodVo.setPeriod(period);
 
-        ProgressDomain progressDomain = progressService.selectProgressNotNull(loginName, type, level);
+            Integer hasDone = 0;
+            if (progressDomain != null) {
+                if (Integer.valueOf(progressDomain.getPeriod()) > period) {
+                    hasDone = 1;
+                } else if (Integer.valueOf(progressDomain.getPeriod()).equals(period)) {
+                    ArticleDomain nextArticle = articleService.selectNext(type, level, period.toString(), progressDomain.getNum());
+                    if (nextArticle == null || Integer.valueOf(nextArticle.getPeriod()) > period) {
+                        hasDone = 1;
+                    }
+                }
+            }
+            periodVo.setHasDone(hasDone);
+            periodVoList.add(periodVo);
+        }
+        model.addAttribute("periodList", periodVoList);
+
         if (progressDomain != null) {
             model.addAttribute("periodProgress", progressDomain.getPeriod());
             model.addAttribute("numProgress", progressDomain.getNum());
+        } else {
+            model.addAttribute("periodProgress", 1);
+            model.addAttribute("numProgress", 1);
         }
         return "customer/articleList";
     }
@@ -46,26 +72,26 @@ public class CustomerArticleController {
                                 @PathVariable("period") String period,
                                 @PathVariable("answer") Integer answer, @PathVariable("selfAnswer")Integer selfAnswer, HttpSession session) {
         String loginName = TicketUtil.getLoginName(session);
-        ProgressDomain progressDomain = progressService.selectProgressNotNull(loginName, learnType, learnLevel);
+        ProgressDomain progressDomain = progressService.selectProgress(loginName, learnType, learnLevel);
+        Integer num;
         if (progressDomain != null) {
-            Integer num;
+
             // 已通过
-            if (Integer.parseInt(progressDomain.getPeriod()) > Integer.parseInt(period)) {
+            if (Integer.parseInt(progressDomain.getPeriod()) != Integer.parseInt(period)) {
                 num = 1;
             } else {
-                num = progressDomain.getNum();
+                num = (progressDomain.getNum() + 1) % 3;
             }
-            ArticleDomain articleDomain = articleService.detail(learnType, learnLevel, period, num);
-
-            if (articleDomain != null) {
-                articleDomain.setContents(Arrays.asList(articleDomain.getContent().split("\n")));
-            }
-            model.addAttribute("article", articleDomain);
-
-            s(loginName, learnType, learnLevel, period, num, model);
-            model.addAttribute("answer", answer);
-            model.addAttribute("selfAnswer", selfAnswer);
+        } else {
+            num = 1;
         }
+        ArticleDomain articleDomain = articleService.detail(learnType, learnLevel, period, num);
+        model.addAttribute("article", articleDomain);
+        s(loginName, learnType, learnLevel, period, num, model);
+        model.addAttribute("answer", answer);
+        model.addAttribute("selfAnswer", selfAnswer);
+        String url = "/customer/articleDetail/" + learnType + "/" + learnLevel + "/" + period + "/" + num + "/" + answer + "/" + selfAnswer;
+        model.addAttribute("url", url);
 
         return "customer/article";
     }
@@ -82,6 +108,8 @@ public class CustomerArticleController {
         s(loginName, learnType, learnLevel, period, num, model);
         model.addAttribute("answer", answer);
         model.addAttribute("selfAnswer", selfAnswer);
+        String url = "/customer/articleDetail/" + learnType + "/" + learnLevel + "/" + period + "/" + num + "/" + answer + "/" + selfAnswer;
+        model.addAttribute("url", url);
 
         return "customer/article";
     }
@@ -124,15 +152,58 @@ public class CustomerArticleController {
         HistoryDomain historyDomain = historyService.select(loginName, learnType, learnLevel, period, num);
         model.addAttribute("history", historyDomain);
 
+        Integer seeAnswer = historyDomain != null ? 1 : 0;
+        model.addAttribute("seeAnswer", seeAnswer);
+
         ArticleDomain lastArticle = articleService.selectLast(learnType, learnLevel, period, num);
         model.addAttribute("hasLast", lastArticle == null ? 0 : 1);
-
-        Integer hasNext = 0;
-        ProgressDomain progressDomain = progressService.selectProgressNotNull(loginName, learnType, learnLevel);
-        if (Integer.valueOf(progressDomain.getPeriod()) > Integer.valueOf(period) ||
-                (progressDomain.getPeriod().equals(period) && progressDomain.getNum() > num)) {
-            hasNext = 1;
+        if (lastArticle != null) {
+            model.addAttribute("lastPeriod", lastArticle.getPeriod());
+            model.addAttribute("lastNum", lastArticle.getNum());
         }
-        model.addAttribute("hasNext", hasNext);
+
+        ArticleDomain nextArticle = articleService.selectNext(learnType, learnLevel, period, num);
+        model.addAttribute("hasNext", nextArticle == null ? 0 : 1);
+        if (nextArticle != null) {
+            model.addAttribute("nextPeriod", nextArticle.getPeriod());
+            model.addAttribute("nextNum", nextArticle.getNum());
+        }
+
+//        Integer hasNext = 0;
+//        ProgressDomain progressDomain = progressService.selectProgress(loginName, learnType, learnLevel);
+//        if (progressDomain != null) {
+//            if (Integer.valueOf(progressDomain.getPeriod()) > Integer.valueOf(period) ||
+//                    (progressDomain.getPeriod().equals(period) && progressDomain.getNum() >= num)) {
+//                ArticleDomain nextArticle = articleService.selectNext(learnType, learnLevel, period, num);
+//                if (nextArticle != null) {
+//                    hasNext = 1;
+//                }
+//
+//            }
+//        }
+//        model.addAttribute("hasNext", hasNext);
+
+
+        Integer canSubmit = 0;
+        ProgressDomain progressDomain = progressService.selectProgress(loginName, learnType, learnLevel);
+        if (progressDomain != null) {
+            if (Integer.valueOf(progressDomain.getPeriod()) > Integer.valueOf(period) ||
+                    (progressDomain.getPeriod().equals(period) && progressDomain.getNum() + 1 >= num)) {
+//                if (nextArticle != null) {
+//                    canSubmit = 1;
+//                }
+                canSubmit = 1;
+            }
+        } else {
+            List<Integer> periodList = articleService.periodList(learnType, learnLevel);
+            if (periodList.size() > 0 && periodList.get(0).equals(Integer.valueOf(period)) && num == 1) {
+                canSubmit = 1;
+            }
+        }
+        System.out.println("==========can submit: " + canSubmit);
+        System.out.println("==========hasLast: " + (lastArticle == null ? 0 : 1));
+        System.out.println("==========hasNext: " + (nextArticle == null ? 0 : 1));
+//        System.out.println("==========can submit: " + canSubmit);
+        model.addAttribute("canSubmit", canSubmit);
     }
 }

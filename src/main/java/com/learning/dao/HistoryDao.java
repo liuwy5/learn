@@ -20,6 +20,23 @@ public class HistoryDao {
         return packageDomain(sqlString);
     }
 
+    public static void insert(HistoryDomain historyDomain) {
+        String formmater = "insert into history (login_name, type, level, period, num, first, second, third, fourth, fifth) " +
+                "values ('%s', '%s', '%s', '%s', %d, '%s', '%s', '%s', '%s', '%s')";
+        String sqlString = String.format(formmater, historyDomain.getLoginName(), historyDomain.getType(), historyDomain.getLevel(),
+                historyDomain.getPeriod(), historyDomain.getNum(), historyDomain.getFirst(), historyDomain.getSecond(),
+                historyDomain.getThird(), historyDomain.getFourth(), historyDomain.getFifth());
+        logger.info("execute sql HistoryDao.insert: " + sqlString);
+        H2SqlUtil.updateSql(sqlString);
+    }
+
+    public static void update(Integer id, String first, String second, String third, String fourth, String fifth) {
+        String formatter = "update history set first = '%s', second = '%s', third = '%s', fourth = '%s', fifth = '%s' where id = %d";
+        String sqlString = String.format(formatter, first, second, third, fourth, fifth, id);
+        logger.info("execute sql HistoryDao.update: " + sqlString);
+        H2SqlUtil.updateSql(sqlString);
+    }
+
     private static HistoryDomain packageDomain(String sqlString) {
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         try {

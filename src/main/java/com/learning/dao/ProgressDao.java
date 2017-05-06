@@ -19,6 +19,22 @@ public class ProgressDao {
         return packageDomain(sqlString);
     }
 
+    public static void insert(ProgressDomain progressDomain) {
+        String formatter = "insert into progress (login_name, type, level, period, num) " +
+                "values ('%s', '%s', '%s', '%s', %d)";
+        String sqlString = String.format(formatter, progressDomain.getLoginName(), progressDomain.getType(), progressDomain.getLevel(),
+                progressDomain.getPeriod(), progressDomain.getNum());
+        logger.info("execute sql ProgressDao.insert: " + sqlString);
+        H2SqlUtil.updateSql(sqlString);
+    }
+
+    public static void update(Integer id, String period, Integer num) {
+        String formatter = "update progress set period = '%s', num = %d where id = %d";
+        String sqlString = String.format(formatter, period, num, id);
+        logger.info("execute sql ProgressDao.update: " + sqlString);
+        H2SqlUtil.updateSql(sqlString);
+    }
+
     private static ProgressDomain packageDomain(String sqlString) {
         ResultSet resultSet = H2SqlUtil.querySql(sqlString);
         if (resultSet != null) {
@@ -26,6 +42,7 @@ public class ProgressDao {
                 if (resultSet.next()) {
                     ProgressDomain progressDomain = new ProgressDomain();
                     progressDomain.setId(resultSet.getInt("id"));
+                    progressDomain.setLoginName(resultSet.getString("login_name"));
                     progressDomain.setType(resultSet.getString("type"));
                     progressDomain.setLevel(resultSet.getString("level"));
                     progressDomain.setPeriod(resultSet.getString("period"));

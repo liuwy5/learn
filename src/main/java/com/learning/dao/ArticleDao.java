@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -65,8 +66,12 @@ public class ArticleDao {
     public static ArticleDomain select(String type, String level, String period, Integer num) {
         String formatter = "select * from article where type = '%s' and level = '%s' and period = '%s' and num = %d";
         String sqlString = String.format(formatter, type, level, period, num);
-        logger.info("execute sql ArticleDao.select: " + sqlString);
-        return packageDomain(sqlString);
+        ArticleDomain articleDomain = packageDomain(sqlString);
+        if (articleDomain != null) {
+            articleDomain.setContents(Arrays.asList(articleDomain.getContent().split("\n")));
+        }
+        logger.info("execute sql ArticleDao.select: " + sqlString + ", result: " + articleDomain);
+        return articleDomain;
 
     }
 

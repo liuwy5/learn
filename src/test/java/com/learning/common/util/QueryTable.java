@@ -102,7 +102,7 @@ public class QueryTable {
         if (resultSet != null) {
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt("id") + " " + resultSet.getString("login_name") + ">>"
-                        + resultSet.getString("type") + " level: " + resultSet.getInt("level") + " num: " +
+                        + resultSet.getString("type") + " level: " + resultSet.getString("level") + " num: " +
                         resultSet.getInt("num"));
             }
 
